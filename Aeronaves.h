@@ -17,16 +17,4 @@ class Aeronaves {
 	double getDistanciaRecorrida();
 	virtual string toString() = 0;
 
-
-	/*string Aeronaves::toString() {
-		stringstream s;
-		s << "La fecha de creacion de avion es: " << endl;
-		if (creacion != NULL)
-			s << creacion->toString() << endl;
-		s << "La distancia recorrida del avion es: " << distanciaReco << endl;
-		return s.str();
-	}
-	*/
-
-
 };
