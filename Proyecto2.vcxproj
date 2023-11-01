@@ -133,6 +133,7 @@
     <ClInclude Include="Carga.h" />
     <ClInclude Include="Comerciales.h" />
     <ClInclude Include="Contrato.h" />
+    <ClInclude Include="ContratoServicio.h" />
     <ClInclude Include="Empleado.h" />
     <ClInclude Include="Fechas.h" />
     <ClInclude Include="Militar.h" />

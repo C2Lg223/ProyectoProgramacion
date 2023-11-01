@@ -16,6 +16,6 @@ public:
 	void setSalario(int);
 	string getCodigo();
 	string getPuesto();
-	string getSalario();
+	int getSalario();
 	virtual string toString() = 0;
 };
