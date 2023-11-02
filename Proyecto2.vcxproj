@@ -139,7 +139,10 @@
     <ClInclude Include="Militar.h" />
     <ClInclude Include="Miscelaneos.h" />
     <ClInclude Include="Planta.h" />
+    <ClInclude Include="Plaza.h" />
+    <ClInclude Include="PlazoFijo.h" />
     <ClInclude Include="ServicioClase.h" />
+    <ClInclude Include="TiempoIndefinido.h" />
     <ClInclude Include="Tripulacion.h" />
   </ItemGroup>
   <ItemGroup>
@@ -149,12 +152,16 @@
     <ClCompile Include="Carga.cpp" />
     <ClCompile Include="Comerciales.cpp" />
     <ClCompile Include="Contrato.cpp" />
+    <ClCompile Include="ContratoServicio.cpp" />
     <ClCompile Include="Empleado.cpp" />
     <ClCompile Include="Fechas.cpp" />
     <ClCompile Include="Militar.cpp" />
     <ClCompile Include="Miscelaneos.cpp" />
     <ClCompile Include="Planta.cpp" />
+    <ClCompile Include="Plaza.cpp" />
+    <ClCompile Include="PlazoFijo.cpp" />
     <ClCompile Include="ServicioClase.cpp" />
+    <ClCompile Include="TiempoIndefinido.cpp" />
     <ClCompile Include="Tripulacion.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

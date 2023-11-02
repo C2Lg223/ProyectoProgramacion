@@ -14,7 +14,11 @@ class Aeronaves {
 	Aeronaves(Fecha& crea, double disRe);;
 	virtual ~Aeronaves();
 	void setDistanciaRecorida(double dr);
+	void setFechaCreacion(Fecha&);
+
+	Fecha* getFechaCreacion();
 	double getDistanciaRecorrida();
+
 	virtual string toString() = 0;
 
 };

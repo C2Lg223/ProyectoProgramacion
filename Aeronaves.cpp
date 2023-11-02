@@ -9,4 +9,6 @@ Aeronaves::~Aeronaves() {
 void Aeronaves::setDistanciaRecorida(double dr) {
 	distanciaReco = dr;
 }
+void Aeronaves::setFechaCreacion(Fecha& CreacionAvion) { creacion = (Fecha*)&CreacionAvion; }
+Fecha* Aeronaves::getFechaCreacion() { return creacion; }
 double Aeronaves::getDistanciaRecorrida() { return distanciaReco; }

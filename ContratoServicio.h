@@ -1,13 +1,18 @@
 #include"Contrato.h"
-#include"Fecha.h"
 
 class ContratoServicio : public Contrato {
     private: 
-        string Horario;
+        string HorarioLaboral;
         string tipoServicio;
-        Fecha* ingresaTrabajar;
-        Fecha* FinalizaTrabajo;
 
 public: 
-
+   ContratoServicio();
+   ContratoServicio(string, string,  string, string, int, Fecha&, Fecha& );
+   virtual ~ContratoServicio();
+   void setHorarioLaboral(string);
+   void setTipoServicio(string);
+   string getHorarioLaboral();
+   string getTipoServicio();
+   string toString();
+  
 };
