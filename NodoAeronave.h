@@ -3,12 +3,24 @@
 #include"Aeronaves.h"
 
 
-class Nodo {
+class NodoAeronave
+{
 private:
 	Aeronaves* aeronavePtr;
-	Nodo* ptrNodo;
+	NodoAeronave* ptrNodo;
+
 public:
-	Nodo() {
+	NodoAeronave();
+	NodoAeronave(Aeronaves&, NodoAeronave*);
+	virtual ~NodoAeronave();
+	void setAeronave(Aeronaves&);
+	void setSigNodo(NodoAeronave*);
+
+	Aeronaves* getAeronave();
+	NodoAeronave* getSigNodo();
+	string toString();
+
+	/*Nodo() {
 		aeronavePtr = NULL;
 		ptrNodo = NULL;
 	}
@@ -33,6 +45,6 @@ public:
 	}
 	Nodo* getSigNodo() {
 		return ptrNodo;
-	}
+	}*/
 
 };

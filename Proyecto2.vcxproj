@@ -154,6 +154,7 @@
     <ClCompile Include="Fechas.cpp" />
     <ClCompile Include="Militar.cpp" />
     <ClCompile Include="Miscelaneos.cpp" />
+    <ClCompile Include="NodoAeronave.cpp" />
     <ClCompile Include="Planta.cpp" />
     <ClCompile Include="ServicioClase.cpp" />
     <ClCompile Include="Tripulacion.cpp" />
