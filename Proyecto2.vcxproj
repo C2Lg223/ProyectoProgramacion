@@ -138,6 +138,7 @@
     <ClInclude Include="Fechas.h" />
     <ClInclude Include="Militar.h" />
     <ClInclude Include="Miscelaneos.h" />
+    <ClInclude Include="NodoAeronave.h" />
     <ClInclude Include="Planta.h" />
     <ClInclude Include="ServicioClase.h" />
     <ClInclude Include="Tripulacion.h" />
