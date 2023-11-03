@@ -136,6 +136,7 @@
     <ClInclude Include="ContratoServicio.h" />
     <ClInclude Include="Empleado.h" />
     <ClInclude Include="Fechas.h" />
+    <ClInclude Include="ListaAeronave.h" />
     <ClInclude Include="Militar.h" />
     <ClInclude Include="Miscelaneos.h" />
     <ClInclude Include="NodoAeronave.h" />
@@ -152,6 +153,7 @@
     <ClCompile Include="Contrato.cpp" />
     <ClCompile Include="Empleado.cpp" />
     <ClCompile Include="Fechas.cpp" />
+    <ClCompile Include="ListaAeronave.cpp" />
     <ClCompile Include="Militar.cpp" />
     <ClCompile Include="Miscelaneos.cpp" />
     <ClCompile Include="NodoAeronave.cpp" />
