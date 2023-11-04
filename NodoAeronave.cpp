@@ -11,7 +11,7 @@ NodoAeronave::NodoAeronave(Aeronaves& av, NodoAeronave* nod){
 }
 
 NodoAeronave::~NodoAeronave(){
-	if (aeronavePtr = nullptr) delete aeronavePtr;
+	if (aeronavePtr != nullptr) delete aeronavePtr;
 }
 
 void NodoAeronave::setAeronave(Aeronaves& av){
