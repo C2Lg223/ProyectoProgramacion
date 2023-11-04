@@ -19,4 +19,5 @@ string PlazoFijo::toString() {
 		s << "---------------------------------------" << endl;
 		s << " Fecha de Finalizacion: " << FinalizaTrabajo->toString() << endl;
 	}
+	return s.str();
 }
