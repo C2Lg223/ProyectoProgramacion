@@ -25,9 +25,7 @@ string Servicio::NombreA(string categoria) {
 	if (categoria == "M130") { return "ANTONOV"; }
 }
 
-string Servicio::Tipo(string categoria) {
 
-}
 int Servicio::Pasajeros(string categoria) {
 	//aviones comerciales
 	if (categoria == "310") { return 250; }
