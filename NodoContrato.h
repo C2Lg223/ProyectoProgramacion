@@ -5,15 +5,15 @@ class NodoContrato {
 
 private: 
 	Contrato* contratoPtr;
-	NodoContrato* ptr;
+	NodoContrato* ptrNodo;
 
 
 public: 
 	NodoContrato();
-	NodoContrato(contratoPtr&, NodoContrato*);
+	NodoContrato(Contrato&, NodoContrato*);
 	virtual ~NodoContrato();
-	void setContrato();
-	void setSiguienteNodo();
+	void setContrato(Contrato&);
+	void setSiguienteNodo(NodoContrato*);
 	Contrato* getContrato();
 	NodoContrato* getSigNodo();
 
