@@ -13,7 +13,7 @@ public:
 	NodoContrato(Contrato&, NodoContrato*);
 	virtual ~NodoContrato();
 	void setContrato(Contrato&);
-	void setSiguienteNodo(NodoContrato*);
+	void setSigNodo(NodoContrato*);
 	Contrato* getContrato();
 	NodoContrato* getSigNodo();
 

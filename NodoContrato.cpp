@@ -18,7 +18,7 @@ NodoContrato::~NodoContrato() {
 void NodoContrato::setContrato(Contrato& contr) {
 	contratoPtr = (Contrato*)&contr;
 }
-void NodoContrato::setSiguienteNodo(NodoContrato* nod) {
+void NodoContrato::setSigNodo(NodoContrato* nod) {
 	ptrNodo = nod;
 
 }
