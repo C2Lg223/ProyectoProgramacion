@@ -18,9 +18,6 @@ public:
 
 	Aeronaves* getAeronave();
 	NodoAeronave* getSigNodo();
-	string toString();
-
-	
 
 
 };
