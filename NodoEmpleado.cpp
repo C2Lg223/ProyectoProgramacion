@@ -30,8 +30,8 @@ NodoEmpleado* NodoEmpleado::getSigNodo(){
 	return sig;
 }
 
-string NodoEmpleado::toString(){
-	stringstream s;
-
-}
+//string NodoEmpleado::toString(){
+//	stringstream s;
+//	
+//}
 
