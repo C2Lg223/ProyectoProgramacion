@@ -139,9 +139,11 @@
     <ClInclude Include="Empleado.h" />
     <ClInclude Include="Fechas.h" />
     <ClInclude Include="ListaAeronave.h" />
+    <ClInclude Include="ListaEmpleado.h" />
     <ClInclude Include="Militar.h" />
     <ClInclude Include="Miscelaneos.h" />
     <ClInclude Include="NodoAeronave.h" />
+    <ClInclude Include="NodoEmpleado.h" />
     <ClInclude Include="Piloto.h" />
     <ClInclude Include="Planta.h" />
     <ClInclude Include="Plaza.h" />
@@ -161,9 +163,11 @@
     <ClCompile Include="Empleado.cpp" />
     <ClCompile Include="Fechas.cpp" />
     <ClCompile Include="ListaAeronave.cpp" />
+    <ClCompile Include="ListaEmpleado.cpp" />
     <ClCompile Include="Militar.cpp" />
     <ClCompile Include="Miscelaneos.cpp" />
     <ClCompile Include="NodoAeronave.cpp" />
+    <ClCompile Include="NodoEmpleado.cpp" />
     <ClCompile Include="Piloto.cpp" />
     <ClCompile Include="Planta.cpp" />
     <ClCompile Include="Plaza.cpp" />
