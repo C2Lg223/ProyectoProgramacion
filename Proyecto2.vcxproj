@@ -169,6 +169,7 @@
     <ClCompile Include="Militar.cpp" />
     <ClCompile Include="Miscelaneos.cpp" />
     <ClCompile Include="NodoAeronave.cpp" />
+    <ClCompile Include="NodoContrato.cpp" />
     <ClCompile Include="NodoEmpleado.cpp" />
     <ClCompile Include="Piloto.cpp" />
     <ClCompile Include="Planta.cpp" />
