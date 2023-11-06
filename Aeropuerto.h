@@ -4,17 +4,21 @@
 
 class Aeropuerto {
 private: 
-	string nomb; 
-	string codigoJuridico;
+	string nombre; 
+	string codJuridico;
 	string numTelefonico;
-	Aeronaves* es;
-	Contrato* con;
-	Empleado* emple;
+	ListaAeronave* AeronavesC;
+	ListaContratos* ContratosC;
+	ListaEmpleado* EmpleadosC;
 
 
 public:
 	Aeropuerto();
-	Aeropuerto(string, string, string, Aeronaves&, Contrato&, Empleado&);
+	Aeropuerto(string, string, string);
 	virtual ~Aeropuerto();
+	bool ingresarAeronave();
+	bool ingresarEmpleado();
+	bool ingresarContrato();
+	string DatosAeropuerto();
 
 };
