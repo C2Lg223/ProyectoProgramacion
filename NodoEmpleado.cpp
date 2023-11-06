@@ -5,8 +5,11 @@ NodoEmpleado::NodoEmpleado(){
 	sig = nullptr;
 }
 
-NodoEmpleado::NodoEmpleado(Empleado* empl, NodoEmpleado* nod) : emp(empl), sig(nod){}
-
+NodoEmpleado::NodoEmpleado(Empleado* empl, NodoEmpleado* nod) {
+	emp = (Empleado*)&empl;
+	sig = nod;
+}
+	
 NodoEmpleado::~NodoEmpleado(){
 	if (emp != nullptr) delete emp;
 }
@@ -27,8 +30,4 @@ NodoEmpleado* NodoEmpleado::getSigNodo(){
 	return sig;
 }
 
-//string NodoEmpleado::toString(){
-//	stringstream s;
-//	
-//}
 
