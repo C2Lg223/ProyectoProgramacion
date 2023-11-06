@@ -138,6 +138,7 @@
     <ClInclude Include="Copiloto.h" />
     <ClInclude Include="Empleado.h" />
     <ClInclude Include="Fechas.h" />
+    <ClInclude Include="Interfaz.h" />
     <ClInclude Include="ListaAeronave.h" />
     <ClInclude Include="ListaEmpleado.h" />
     <ClInclude Include="Militar.h" />
