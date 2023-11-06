@@ -13,7 +13,6 @@ public:
 	void setSigNodo(NodoEmpleado*);
 	Empleado* getEmpleado();
 	NodoEmpleado* getSigNodo();
-	string toString();
 
 
 
