@@ -3,8 +3,8 @@
 #include"ListaEmpleado.h"
 
 class Aeropuerto {
-private: 
-	string nombre; 
+private:
+	string nombre;
 	string codJuridico;
 	string numTelefonico;
 	ListaAeronave* AeronavesC;

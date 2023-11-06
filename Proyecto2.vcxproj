@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClInclude Include="Administrativa.h" />
     <ClInclude Include="Aeronaves.h" />
+    <ClInclude Include="Aeropuerto.h" />
     <ClInclude Include="AviacionCivil.h" />
     <ClInclude Include="Azafata.h" />
     <ClInclude Include="Carga.h" />
