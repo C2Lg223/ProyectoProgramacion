@@ -140,6 +140,7 @@
     <ClInclude Include="Fechas.h" />
     <ClInclude Include="Interfaz.h" />
     <ClInclude Include="ListaAeronave.h" />
+    <ClInclude Include="ListaContrato.h" />
     <ClInclude Include="ListaEmpleado.h" />
     <ClInclude Include="Militar.h" />
     <ClInclude Include="Miscelaneos.h" />
