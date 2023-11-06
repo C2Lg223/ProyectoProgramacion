@@ -144,6 +144,7 @@
     <ClInclude Include="Militar.h" />
     <ClInclude Include="Miscelaneos.h" />
     <ClInclude Include="NodoAeronave.h" />
+    <ClInclude Include="NodoContratos.h" />
     <ClInclude Include="NodoEmpleado.h" />
     <ClInclude Include="Piloto.h" />
     <ClInclude Include="Planta.h" />
