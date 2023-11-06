@@ -5,7 +5,10 @@ NodoEmpleado::NodoEmpleado(){
 	sig = nullptr;
 }
 
-NodoEmpleado::NodoEmpleado(Empleado* empl, NodoEmpleado* nod) : emp(empl), sig(nod){}
+NodoEmpleado::NodoEmpleado(Empleado& empl, NodoEmpleado* nod){
+	emp = (Empleado*)&emp;
+	sig = nod;
+}
 
 NodoEmpleado::~NodoEmpleado(){
 	if (emp != nullptr) delete emp;
