@@ -166,6 +166,7 @@
     <ClCompile Include="Contrato.cpp" />
     <ClCompile Include="Empleado.cpp" />
     <ClCompile Include="Fechas.cpp" />
+    <ClCompile Include="Interfaz.cpp" />
     <ClCompile Include="ListaAeronave.cpp" />
     <ClCompile Include="ListaContrato.cpp" />
     <ClCompile Include="ListaEmpleado.cpp" />
