@@ -159,7 +159,6 @@
   <ItemGroup>
     <ClCompile Include="Administrativa.cpp" />
     <ClCompile Include="Aeronaves.cpp" />
-    <ClCompile Include="Aeropuerto.cpp" />
     <ClCompile Include="AviacionCivil.cpp" />
     <ClCompile Include="Azafata.cpp" />
     <ClCompile Include="Carga.cpp" />

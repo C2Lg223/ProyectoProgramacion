@@ -1,4 +1,3 @@
-
 #include"Contrato.h"
 
 Contrato::Contrato()

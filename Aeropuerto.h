@@ -1,5 +1,5 @@
 #include"ListaAeronave.h"
-#include"ListaContrato.h"
+#include"ListaContratos.h"
 #include"ListaEmpleado.h"
 
 class Aeropuerto {
@@ -16,9 +16,9 @@ public:
 	Aeropuerto();
 	Aeropuerto(string, string, string);
 	virtual ~Aeropuerto();
-	bool ingresarAeronave(Aeronaves* av);
-	bool ingresarEmpleado(Empleado* em);
-	bool ingresaContrato(Contrato* cont);
+	bool ingresarAeronave();
+	bool ingresarEmpleado();
+	bool ingresarContrato();
 	string DatosAeropuerto();
 
 };
