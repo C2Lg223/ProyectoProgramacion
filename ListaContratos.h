@@ -1,11 +1,11 @@
-#include"NodoContrato.h"
+#include"NodoContratos.h"
 
 class ListaContratos {
    private: 
 	   NodoContrato* ppio;
   public: 
 	  ListaContratos();
-	  ListaContratos();
+	  virtual ~ListaContratos();
 	  bool estaVacia();
 	  bool ingresar(Contrato&);
 	  string toString();

@@ -5,8 +5,8 @@ class Azafata : public Tripulacion {
 private:
 	string nacionalidad;
 public:
-	Azafata();
-	Azafata(string, string, string, int, Aeronaves&, string);
+	
+	Azafata(string, string, string, int, string);
 	virtual ~Azafata();
 	void setNacionalidad(string);
 	string getNacionalidad();

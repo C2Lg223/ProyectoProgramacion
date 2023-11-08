@@ -1,37 +1,35 @@
-#include "Copiloto.h"
+#include"Copiloto.h"
 
-Copiloto::Copiloto(){
-	telefono = "0000 0000";
-}
 
-Copiloto::Copiloto(string ced, string nom, string ocu, int ed, Aeronaves& av, string tel):Tripulacion(ced, nom, ocu, ed, av), telefono(tel){}
+Copiloto::Copiloto(string ced, string nom, string ocu, int ed, string tel) :Tripulacion(ced, nom, ocu, ed), telefono(tel) {}
 
 Copiloto::~Copiloto()
 {
 }
 
-void Copiloto::setTelefono(string tel){
+void Copiloto::setTelefono(string tel) {
 	telefono = tel;
 }
 
-string Copiloto::getTelefono(){
+string Copiloto::getTelefono() {
 	return telefono;
 }
 
-string Copiloto::toString(){
+string Copiloto::toString() {
 	stringstream s;
-	s << "------Informacion del Copiloto------" << endl
+	s << "*******Informacion del Copiloto*******" << endl
 		<< "Cedula: " << cedula << endl
 		<< "Nombre: " << nombre << endl
 		<< "Ocupacion: " << Ocupacion << endl
 		<< "Edad: " << edad << endl
-		<< "Numero de Telefono: " << telefono << endl;
-	if (getAvion() != nullptr) {
-		s << "------Avion Correspondiente------" << endl
-			<< getAvion()->toString() << endl;
-	}
+		<< "Numero de Telefono: " << telefono << endl
+		<< "***********************************";
 	return s.str();
 
 }
+
+
+
+
 
 

@@ -138,4 +138,28 @@ int Interfaz::menuConsulta() {
 
 }
 
+void Interfaz::ingresarPiloto(Aeropuerto* aero){
+	Empleado* p = NULL;
+	string ced, nom, ocu;
+	int ed, aE;
+
+	system("cls");
+	cout << "-----------------INGRESAR UN PILOTO-----------------" << endl;
+	cout << "Digite Cedula: " << endl;
+	cin >> ced;
+	cout << "Digite Nombre: " << endl;
+	cin >> nom;
+	cout << "Digite la Ocupacion: " << endl;
+	cin >> ocu;
+	cout << "Digite la Edad: " << endl;
+	cin >> ed;
+	cout << "Digite los Anios de Experiencia: " << endl;
+	cin >> aE;
+	cout << endl;
+
+	p = new Piloto(ced, nom, ocu, ed, aE);
+	aero->ingresarEmpleado(*p);
+
+}
+
 

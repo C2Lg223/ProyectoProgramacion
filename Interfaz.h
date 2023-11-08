@@ -26,12 +26,17 @@ public:
 	//Cuarta opcion del menu principla CONSULTA 
 	static int menuConsulta();
 
-	static int DatosEmpleado();
-	static int ingresarPiloto(Aeropuerto* per);
-	static int ingresaCopilotos(Aeropuerto* per);
-	static int ingresaAzafata(Aeropuerto* per);
-	static int ingreasaAdministrativos(Aeropuerto* per);
-	static int ingresaMiscelaneo(Aeropuerto* per);
+	//Metodos de Ingreso
+	static void DatosEmpleado();
+	static void ingresarPiloto(Aeropuerto* aero);
+	static void ingresaCopilotos(Aeropuerto* aero);
+	static void ingresaAzafata(Aeropuerto* aero);
+	static void ingreasaAdministrativos(Aeropuerto* aero);
+	static void ingresaMiscelaneo(Aeropuerto* aero);
+
+	
+	
+
 
 };
 

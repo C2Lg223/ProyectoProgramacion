@@ -5,8 +5,7 @@ class Copiloto : public Tripulacion {
 private:
 	string telefono;
 public:
-	Copiloto();
-	Copiloto(string, string, string, int, Aeronaves&, string);
+	Copiloto(string, string, string, int, string);
 	virtual ~Copiloto();
 	void setTelefono(string);
 	string getTelefono();

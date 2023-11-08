@@ -5,7 +5,7 @@ private:
 	NodoContrato* ppio;
 public:
 	ListaContratos();
-	ListaContratos();
+	virtual ~ListaContratos();
 	bool estaVacia();
 	bool ingresar(Contrato&);
 	string toString();

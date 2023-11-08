@@ -3,14 +3,9 @@
 
 class Tripulacion : public Empleado {
 protected:
-	Aeronaves* nave;
 public:
-	Tripulacion();
-	Tripulacion(string, string, string, int, Aeronaves&);
+	Tripulacion(string, string, string, int);
 	virtual ~Tripulacion();
 
-	void setAvion(Aeronaves&);
-
-	Aeronaves* getAvion();
 	virtual string toString() = 0;
 };
