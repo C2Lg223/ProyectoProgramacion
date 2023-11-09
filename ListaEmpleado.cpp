@@ -45,21 +45,17 @@ string ListaEmpleado::toString(){
 
 }
 
-string  ListaEmpleado:: buscarConCedula(string ced) {
-	stringstream s;
+Empleado*  ListaEmpleado:: buscarConCedula(string ced) {
 
 	NodoEmpleado* Pex = ppio;
 
-	while (Pex != NULL) {
+
 		if (Pex->getEmpleado()->getCedula() == ced) {
-			s << Pex->getEmpleado()->toString();
+			return Pex->getEmpleado();
+         Pex = Pex->getSigNodo();
 		}
-		else {
-			s << " No se encuentra empleado con ese numero de cedula " << endl;
-		}
-		Pex = Pex->getSigNodo();
-	}
-	return s.str();
+		
+	
 }
 
 

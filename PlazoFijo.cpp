@@ -21,3 +21,8 @@ string PlazoFijo::toString() {
 	}
 	return s.str();
 }
+
+
+bool accederATiempoIndefinido() {
+
+}

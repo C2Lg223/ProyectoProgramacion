@@ -158,7 +158,7 @@ void Interfaz::ingresarPiloto(Aeropuerto* aero){
 	cout << endl;
 
 	p = new Piloto(ced, nom, ocu, ed, aE);
-	aero->ingresarEmpleado(*p);
+	aero->ingresarEmpleado(p);
 	
 }
 

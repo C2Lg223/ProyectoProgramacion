@@ -1,3 +1,4 @@
+#pragma once
 #include"ListaAeronave.h"
 #include"ListaContratos.h"
 #include"ListaEmpleado.h"
@@ -16,9 +17,9 @@ public:
 	Aeropuerto();
 	Aeropuerto(string, string, string);
 	virtual ~Aeropuerto();
-	bool ingresarAeronave();
-	bool ingresarEmpleado();
-	bool ingresarContrato();
-	string DatosAeropuerto();
+	bool ingresarAeronave(Aeronaves*);
+	bool ingresarEmpleado(Empleado* );
+	bool ingresarContrato(Contrato* );
+	
 
 };

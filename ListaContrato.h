@@ -1,3 +1,4 @@
+#pragma once
 #include"NodoContratos.h"
 
 class ListaContratos {
