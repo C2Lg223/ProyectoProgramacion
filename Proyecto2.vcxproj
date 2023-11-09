@@ -181,6 +181,7 @@
     <ClCompile Include="Planta.cpp" />
     <ClCompile Include="Plaza.cpp" />
     <ClCompile Include="PlazoFijo.cpp" />
+    <ClCompile Include="principal.cpp" />
     <ClCompile Include="ServicioClase.cpp" />
     <ClCompile Include="TiempoIndefinido.cpp" />
     <ClCompile Include="Tripulacion.cpp" />

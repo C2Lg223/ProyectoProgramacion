@@ -10,6 +10,7 @@ public:
 	bool estaVacia();
 	bool ingresar(Empleado&);
 	string toString();
+	string  buscarConCedula(string);
 };
 
 

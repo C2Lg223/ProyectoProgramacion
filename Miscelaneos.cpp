@@ -1,7 +1,7 @@
 #pragma once
 #include "Miscelaneos.h"
 
-Miscelaneos::Miscelaneos(int Escolaridad, string Labor, string ced, string nom, string Ocupaci, int ed)
+Miscelaneos::Miscelaneos(int Escolaridad, string Labor, string ced, string nom, string Ocupaci, int ed, string TipoArea)
 	:gradEscolaridad(Escolaridad), tipoLabor(Labor), Planta(TipoArea, ced, nom, Ocupaci, ed) {}
 
 Miscelaneos::~Miscelaneos() {}
