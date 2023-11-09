@@ -1,5 +1,10 @@
 #pragma once
 #include"Empleado.h"
+#include"Piloto.h"
+#include"Copiloto.h"
+#include"Administrativa.h"
+#include"Miscelaneos.h"
+#include"Azafata.h"
 
 class NodoEmpleado {
 private:

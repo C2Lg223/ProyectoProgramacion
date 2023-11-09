@@ -159,7 +159,101 @@ void Interfaz::ingresarPiloto(Aeropuerto* aero){
 
 	p = new Piloto(ced, nom, ocu, ed, aE);
 	aero->ingresarEmpleado(*p);
+	
+}
 
+void Interfaz::ingresaCopilotos(Aeropuerto* aero){
+	string ced, nom, ocu, tel;
+	int ed;
+	Empleado* cop = nullptr;
+
+	system("cls");
+
+	cout << "----------INGRESAR UN COPILOTO--------------" << endl;
+	cout << "Digite Cedula: " << endl;
+	cin >> ced;
+	cout << "Digite Nombre: " << endl;
+	cin >> nom;
+	cout << "Digite Ocupacion: " << endl;
+	cin >> ocu;
+	cout << "Digite Edad: " << endl;
+	cin >> ed;
+	cout << "Digite el Telefono: " << endl;
+	cout << "--------------------------------------------" << endl;
+
+	cop = new Copiloto(ced, nom, ocu, ed, tel);
+	aero->ingresarEmpleado(cop);
+}
+
+void Interfaz::ingresaAzafata(Aeropuerto* aero){
+	string ced, nom, ocu, nac;
+	int ed;
+	Empleado* az = nullptr;
+
+	system("cls");
+	cout << "------------INGRESAR UNA AZAFATA------------" << endl;
+	cout << "Digite Cedula: " << endl;
+	cin >> ced;
+	cout << "Digite Nombre: " << endl;
+	cin >> nom;
+	cout << "Digite Ocupacion: " << endl;
+	cin >> ocu;
+	cout << "Digite Edad: " << endl;
+	cin >> ed;
+	cout << "Digite Nacionalidad: " << endl;
+	cin >> nac;
+	cout << "---------------------------------------------" << endl;
+
+	az = new Azafata(ced, nom, ocu, ed, nac);
+	aero->ingresarEmpleado(az);
+}
+
+void Interfaz::ingreasaAdministrativos(Aeropuerto* aero) {
+	string tipAdmi, tit, ced, nom, ocu;
+	int ed;
+	Empleado* adm = nullptr;
+	
+	system("cls");
+	cout << "------------INGRESAR UNA ADMINISTRATIVO------------" << endl;
+	cout << "Digite Cedula: " << endl;
+	cin >> ced;
+	cout << "Digite Nombre: " << endl;
+	cin >> nom;
+	cout << "Digite Ocupacion: " << endl;
+	cin >> ocu;
+	cout << "Digite Edad: " << endl;
+	cin >> ed;
+	cout << "Digite Tipo Administrativo (Secretario, Recepcionista, etc): " << endl;
+	cin >> ed;
+	cout << "Digite Titulo Universitario: " << endl;
+	cin >> tit;
+	cout << "---------------------------------------------" << endl;
+	adm = new Administrativa(tit, tipAdmi, ced, nom, ocu, ed);
+	aero->ingresarEmpleado(adm);
+}
+
+void Interfaz::ingresaMiscelaneo(Aeropuerto* aero){
+	int ed, escolaridad;
+	string ced, nom, ocu, labor;
+	Empleado* Mis = nullptr;
+
+	system("cls");
+	cout << "------------INGRESAR UNA ADMINISTRATIVO------------" << endl;
+	cout << "Digite Cedula: " << endl;
+	cin >> ced;
+	cout << "Digite Nombre: " << endl;
+	cin >> nom;
+	cout << "Digite Ocupacion: " << endl;
+	cin >> ocu;
+	cout << "Digite Edad: " << endl;
+	cin >> ed;
+	cout << "Digite el Grado de Escolaridad: " << endl;
+	cin >> escolaridad;
+	cout << "Digite Tipo de Labor: " << endl;
+	cin >> labor;
+	cout << "---------------------------------------------" << endl;
+
+	Mis = new Miscelaneos(escolaridad, labor, ced, nom, ocu, ed);
 }
 
 
