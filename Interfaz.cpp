@@ -213,6 +213,75 @@ void Interfaz::IngresarAvionComercial(Aeropuerto* aero) {
 
 }
 
+void Interfaz::IngresarAvionesCargas(Aeropuerto* aero) {
+	string categ, pla, tipoAvio;
+	int dia, mes, annio;
+	Fecha* cre;
+	double distaR, anchoPuer, alturaPuer;
+	Aeronaves* ae = nullptr;
+
+	system("cls");
+	cout << " ---------INGRESAR AVION DE CARGA--------" << endl;
+	cout << "  Ingrese la Categoria:  ";
+	cin >> categ; cout << endl;
+	cout << "  Ingrese la placa: ";
+	cin >> pla;
+	cout << "\n Escriba el tipo de avion:  " << endl;
+	cout << " * PasilloÚnico" << endl << " * DoblePasillo " << endl;
+	cin >> tipoAvio;
+	cout << " Ingrese la fecha de Creacion: " << endl;
+	cout << " Dia: ";
+	cin >> dia;
+	cout << "\n Mes: ";
+	cin >> mes;
+	cout << " \n Annio: ";
+	cin >> annio;
+	cout << "\n Ingrese la distancia Recorrida: ";
+	cin >> distaR;
+	cout << "\n Ingrese el ancho de la puerta: ";
+	cin >> anchoPuer;
+	cout << "\n Ingrese la altura de la puerta: ";
+	cin >> alturaPuer;
+	cout << endl;
+
+	cre = new Fecha(dia, mes, annio);
+	ae = new Carga(categ, alturaPuer, anchoPuer, pla, tipoAvio, *cre, distaR);
+	aero->ingresarAeronave(ae);
+
+}
+
+void Interfaz::IngresaAvionesMilitares(Aeropuerto* aero) {
+	string categ, tipoAvio;
+	int dia, mes, annio;
+	Fecha* creacion;
+	double distaR; 
+	int veloc;
+	Aeronaves* ae = nullptr;
+
+	system(" cls");
+	cout << " ---------INGRESAR AVION MILITAR --------" << endl;
+	cout << "  Ingrese la Categoria:  ";
+	cin >> categ; cout << endl;
+	cout << " Escribe el tipo de avion: ";
+	cout << tipoAvio; cout << endl;
+	cout << " Digite la distancia recorrida: ";
+	cin >> distaR;
+	cout << "\n Digite la velocidad: ";
+	cin >> veloc;
+	cout << " Ingrese la fecha de Creacion del Avion: " << endl;
+	cout << " Dia: ";
+	cin >> dia;
+	cout << "\n Mes: ";
+	cin >> mes;
+	cout << " \n Annio: ";
+	cin >> annio;
+	creacion = new Fecha(dia, mes, annio);
+	if (aero->contarAeronave() == 15) {
+		ae = new Militar(veloc, tipoAvio, categ, *creacion, distaR);
+		aero->ingresarAeronave(ae);
+	}
+}
+
 
 
 

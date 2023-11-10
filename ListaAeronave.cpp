@@ -45,6 +45,18 @@ string ListaAeronave::toString(){
 	
 }
 
+
+
+int ListaAeronave::contarObjetos() {
+	int cont = 0;
+	NodoAeronave* Pex = ppio;
+	while (Pex != NULL) {
+		cont++;
+		Pex = Pex->getSigNodo();
+	}
+	return cont;
+}
+
 /*
 * ListaAeronave::busquedaPlaca(string pla) {
 	NodoAeronave* Pex = ppio;

@@ -4,6 +4,7 @@
 #include"ListaAeronave.h"
 #include"Comerciales.h"
 #include"Carga.h"
+#include"Aeropuerto.h"
 
 
 
@@ -19,7 +20,6 @@ int main() {
 
 	Aeronaves* o1 = new Comercial("310", "BIU_ ", " DoblePuerta", *creacion, 23.4);
 	//Aeronaves* segunda = new Carga("345")
-
 	ListaEmpleado* conte = new ListaEmpleado();
 	ListaAeronave* cont2 = new ListaAeronave();
 

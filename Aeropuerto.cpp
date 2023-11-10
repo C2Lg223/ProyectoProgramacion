@@ -33,3 +33,5 @@ bool Aeropuerto::ingresarEmpleado(Empleado*  empl) {     return EmpleadosC->ingr
 bool Aeropuerto::ingresarContrato(Contrato*  Cont) {     return ContratosC->ingresar(*Cont); }
 
 bool Aeropuerto::BuscarPorCed(string ced) { return EmpleadosC->buscarConCedula(ced); }
+
+int Aeropuerto::contarAeronave() { return AeronavesC->contarObjetos(); }

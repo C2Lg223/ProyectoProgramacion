@@ -21,6 +21,7 @@ public:
 	bool ingresarEmpleado(Empleado* );
 	bool ingresarContrato(Contrato* );
 	bool BuscarPorCed(string);
+	int contarAeronave();
 	
 
 };

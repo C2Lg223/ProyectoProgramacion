@@ -26,7 +26,9 @@ public:
 	//Metodos de Ingresoa Aeronaves 
 
 	static int MenuTiposAeronaves();
-	static void IngresarAvionComercial(Aeropuerto* );
+	static void IngresarAvionComercial(Aeropuerto*);
+	static void IngresarAvionesCargas(Aeropuerto* );
+	static void IngresaAvionesMilitares(Aeropuerto*);
 
 
 
