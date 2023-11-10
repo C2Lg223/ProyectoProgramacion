@@ -10,4 +10,5 @@ public:
 	bool estaVacia();
 	bool ingresar(Contrato&);
 	string toString();
+	Contrato* busquedaPorCod(string cod);
 };

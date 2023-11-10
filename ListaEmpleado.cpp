@@ -49,13 +49,14 @@ Empleado*  ListaEmpleado:: buscarConCedula(string ced) {
 
 	NodoEmpleado* Pex = ppio;
 
-
+	while (Pex != NULL) {
 		if (Pex->getEmpleado()->getCedula() == ced) {
-			return Pex->getEmpleado();
-         Pex = Pex->getSigNodo();
-		}
+			return (Pex->getEmpleado());
+		
+		}	Pex = Pex->getSigNodo();
+	}
 		
 	
-}
+} 
 
 

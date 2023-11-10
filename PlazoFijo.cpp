@@ -1,3 +1,5 @@
+
+#pragma warning(disable: 4996)
 #include"PlazoFijo.h"
 
 PlazoFijo::PlazoFijo(string cod, string pues, int sala, Fecha& Ingresa, Fecha& finaliza) 
@@ -23,6 +25,14 @@ string PlazoFijo::toString() {
 }
 
 
-bool accederATiempoIndefinido() {
+bool PlazoFijo::accederATiempoIndefinido() {
+	time_t tiempoActual= time (nullptr);
+	tm* fechaActual = localtime(&tiempoActual);
 
+	int aniosTraba = fechaActual->tm_year + 1900 - ingresaTrabajar->getAnnio();
+	if (fechaActual->tm_mon < ingresaTrabajar->getMes() ||
+		(fechaActual->tm_mon == ingresaTrabajar->getMes() && fechaActual->tm_mday < ingresaTrabajar->getDia())) {
+		aniosTraba--;
+	}
+	return aniosTraba >= 2;
 }

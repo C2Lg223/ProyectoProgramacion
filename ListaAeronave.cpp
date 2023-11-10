@@ -44,3 +44,16 @@ string ListaAeronave::toString(){
 	return s.str();
 	
 }
+
+/*
+* ListaAeronave::busquedaPlaca(string pla) {
+	NodoAeronave* Pex = ppio;
+
+	while (Pex != NULL) {
+
+		if (Pex->getAeronave())
+
+
+
+	}
+}*/

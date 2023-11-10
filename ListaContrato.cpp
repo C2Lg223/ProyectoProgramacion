@@ -46,3 +46,14 @@ string ListaContratos::toString() {
 	}
 	return s.str();
 }
+
+Contrato* ListaContratos::busquedaPorCod(string cod) {
+	NodoContrato* Pex = ppio;
+
+	
+	if (Pex->getContrato()->getCodigo() == cod) {
+		return  Pex->getContrato();
+		Pex = Pex->getSigNodo();
+	}
+	
+}

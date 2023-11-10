@@ -10,6 +10,7 @@ public:
 	bool estaVacia();
 	bool ingresar(Aeronaves&);
 	string toString();
+
 };
 
 

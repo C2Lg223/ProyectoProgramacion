@@ -4,7 +4,7 @@
 class Miscelaneos : public Planta {
   private:
 	int gradEscolaridad;
-	string tipoLabor;
+	string LugarLabor;
  public: 
 	 Miscelaneos(int , string, string, string, string, int);
 	 virtual~Miscelaneos();
@@ -12,6 +12,6 @@ class Miscelaneos : public Planta {
 	 void setTipoLabor(string Labor);
 	 int getGradoEscolaridad();
 	 string getTipoLabor();
-	 string ToString();
+	 string toString();
 
 };

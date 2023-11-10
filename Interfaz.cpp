@@ -55,7 +55,7 @@ int Interfaz::menuMantenimiento() {
 	return opc;
 }
 
-int Interfaz::menuMantEmpleado() {
+ int Interfaz::menuMantEmpleado() {
 	int opc;
 	system("cls");
 	cout << "2.Mantenimiento                               2.1 Empleados " << endl << endl;
@@ -66,6 +66,7 @@ int Interfaz::menuMantEmpleado() {
 	return opc;
 
 }
+
 int Interfaz::menuMantAeronaves() {
 	int opc;
 	system("cls");
@@ -249,11 +250,27 @@ void Interfaz::ingresaMiscelaneo(Aeropuerto* aero){
 	cin >> ed;
 	cout << "Digite el Grado de Escolaridad: " << endl;
 	cin >> escolaridad;
-	cout << "Digite Tipo de Labor: " << endl;
+	cout << "Escriba el area donde Laboran: " << endl;
+	cout << " 1. Area de Cargo" << endl << " 2. Area de Descarga" << endl << " 3. Aseo y ornato" << endl
+		<< "4. Cuido en el edificio" << endl<<" 5. Pistas de aterrizaje" << endl << "6. Terminal " << endl;
 	cin >> labor;
 	cout << "---------------------------------------------" << endl;
 
 	Mis = new Miscelaneos(escolaridad, labor, ced, nom, ocu, ed);
+}
+
+int Interfaz::menuModificarEmple() {
+	int opc;
+	system("cls");
+	cout << "Modificar Datos del Empleados " << endl;
+	cout << " 1. Nombre " << endl;
+	cout << " 2. Edad" << endl;
+	cout << " 3. Ocupacion " << endl;
+	cout << " 4. Amnios Experiencia " << endl;
+	cout << " 5. Atras " << endl << endl;
+	cout << " Digite una opcion: " << endl;
+
+
 }
 
 

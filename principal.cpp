@@ -21,7 +21,7 @@ int main() {
 	cout << " Buscar por cedula " << endl;
 	cout << "Ingrese la cedula " << endl;
 	cin >> ced;
-	cout<<conte->buscarConCedula(ced);
+	conte->buscarConCedula(ced);
 	
 
 

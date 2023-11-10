@@ -20,6 +20,7 @@ public:
 	bool ingresarAeronave(Aeronaves*);
 	bool ingresarEmpleado(Empleado* );
 	bool ingresarContrato(Contrato* );
+	bool BuscarPorCed(string);
 	
 
 };

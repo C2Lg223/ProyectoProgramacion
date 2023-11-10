@@ -17,6 +17,8 @@ public:
 	static int menuMantEmpleado();
 	static int menuMantAeronaves();
 	static int menuMantContratos();
+	// Opcion de editar 
+	static int menuModificarEmple();
 	//Tercera opcion del menu principla REPORTES 
 	static int menuReportes();
 
