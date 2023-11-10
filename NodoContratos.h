@@ -1,5 +1,8 @@
 #pragma once
 #include"Contrato.h"
+#include"ContratoServicio.h"
+#include"PlazoFijo.h"
+#include"TiempoIndefinido.h"
 
 class NodoContrato {
 

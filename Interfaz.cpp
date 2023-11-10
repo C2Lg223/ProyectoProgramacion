@@ -20,8 +20,8 @@ int Interfaz::menuIngresos()
 	int opc;
 	system("cls");
 	cout << "**************************** INGRESAR ******************************" << endl;
-	cout << "(1). Empleado" << endl;
-	cout << "(2). Avion " << endl;
+	cout << "(1). Avion " << endl;
+	cout << "(2). Empleado" << endl;
 	cout << "(3). Contrato " << endl;
 	cout << "(4). Atras" << endl;
 	cout << "********Digitar una opcion********" << endl;
@@ -162,7 +162,76 @@ void Interfaz::ingresaMiscelaneo(Aeropuerto* aero){
 	cout << "---------------------------------------------" << endl;
 
 	Mis = new Miscelaneos(escolaridad, labor, ced, nom, ocu, ed);
+	aero->ingresarEmpleado(Mis);
 }
+
+int Interfaz::MenuTiposAeronaves() {
+
+	int opc;
+	system("cls");
+	cout << "-----------------------------------------------------------------" << endl;
+	cout << "              Ingresa Aviones  " << endl;
+	cout << "    1. Aviones Comerciales  " << endl;
+	cout << "    2. Aviones de Carga " << endl;
+	cout << "    3. Aviones Militares " << endl;
+	cout << "-----------------------------------------------------------------" << endl << endl;
+	cout << "Digite una opcion: ";
+	cin >> opc;
+
+	return opc;
+}
+
+void Interfaz::IngresarAvionComercial(Aeropuerto* aero) {
+	string categ, pla, tipoAvio;
+	int dia, mes, annio;
+	Fecha* cre;
+	double distar;
+	Aeronaves* ae = nullptr;
+
+	system("cls");
+	cout << " ---------INGRESAR AVION COMERCIAL--------" << endl;
+	cout << "  Ingrese la Categoria:  ";
+	cin >> categ; cout << endl;
+	cout << "  Ingrese la placa: ";
+	cin >> pla; 
+	cout << "\n Escriba el tipo de avion:  " << endl;
+	cout << " * PasilloÚnico"<<endl<<" * DoblePasillo " << endl;
+	cin >> tipoAvio;
+	cout << " Ingrese la fecha de Creacion: " << endl;
+	cout << " Dia: ";
+	cin >> dia;
+	cout << "\n Mes: ";
+	cin >> mes;
+	cout << " \n Annio: ";
+	cin >> annio;
+	cout << "\n Ingrese la distancia Recorrida: ";
+	cin >> distar;
+
+	cre = new Fecha(dia, mes, annio);
+    ae = new Comercial(categ, pla, tipoAvio, *cre, distar);
+	aero->ingresarAeronave(ae);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 int Interfaz::menuMantenimiento() {
@@ -272,8 +341,9 @@ int Interfaz::menuModificarEmple() {
 	cout << " 4. Amnios Experiencia " << endl;
 	cout << " 5. Atras " << endl << endl;
 	cout << " Digite una opcion: " << endl;
+	cin >> opc;
 
-
+	return opc;
 }
 
 

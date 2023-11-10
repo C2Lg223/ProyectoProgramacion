@@ -1,5 +1,5 @@
 #pragma once
-#include"Fecha.h"
+#include"Fechas.h"
 
 
 Fecha::Fecha() : dia(0), mes(0), annio(0) {}
@@ -14,7 +14,7 @@ int Fecha::getAnnio() { return annio; }
 
 string Fecha::toString() {
 	stringstream s;
-	s << " Dia: " << dia << " \n mes: " << mes << " Año: " << annio << endl;
+	s << " " << dia << "/" << mes << "/" << annio << endl;
 	return s.str();
 
 }

@@ -21,4 +21,5 @@ public:
 	int getMes();
 	int getAnnio();
 	string toString();
+	bool operator==(const Fecha& other) const;
 };

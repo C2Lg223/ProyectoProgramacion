@@ -2,12 +2,12 @@
 #include"AviacionCivil.h"
 #include"ServicioClase.h"
 
-class Comerciales : public AviacionCivil {
+class Comercial : public  AviacionCivil {
 private:
 	string categoria;
 public:
-	Comerciales(string catego, string plac, string Tipo, Fecha& crea, double disRe); 
+	Comercial(string catego, string plac, string Tipo, Fecha& crea, double disRe); 
 
-	virtual~Comerciales();
+	virtual~Comercial();
 	string toString();
 };

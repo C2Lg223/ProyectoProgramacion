@@ -1,6 +1,10 @@
 #pragma once
 #pragma once
 #include"Aeronaves.h"
+#include"Carga.h"
+#include"AviacionCivil.h"
+#include"Comerciales.h"
+#include"Militar.h"
 
 
 class NodoAeronave
