@@ -30,24 +30,40 @@ public:
 	static void IngresarAvionesCargas(Aeropuerto* );
 	static void IngresaAvionesMilitares(Aeropuerto*);
 
+	//Metodos de Ingreso Contratos 
+	static int MenuTiposContratos();
+	static void IngresarContratoServivio();
+	static void IngresarPlazoFijo();
+	static void IngresarTiempoIndefinido();
+
 
 
 	
 	//Segunda opcion del menu principal MANTENIMIENTO
 	static int menuMantenimiento();
-	static int menuMantEmpleado();
+	static int menuMantEmpleado();//Falta dearrollar esto
 	static int menuMantAeronaves();
 	static int menuMantContratos();
+	static void EliminarEmpleado(Aeropuerto* );
 	// Opcion de editar 
 	static int menuModificarEmple();
 	//Tercera opcion del menu principla REPORTES 
 	static int menuReportes();
+	static void MostrarContratos(Aeropuerto* );
+	static void ReportesAeronavesyTripula(Aeropuerto*);
+	static void MostrarAeronaves(Aeropuerto*);
+	static void ReporteEmpleadoTodos(Aeropuerto*);
 
+
+	static void ReporteContratoServicio(Aeropuerto*);
+	static void ReportaC_PlazoFijo(Aeropuerto*);
+	static void ReporteC_TiempoIndefinido(Aeropuerto*);
 
 
 
 	//Cuarta opcion del menu principla CONSULTA 
 	static int menuConsulta();
+	static void BusquedaContrato(Aeropuerto*);
 
 
 };

@@ -1,14 +1,18 @@
 #pragma once
 #include"NodoContratos.h"
 
-class ListaContratos {
+class ListaContrato{
 private:
 	NodoContrato* ppio;
 public:
-	ListaContratos();
-	virtual ~ListaContratos();
+	ListaContrato ();
+	virtual ~ListaContrato ();
 	bool estaVacia();
 	bool ingresar(Contrato&);
 	string toString();
 	Contrato* busquedaPorCod(string cod);
+	string reporteAeronaveconTripulacion(); 
+	string ReporteContratoServicio();
+	string ReportePlazoFijo();
+	string ReporteTiempoIndefinido();
 };

@@ -59,4 +59,49 @@ Empleado*  ListaEmpleado:: buscarConCedula(string ced) {
 	
 } 
 
+bool ListaEmpleado::eliminaEmpleado(string ced) {
+	NodoEmpleado* PEx = ppio;
+	NodoEmpleado* borrado = NULL;
+	bool encontrado = false;
+	if (PEx != NULL) {
+		if (PEx->getEmpleado()->getCedula() == ced) { // Borrar primero.
+			borrado = ppio;
+			ppio = borrado->getSigNodo();
+			delete borrado->getEmpleado();
+			delete borrado;
+			return true;
+		}
+		else
+		{
+			while (PEx->getSigNodo() != NULL && !encontrado) {
+				if (PEx->getSigNodo()->getEmpleado()->getCedula() != ced)
+					PEx = PEx->getSigNodo();
+				else
+					encontrado = true;
+			}
+			if (PEx->getSigNodo() != NULL) {
+				borrado = PEx->getSigNodo();
+				PEx->setSigNodo(borrado->getSigNodo());
+				delete borrado->getEmpleado();
+				delete borrado;
+				return true;
+			}
+			else
+				return false;
+		}
+	}
+	return false;
+}
+
+bool ListaEmpleado::hayPilotos() {
+	NodoEmpleado* empl = ppio;
+
+	while (empl != NULL) {
+		if (typeid(Empleado) == typeid(Piloto))
+			return true;
+
+		empl = empl->getSigNodo();
+	}
+}
+
 

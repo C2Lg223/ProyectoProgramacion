@@ -50,13 +50,49 @@ string ListaAeronave::toString(){
 int ListaAeronave::contarObjetos() {
 	int cont = 0;
 	NodoAeronave* Pex = ppio;
-	while (Pex != NULL) {
+	while (Pex != nullptr) {
 		cont++;
 		Pex = Pex->getSigNodo();
 	}
 	return cont;
 }
 
+
+bool ListaAeronave::hayAvionDeCarga() {
+	NodoAeronave* pt = ppio;
+
+	while (pt != nullptr) {
+		if (typeid(Aeronaves) == typeid(Carga))
+			return true;
+
+		pt = pt->getSigNodo();
+	}
+}
+/*  Revisar 
+Aeronaves* ListaAeronave::MayorAreaAcceso() {
+	Aeronaves* mayor = NULL;
+	double AreaMayor = 0;
+	Carga* m = NULL;
+	NodoAeronave* Pex = ppio;
+	
+		while (Pex != NULL) {
+			Aeronaves* Av = Pex->getAeronave();
+			  if (typeid(Aeronaves) == typeid (Carga)){
+				  Carga* car = 
+				  Carga* car = (typeid(Carga) == typeid(Aeronaves));
+				  double area = m->AreaAcceso(); {
+					  if (area > AreaMayor) {
+						  mayor = Pex->getAeronave();
+						  AreaMayor = area;
+
+					  }
+				  }
+
+			}
+		}
+	
+
+}*/
 /*
 * ListaAeronave::busquedaPlaca(string pla) {
 	NodoAeronave* Pex = ppio;

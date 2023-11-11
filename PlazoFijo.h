@@ -4,7 +4,7 @@
 
 class PlazoFijo : public Contrato {
 public:
-	PlazoFijo(string, string, int, Fecha&, Fecha&);
+	PlazoFijo(string, string, int, Empleado&, Aeronaves&, Fecha&, Fecha&);
 	virtual~PlazoFijo();
 	string toString();
 	bool accederATiempoIndefinido();

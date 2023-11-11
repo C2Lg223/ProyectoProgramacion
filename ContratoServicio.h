@@ -8,7 +8,7 @@ class ContratoServicio : public Contrato {
 
 public: 
    ContratoServicio();
-   ContratoServicio(string, string,  string, string, int, Fecha&, Fecha& );
+   ContratoServicio(string Horario, string tipSer, string cod, string pues, int sala, Empleado& empl, Aeronaves& avion, Fecha& Ingresa, Fecha& finaliza);
    virtual ~ContratoServicio();
    void setHorarioLaboral(string);
    void setTipoServicio(string);

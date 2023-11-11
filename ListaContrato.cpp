@@ -1,10 +1,10 @@
 #include "ListaContrato.h"
 
-ListaContratos::ListaContratos()
+ListaContrato::ListaContrato()
 {
 	ppio = nullptr;
 }
-ListaContratos::~ListaContratos() {
+ListaContrato::~ListaContrato() {
 	NodoContrato* aux = ppio;
 	while (aux != nullptr) {
 		ppio = ppio->getSigNodo();
@@ -13,11 +13,11 @@ ListaContratos::~ListaContratos() {
 	}
 }
 
-bool ListaContratos::estaVacia() {
+bool ListaContrato::estaVacia() {
 	return(ppio == nullptr);
 }
 
-bool ListaContratos::ingresar(Contrato& contr) {
+bool ListaContrato::ingresar(Contrato& contr) {
 	NodoContrato* aux = ppio;
 	if (estaVacia()) {
 		ppio = new NodoContrato(contr, nullptr);
@@ -35,7 +35,7 @@ bool ListaContratos::ingresar(Contrato& contr) {
 	return false;
 }
 
-string ListaContratos::toString() {
+string ListaContrato::toString() {
 	stringstream s;
 	NodoContrato* aux = ppio;
 	s << " Lista de Contratos en el sistemas " << endl;
@@ -47,13 +47,83 @@ string ListaContratos::toString() {
 	return s.str();
 }
 
-Contrato* ListaContratos::busquedaPorCod(string cod) {
+Contrato* ListaContrato::busquedaPorCod(string cod) {
+	stringstream s;
 	NodoContrato* Pex = ppio;
 
 	
 	if (Pex->getContrato()->getCodigo() == cod) {
+		if(typeid(Contrato).name())
 		return  Pex->getContrato();
 		Pex = Pex->getSigNodo();
 	}
+	return nullptr;
 	
 }
+
+string ListaContrato::reporteAeronaveconTripulacion() {
+	stringstream s;
+	NodoContrato* Pex = ppio;
+	
+
+	while (Pex != NULL) {
+		Empleado* empl = Pex->getContrato()->getEmpleado();
+		Aeronaves* av = Pex->getContrato()->getAviones();
+
+		if (empl != NULL && av != NULL) {
+			s << " Aeronave con Tripulacion " << endl;
+			s << "-----------------------------" << endl << endl;
+			s << "Avion: " << av->toString() << endl;
+			s << " Tripulacion: " << empl->toString() << endl;
+		}
+		Pex = Pex->getSigNodo();
+	}
+	return s.str();
+}
+
+string ListaContrato::ReporteContratoServicio() {
+	stringstream s;
+	NodoContrato* Pex = ppio;
+	
+
+	while (Pex != NULL) {
+		Contrato* aux = Pex->getContrato();
+		if (typeid(*aux) == typeid(ContratoServicio)) {
+			s << aux->toString();
+		}
+		Pex = Pex->getSigNodo();
+	}
+	return s.str();
+}
+string ListaContrato::ReportePlazoFijo() {
+	stringstream s;
+	NodoContrato* Pex = ppio;
+
+
+	while (Pex != NULL) {
+		Contrato* aux = Pex->getContrato();
+		if (typeid(*aux) == typeid(PlazoFijo)) {
+			s << aux->toString();
+		}
+		Pex = Pex->getSigNodo();
+	}
+	return s.str();
+}
+
+string ListaContrato::ReporteTiempoIndefinido() {
+	stringstream s; 
+	NodoContrato* Pex = ppio;
+
+
+	while (Pex != NULL) {
+		Contrato* aux = Pex->getContrato();
+		if (typeid(*aux) == typeid(TiempoIndefinido)) {
+			s << aux->toString();
+		}
+		Pex = Pex->getSigNodo();
+	}
+	return s.str();
+}
+
+
+

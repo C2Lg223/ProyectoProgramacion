@@ -27,3 +27,7 @@ string Carga::toString() {
 
 	return s.str();
 }
+
+double Carga::AreaAcceso() {
+	 return  getAlturaPuerta () * getAnchoPuerta();
+}

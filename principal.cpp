@@ -5,12 +5,13 @@
 #include"Comerciales.h"
 #include"Carga.h"
 #include"Aeropuerto.h"
+#include"Controladora.h"
 
 
 
 
 int main() {
-	string ced;
+	/*string ced;
 	Empleado* one = new Piloto("222", "Santiago ", "Piloto principal", 25, 2);
 	Empleado* two = new Copiloto("333", "Leo", "CoPiloto de Carga", 20, "2324234");
 	Empleado* three = new Azafata("444", "sofia ", "Azafata Aer ", 18, " NorteAmericana");
@@ -32,13 +33,19 @@ int main() {
 
 	
 
-	/*cout << " Mostrar informacion " << endl;
+   cout << " Mostrar informacion " << endl;
 	cout << conte->toString();
 	cout << " Buscar por cedula " << endl;
-	*/
+
 	cout << " Mostar avion " << endl;
 	cout << cont2->toString();
+  */
 
+
+	Controladora* CO = new Controladora();
+
+	CO->Control0();
+	return 0;
 	
 
 

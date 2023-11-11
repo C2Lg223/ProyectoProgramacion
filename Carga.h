@@ -16,4 +16,5 @@ public:
 	double getAlturaPuerta();
 	double getAnchoPuerta();
 	string toString();
+	double AreaAcceso();
 };

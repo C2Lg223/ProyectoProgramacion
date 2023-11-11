@@ -1,6 +1,6 @@
 #pragma once
 #include"ListaAeronave.h"
-#include"ListaContratos.h"
+#include"ListaContrato.h"
 #include"ListaEmpleado.h"
 
 class Aeropuerto {
@@ -9,7 +9,7 @@ private:
 	string codJuridico;
 	string numTelefonico;
 	ListaAeronave* AeronavesC;
-	ListaContratos* ContratosC;
+	ListaContrato* ContratosC;
 	ListaEmpleado* EmpleadosC;
 
 
@@ -20,8 +20,21 @@ public:
 	bool ingresarAeronave(Aeronaves*);
 	bool ingresarEmpleado(Empleado* );
 	bool ingresarContrato(Contrato* );
-	bool BuscarPorCed(string);
+	bool BuscarEmPorCed(string);
+	bool BusquedaConPorCod(string);
 	int contarAeronave();
+	void MostrarContratos();
+	string MostrarAeronaves();
+	bool eliminarEmpleado(string);
+	string reporteAeronavesTripulacion();
+	void PilotosDeCarga();
+	bool hayPilotos();
+	bool hayAvionesCarga();
+	string MostrarEmpleado();
+	string ReporteContratoServicio();
+	string ReportePlazoFijo();
+	string ReporteTiempoIndefinido();
+	string ReporteEmpleadoEnAvComercial(); 
 	
 
 };

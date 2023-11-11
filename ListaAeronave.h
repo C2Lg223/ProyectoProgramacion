@@ -12,6 +12,9 @@ public:
 	string toString();
 	int contarObjetos();
 
+	bool eliminarAeronave(string placa);
+	bool hayAvionDeCarga();
+	Aeronaves* MayorAreaAcceso();
 };
 
 

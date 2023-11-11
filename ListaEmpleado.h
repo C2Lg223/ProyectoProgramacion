@@ -11,6 +11,9 @@ public:
 	bool ingresar(Empleado&);
 	string toString();
 	Empleado* buscarConCedula(string);
+	bool eliminaEmpleado(string ced);
+	bool hayPilotos();
+
 };
 
 

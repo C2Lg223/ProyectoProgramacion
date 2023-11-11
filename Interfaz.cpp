@@ -4,13 +4,14 @@ int Interfaz::menuPrincipal()
 {
 	int opc;
 	system("cls");
-	cout << "**************************** AEROPUERTO MENU ******************************" << endl;
-	cout << "(1). Ingresar" << endl;
-	cout << "(2). Mantenimiento " << endl;
-	cout << "(3). Reportes" << endl;
-	cout << "(4). Consulta" << endl;
-	cout << "(5). Salir" << endl;
-	cout << "********Digitar una opcion********" << endl;
+	cout << "**************************** AEROPUERTO MENU ***************" << endl << endl;
+	cout << "   (1). Ingresar" << endl;
+	cout << "   (2). Mantenimiento " << endl;
+	cout << "   (3). Reportes" << endl;
+	cout << "   (4). Consulta" << endl;
+	cout << "   (5). Salir" << endl;
+	cout << "************************************************************" << endl << endl;
+	cout << " Digitar una opcion" << endl;
 	cin >> opc;
 	return opc;
 }
@@ -282,6 +283,37 @@ void Interfaz::IngresaAvionesMilitares(Aeropuerto* aero) {
 	}
 }
 
+int Interfaz::MenuTiposContratos() {
+	int opc;
+
+	system("cls");
+	cout << "............................................................" << endl;
+	cout << ":                Tipos Contratos                           :" << endl;
+	cout << ":                                                          :" << endl;
+	cout << ":       1. Contrato de servicio                            :" << endl;
+	cout << ":       2. Plazo Fijo                                      :" << endl;
+	cout << ":       3. Tiempo Intefinido                               :" << endl;
+	cout << "............................................................" << endl << endl;
+	cout << "Digite una opcio: ";
+	cin >> opc;
+
+	return opc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -328,6 +360,21 @@ int Interfaz::menuMantEmpleado() {
 
 }
 
+void Interfaz::EliminarEmpleado(Aeropuerto* aer) {
+	stringstream s;
+	string ced;
+	system("cls");
+	cout << " Digite la cedula del Empleado que desea Eliminar: ";
+	cin >> ced;
+	aer->eliminarEmpleado(ced);
+	if (aer->eliminarEmpleado(ced) == true) {
+		s<<"El empleado ha sido eliminado";
+	}
+}
+	
+
+	
+
 int Interfaz::menuMantAeronaves() {
 	int opc;
 	system("cls");
@@ -351,7 +398,20 @@ int Interfaz::menuMantContratos() {
 	return opc;
 
 }
+int Interfaz::menuModificarEmple() {
+	int opc;
+	system("cls");
+	cout << "Modificar Datos del Empleados " << endl;
+	cout << " 1. Nombre " << endl;
+	cout << " 2. Edad" << endl;
+	cout << " 3. Ocupacion " << endl;
+	cout << " 4. Amnios Experiencia " << endl;
+	cout << " 5. Atras " << endl << endl;
+	cout << " Digite una opcion: " << endl;
+	cin >> opc;
 
+	return opc;
+}
 
 
 int Interfaz::menuReportes() {
@@ -380,6 +440,75 @@ int Interfaz::menuReportes() {
 	return opc;
 
 }
+//opcion 1  REPORTES 
+void Interfaz::MostrarContratos(Aeropuerto* aero) {
+
+	cout<<" <=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=>" << endl;
+	cout << "              Contratos los Empleado " << endl;
+	aero->MostrarContratos();
+
+}
+//opcion 2  REPORTES
+
+void Interfaz::ReportesAeronavesyTripula(Aeropuerto* aero) {
+
+	cout << " <=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=>" << endl;
+	cout << " Reportes de Aeronaves con su tripulacion " << endl; 
+	aero->reporteAeronavesTripulacion();
+}
+
+
+//opcion 3 REPORTES
+void Interfaz::MostrarAeronaves(Aeropuerto* aero) {
+	cout << " <=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=>" << endl;
+	cout << "      Mostrar todas las Aeronaves     " << endl;
+	aero->MostrarAeronaves();
+	cout << " <=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=>" << endl;
+}
+
+//opcion 4  REPORTES
+void Interfaz::ReporteEmpleadoTodos(Aeropuerto* aero) {
+	cout << " <=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=>" << endl;
+	cout << " Mostrar todas los Empleados " << endl;
+	cout<< aero->MostrarEmpleado();
+}
+
+//opcion 6 REPORTES
+
+void Interfaz::ReporteContratoServicio(Aeropuerto* aero) {
+	cout << " <=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=>" << endl;
+	cout << " Reporte de Contrato de Servicios Profesional " << endl << endl;
+	cout<< aero->ReporteContratoServicio();
+
+}
+
+//Opcion 7 Reportes 
+void Interfaz::ReportaC_PlazoFijo(Aeropuerto* aero) {
+	cout << " <=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=>" << endl;
+	cout << " Reporte de Contrato de Plazo Fijo  " << endl << endl;
+	cout << aero->ReportePlazoFijo();
+}
+
+//Opcion 8 Reportes 
+void Interfaz::ReporteC_TiempoIndefinido(Aeropuerto* aero) {
+	cout << " <=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=>" << endl;
+	cout << " Reporte de Contrato de Plazo Fijo  " << endl << endl;
+	cout << aero->ReporteTiempoIndefinido();
+}
+
+//Opcion 9 Reportes 
+
+
+//Opcion 10 Reportes 
+
+
+
+//Opcion 11 
+
+
+//Opcion 12 
+
+
 
 //MENU CONSULTAS 
 int Interfaz::menuConsulta() {
@@ -400,19 +529,20 @@ int Interfaz::menuConsulta() {
 
 }
 
-int Interfaz::menuModificarEmple() {
-	int opc;
-	system("cls");
-	cout << "Modificar Datos del Empleados " << endl;
-	cout << " 1. Nombre " << endl;
-	cout << " 2. Edad" << endl;
-	cout << " 3. Ocupacion " << endl;
-	cout << " 4. Amnios Experiencia " << endl;
-	cout << " 5. Atras " << endl << endl;
-	cout << " Digite una opcion: " << endl;
-	cin >> opc;
 
-	return opc;
+//Opcion 2
+
+void Interfaz::BusquedaContrato(Aeropuerto* aero) {
+	string cod;
+	system("cls");
+	cout << " ========================================================================" << endl;
+	cout << "  Digite la codigo del Contrato: " << endl;
+	cin >> cod;
+	aero->BusquedaConPorCod(cod);
+
 }
+
+
+
 
 
