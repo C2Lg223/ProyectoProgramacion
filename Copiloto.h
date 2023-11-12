@@ -10,4 +10,5 @@ public:
 	void setTelefono(string);
 	string getTelefono();
 	string toString();
+	bool EsPiloto();
 };

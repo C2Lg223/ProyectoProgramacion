@@ -1,5 +1,5 @@
 
-#pragma warning(disable: 4996)
+
 #include"PlazoFijo.h"
 
 PlazoFijo::PlazoFijo(string cod, string pues, int sala, Empleado& empl, Aeronaves& avion, Fecha& Ingresa, Fecha& finaliza)
@@ -24,15 +24,23 @@ string PlazoFijo::toString() {
 	return s.str();
 }
 
+int PlazoFijo::TiempoConContratoFijo(Fecha& Actual) {
+	int AnnioPF = 0;
+	int diaActual = Actual.getDia();
+	int MesActual = Actual.getMes();
+	int AnioActual = Actual.getAnnio();
 
-bool PlazoFijo::accederATiempoIndefinido() {
-	time_t tiempoActual= time (nullptr);
-	tm* fechaActual = localtime(&tiempoActual);
+	AnnioPF = AnioActual - ingresaTrabajar->getAnnio();
 
-	int aniosTraba = fechaActual->tm_year + 1900 - ingresaTrabajar->getAnnio();
-	if (fechaActual->tm_mon < ingresaTrabajar->getMes() ||
-		(fechaActual->tm_mon == ingresaTrabajar->getMes() && fechaActual->tm_mday < ingresaTrabajar->getDia())) {
-		aniosTraba--;
+	//Comprueba si todavia no tiene un annio
+	if (MesActual < ingresaTrabajar->getMes() || (MesActual == ingresaTrabajar->getMes() && diaActual == ingresaTrabajar->getDia())) {
+		AnnioPF--;
 	}
-	return aniosTraba >= 2;
+
+	return AnnioPF;
+}
+bool PlazoFijo::EstaExcedido(Fecha& Act) {
+	
+	if (TiempoConContratoFijo(Act) > 2)
+		return true;
 }

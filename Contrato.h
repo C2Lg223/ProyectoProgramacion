@@ -34,5 +34,7 @@ public:
 	Fecha* getIniciaaTrabajar();
 	Fecha* getFinalizaTrabajo();
 	int getSalario();
+	void desvincularAeronave();
+	virtual bool EstaExcedido(Fecha&) = 0;
 	virtual string toString() = 0;
 };

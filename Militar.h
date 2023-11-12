@@ -9,9 +9,11 @@ class Militar : public Aeronaves {
       string Categoria;
 
 public: 
-    Militar(int velocid, string TPavion, string cat,Fecha& crea, double disRe);
+    Militar(int , string , string,Fecha&, double, string);
     virtual~Militar();
     void setVelocidad(int velocid);
     void setTipoAvionM(string TipoMi);
     string toString();
+    bool EsAvionComercial();
+    bool EsAvionDeCarga();
 };

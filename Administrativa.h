@@ -11,5 +11,6 @@ public:
 	void setTitulo(string);
 	string getTitulo();
 	string toString(); 
+	bool EsPiloto();
 
 };

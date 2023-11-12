@@ -30,3 +30,5 @@ string TiempoIndefinido:: toString() {
 	
 	
 }
+
+bool TiempoIndefinido::EstaExcedido(Fecha&) { return false; }

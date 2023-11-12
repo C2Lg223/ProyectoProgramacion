@@ -26,6 +26,7 @@ class Empleado {
 	  int getEdad();
 	  
 	  virtual string toString() = 0;
+	  virtual bool EsPiloto() = 0;
 	  
 
 };

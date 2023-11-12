@@ -6,8 +6,10 @@ class Comercial : public  AviacionCivil {
 private:
 	string categoria;
 public:
-	Comercial(string catego, string plac, string Tipo, Fecha& crea, double disRe); 
+	Comercial(string, string, Fecha&, double, string);
 
 	virtual~Comercial();
 	string toString();
+	bool EsAvionDeCarga();
+	bool EsAvionComercial();
 };

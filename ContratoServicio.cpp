@@ -27,3 +27,5 @@ string ContratoServicio::toString() {
 
 	return s.str();
 }
+
+bool ContratoServicio::EstaExcedido(Fecha&) { return false; }

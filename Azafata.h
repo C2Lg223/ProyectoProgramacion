@@ -11,6 +11,7 @@ public:
 	void setNacionalidad(string);
 	string getNacionalidad();
 	string toString();
+	bool EsPiloto();
 };
 
 

@@ -39,13 +39,8 @@ bool Aeropuerto::BusquedaConPorCod(string cod) { return ContratosC->busquedaPorC
 
 int Aeropuerto::contarAeronave() { return AeronavesC->contarObjetos(); }
 
-bool Aeropuerto::hayPilotos() { return EmpleadosC->hayPilotos(); }
-
-bool Aeropuerto::hayAvionesCarga() { return AeronavesC->hayAvionDeCarga(); }
-
-void Aeropuerto::MostrarContratos() {
-	stringstream s;
-	s << ContratosC->toString() << endl;
+string Aeropuerto::MostrarContratos() {
+	return  ContratosC->toString();
 }
 
 string Aeropuerto::MostrarAeronaves() {
@@ -53,7 +48,7 @@ string Aeropuerto::MostrarAeronaves() {
 }
 
 bool Aeropuerto::eliminarEmpleado(string ced ) {
-	return EmpleadosC->eliminaEmpleado(ced);
+	return ContratosC->EliminarEmpleado(ced);
 }
 
 string Aeropuerto::reporteAeronavesTripulacion() {
@@ -73,32 +68,46 @@ string Aeropuerto::ReporteTiempoIndefinido() {
 	return ContratosC->ReporteTiempoIndefinido();
 }
 
+string Aeropuerto::PilotosDeCarga() {
+	return ContratosC->ReportePilotoAvCarga();
+}
 
+string Aeropuerto::ReporteEmpleadoEnAvComercial() {
+	return ContratosC->EmpleadosDeAvionesComerciales();
+}
 
-/* void Aeropuerto::PilotosDeCarga() {
-	stringstream s;
-	NodoContrato* nod = ContratosC; 
+bool Aeropuerto::existeEmplSegunCedula(string ced) {
+	return EmpleadosC->existeEmplSegunCed(ced);
+}
 
-	
-	while (ContratosC != NULL) {
-		NodoContrato* con = nod->getSigNodo();
-	
-		if (hayPilotos() && hayAvionesCarga()) {
-			Empleado* emp = con->getContrato()->getEmpleado();
-			Aeronaves* aero = con->getContrato()->getAviones(); 
+bool Aeropuerto::existeContratoConEmpleado(string ced) {
+	return ContratosC->existeContratoLigadoAEmpleado(ced);
+}
 
-			if (emp != NULL && aero != NULL) {
-				if (typeid(*emp) == typeid(Piloto) && typeid(*aero) == typeid(Carga)) {
-					s << " Los Pilotos de Aviones de Carga son: " << endl;
-					s << emp->toString();
-				}
-			}
-			
-		}
-		cout << s.str();
+Empleado* Aeropuerto::BuscarPorCed(string ced) {
+	return EmpleadosC->buscarConCedula(ced);
+}
 
-	}
+bool Aeropuerto::listaAeronaveVacio() {
+	return AeronavesC->estaVacia();
+}
 
+string Aeropuerto::imprimirAeronaves() {
+	return AeronavesC->toString();
+}
 
-}   */
+bool Aeropuerto::existeAvionSegunPlaca(string pla) {
+	return AeronavesC->existeAvionSegunPlaca(pla);
+}
 
+string Aeropuerto::ContratosExcedidos(Fecha& Actual) {
+	return ContratosC->ContratosPlazoFijExcedidos(Actual);
+}
+
+void Aeropuerto::BuscaEmplConCed(string ced) {
+	return ContratosC->BuscaEmplConCed(ced);
+}
+
+Aeronaves* Aeropuerto::BuscarAvionCivil(string Placa) {
+	return AeronavesC->buscarAvionesCivil(Placa);
+}

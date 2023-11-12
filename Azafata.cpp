@@ -26,6 +26,7 @@ string Azafata::toString(){
 	return s.str();
 
 }
+bool Azafata::EsPiloto() { return false; }
 
 
 

@@ -13,8 +13,9 @@ public:
 	int contarObjetos();
 
 	bool eliminarAeronave(string placa);
-	bool hayAvionDeCarga();
 	Aeronaves* MayorAreaAcceso();
+	bool existeAvionSegunPlaca(string pla);
+	Aeronaves* buscarAvionesCivil(string); 
 };
 
 

@@ -12,8 +12,7 @@ public:
 	//Menu Ingresos 
 	static int menuIngresos();
 	static int menuIngresoEmpleados();
-	static int menuIngresoAeronaves();
-	
+	static int MenuTiposAeronaves();
 
 	//Metodos de Ingreso Empleados 
 	static void ingresarPiloto(Aeropuerto* aero);
@@ -23,7 +22,7 @@ public:
 	static void ingresaMiscelaneo(Aeropuerto* aero);
 
 	//Metodos de Ingresoa Aeronaves 
-	static int MenuTiposAeronaves();
+	
 	static void IngresarAvionComercial(Aeropuerto*);
 	static void IngresarAvionesCargas(Aeropuerto* );
 	static void IngresaAvionesMilitares(Aeropuerto*);

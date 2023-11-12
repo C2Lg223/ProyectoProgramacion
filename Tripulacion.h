@@ -9,4 +9,5 @@ public:
 	virtual ~Tripulacion();
 
 	virtual string toString() = 0;
+	virtual bool EsPiloto() = 0;
 };

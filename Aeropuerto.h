@@ -20,23 +20,38 @@ public:
 	ListaContrato* getContenedorContrato();
 	ListaEmpleado* getContenedorEmpleados();
 	virtual ~Aeropuerto();
+
 	bool ingresarAeronave(Aeronaves*);
 	bool ingresarEmpleado(Empleado* );
 	bool ingresarContrato(Contrato* );
 	bool BusquedaConPorCod(string);
+
+	bool listaEmpleadosVacio();
+	bool existeEmplSegunCedula(string ced);
+	bool existeContratoConEmpleado(string ced);
+	Empleado* BuscarPorCed(string);
+	bool listaAeronaveVacio();
+	string imprimirAeronaves();
+	bool existeAvionSegunPlaca(string pla);
+
+
 	int contarAeronave();
-	void MostrarContratos();
+	string MostrarContratos();
 	string MostrarAeronaves();
 	bool eliminarEmpleado(string);
 	string reporteAeronavesTripulacion();
-	void PilotosDeCarga();
-	bool hayPilotos();
-	bool hayAvionesCarga();
+	string PilotosDeCarga();
+	
 	string MostrarEmpleado();
 	string ReporteContratoServicio();
 	string ReportePlazoFijo();
 	string ReporteTiempoIndefinido();
-	string ReporteEmpleadoEnAvComercial(); 
+	string ReporteEmpleadoEnAvComercial();
+	string ContratosExcedidos(Fecha&);
+
+
+	void BuscaEmplConCed(string);
+	Aeronaves* BuscarAvionCivil(string);
 	
 
 };

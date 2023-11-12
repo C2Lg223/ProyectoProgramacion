@@ -7,5 +7,6 @@ public:
 	PlazoFijo(string, string, int, Empleado&, Aeronaves&, Fecha&, Fecha&);
 	virtual~PlazoFijo();
 	string toString();
-	bool accederATiempoIndefinido();
+	bool EstaExcedido(Fecha& Act);
+	int TiempoConContratoFijo(Fecha&);
 };

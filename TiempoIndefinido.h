@@ -11,6 +11,7 @@ public:
 	void setPlazaC(Plaza&);
 	Plaza* getPlazaC();
 	string toString();
+	bool EstaExcedido(Fecha&);
 
 
 };

@@ -16,3 +16,4 @@ string Administrativa::toString(){
 
 	return s.str();
 }
+bool Administrativa::EsPiloto() { return false; }

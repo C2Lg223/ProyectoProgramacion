@@ -15,5 +15,6 @@ public:
    string getHorarioLaboral();
    string getTipoServicio();
    string toString();
+   bool EstaExcedido(Fecha&);
   
 };

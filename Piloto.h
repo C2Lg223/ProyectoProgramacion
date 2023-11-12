@@ -11,6 +11,7 @@ public:
 	int getAniosExp();
 	string toString();
 	Empleado* copia();
+	bool EsPiloto();
 
 
 

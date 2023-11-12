@@ -1,7 +1,7 @@
 #include"Comerciales.h"
 
-Comercial::Comercial(string catego, string plac, string Tipo, Fecha& crea, double disRe) 
-	:categoria(catego), AviacionCivil(plac, Tipo, crea, disRe) {}
+Comercial::Comercial(string catego, string Tipo, Fecha& crea, double disRe, string plac) 
+	:categoria(catego), AviacionCivil( Tipo, crea, disRe, plac) {}
 Comercial::~Comercial() {}
 string Comercial::toString() {
 		stringstream s;
@@ -11,7 +11,7 @@ string Comercial::toString() {
 			s << "   Fecha de Creacion:  " << creacion->toString(); 
 		}
 		s << "   Distancia Recorrida: " << distanciaReco << endl;
-		s << "   Placa: " << placa << endl;
+		s << "   Placa: " << Placa << endl;
 		s << "   Tipo de avion: " << tipoAvion << endl << endl;
 		s << "   ---------------------------------" << endl;
 		s << "   Avion: " << Servicio::NombreA(categoria) << endl;
@@ -25,4 +25,7 @@ string Comercial::toString() {
 	
 		return s.str();
 	}
-
+bool Comercial::EsAvionDeCarga() {
+	return false;
+}
+bool Comercial::EsAvionComercial() { return true; }

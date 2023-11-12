@@ -9,7 +9,7 @@ private:
 	string categoria;
 
 public:
-	Carga( string categ,double AltuPuer, double AnchPuerta,string pla, string TipoAv,  Fecha& crea, double disRe);
+	Carga( string, double, double, string,  Fecha&, double, string);
 	virtual~Carga();
 	void setAlturaPuerta(double altP);
 	void setAnchuraPuerta(double AnchoPuer);
@@ -17,4 +17,6 @@ public:
 	double getAnchoPuerta();
 	string toString();
 	double AreaAcceso();
+	bool  EsAvionDeCarga();
+	bool EsAvionComercial();
 };

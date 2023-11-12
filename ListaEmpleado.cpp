@@ -93,13 +93,16 @@ bool ListaEmpleado::eliminaEmpleado(string ced) {
 	return false;
 }
 
-bool ListaEmpleado::hayPilotos() {
-	NodoEmpleado* empl = ppio;
-
-	while (empl != NULL) {
-		if (typeid(Empleado) == typeid(Piloto))
+bool ListaEmpleado::existeEmplSegunCed(string ced) {
+	NodoEmpleado* aux = ppio;
+	while (aux != NULL) {
+		if (aux->getEmpleado()->getCedula() == ced) {
 			return true;
-
-		empl = empl->getSigNodo();
+		}
+		aux = aux->getSigNodo();
 	}
+	return false;
 }
+
+
+

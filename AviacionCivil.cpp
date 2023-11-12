@@ -1,7 +1,8 @@
 #pragma once
 #include"AviacionCivil.h"
 
-AviacionCivil::AviacionCivil(string pla, string TpAvion, Fecha& crea, double disRe)
-	:placa(pla), tipoAvion(TpAvion), Aeronaves(crea, disRe) {}
-
+AviacionCivil::AviacionCivil( string TpAvion, Fecha& crea, double disRe, string pla)
+	: tipoAvion(TpAvion), Aeronaves(crea, disRe, pla) {}
+void AviacionCivil::setTipoAvion(string TipAV) { tipoAvion = TipAV; }
+string AviacionCivil::getTipoAvion() { return tipoAvion; }
 AviacionCivil::~AviacionCivil() {}

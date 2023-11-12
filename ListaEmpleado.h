@@ -12,8 +12,7 @@ public:
 	string toString();
 	Empleado* buscarConCedula(string);
 	bool eliminaEmpleado(string ced);
-	bool hayPilotos();
-	void ModificaAnnioExPil(int anioE);
+	bool existeEmplSegunCed(string ced);
 
 };
 

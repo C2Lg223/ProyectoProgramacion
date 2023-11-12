@@ -27,6 +27,7 @@ string Copiloto::toString() {
 	return s.str();
 
 }
+bool Copiloto::EsPiloto() { return false; }
 
 
 

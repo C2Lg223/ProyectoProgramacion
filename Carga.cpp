@@ -1,8 +1,8 @@
 #pragma once
 #include"Carga.h"
 
-Carga::Carga(string categ, double AltuPuer, double AnchPuerta, string plac, string TipoAv, Fecha& crea, double disRe)
-	:alturaPuerta(AltuPuer), anchoPuerta(AnchPuerta), categoria(categ), AviacionCivil(plac, TipoAv, crea, disRe) {}
+Carga::Carga(string categ, double AltuPuer, double AnchPuerta,  string TipoAv, Fecha& crea, double disRe, string plac)
+	:alturaPuerta(AltuPuer), anchoPuerta(AnchPuerta), categoria(categ), AviacionCivil( TipoAv, crea, disRe, plac) {}
 Carga::~Carga() {}
 void Carga::setAlturaPuerta(double altP) {alturaPuerta = altP;}
 void Carga::setAnchuraPuerta(double AnchoPuer) { anchoPuerta = AnchoPuer; }
@@ -16,7 +16,7 @@ string Carga::toString() {
 		s << "El avion fue creado en " << creacion->toString() << endl;
 	}
 	s << "Su distancia recorrida es: " << distanciaReco << endl;
-	s << "Placa: " << placa << endl;
+	s << "Placa: " << Placa << endl;
 	s << "Tipo: " << tipoAvion << endl;
 	s << "Altura de la puerta: " << alturaPuerta << endl;
 	s << "Ancho de la Puerta: " << anchoPuerta << endl;
@@ -30,4 +30,11 @@ string Carga::toString() {
 
 double Carga::AreaAcceso() {
 	 return  getAlturaPuerta () * getAnchoPuerta();
+}
+bool Carga::EsAvionDeCarga() {
+	return true;
+}
+
+bool Carga::EsAvionComercial() {
+	return false;
 }

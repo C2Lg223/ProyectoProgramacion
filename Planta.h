@@ -8,5 +8,6 @@ class Planta: public Empleado {
 	 Planta(string, string, string, int);
 	 virtual~Planta();
 	 virtual string toString() = 0;
+	 virtual bool EsPiloto() = 0;
 
 };

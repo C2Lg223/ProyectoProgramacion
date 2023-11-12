@@ -156,7 +156,8 @@ public:
 			opc = ControlMantenimiento();
 			switch (opc) {
 			case 1: MenuMantEmpleado(); break;
-			case 2: MenuMantContrato(); break;
+			case 2: MenuMantAer(); break;
+			case 3: MenuMantContrato(); break;
 
 
 			default:
@@ -193,38 +194,32 @@ public:
 	void EliminarEmpleado() { return Interfaz::EliminarEmpleado(aeropuert); }
 	void ModificaEmpleado() { return Interfaz::ModificarEmple(aeropuert); }
 
-
-	/*void MenuMantAeronaves() {
+	void MenuMantAeronaves() {
 		int opc;
-		do {
-			opc = ControlMantAerona();
-			switch (opc)	{
+			opc = MenuMantAer();
+			switch (opc){
+			case 1: ModificarAer(); break;
 
 			default:
 				break;
 			}
-
-
-		} while (opc != 3);
 	}
+	int MenuMantAer() { return Interfaz::menuMantAeronaves(); }
+	void ModificarAer() { return Interfaz::ModificarAerona(aeropuert); }
 
-	int ControlMantAerona() { return Interfaz::menuMantAeronaves(); }
-	*/
+
 
 
 
 	void MenuMantContrato() {
 		int opc;
-		do {
+		
 			opc = ControlMantenimiento();
-			switch (opc){
-               case 1: ModificarContrato(); break;
-			default:
-				break;
+			if (opc == 1) {
+			    ModificarContrato();
 			}
 			
 
-		} while (opc != 3);
 	}
 
 	int ControManteContrato() { return Interfaz::menuMantContratos(); }

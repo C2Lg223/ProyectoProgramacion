@@ -25,3 +25,4 @@ string Miscelaneos::toString() {
 	return s.str();
 
 }
+bool Miscelaneos::EsPiloto() { return false; }

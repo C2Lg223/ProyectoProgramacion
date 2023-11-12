@@ -57,51 +57,61 @@ int ListaAeronave::contarObjetos() {
 	return cont;
 }
 
+bool ListaAeronave::existeAvionSegunPlaca(string pla) {
+	NodoAeronave* aux = ppio;
 
-bool ListaAeronave::hayAvionDeCarga() {
-	NodoAeronave* pt = ppio;
-
-	while (pt != nullptr) {
-		if (typeid(Aeronaves) == typeid(Carga))
+	while (aux != NULL) {
+		if (aux->getAeronave()->getPlaca() == pla) {
 			return true;
-
-		pt = pt->getSigNodo();
+		}
+		aux = aux->getSigNodo();
 	}
+
+	return false;
 }
-/*  Revisar 
-Aeronaves* ListaAeronave::MayorAreaAcceso() {
+
+/*Aeronaves* ListaAeronave::MayorAreaAcceso() {
 	Aeronaves* mayor = NULL;
-	double AreaMayor = 0;
-	Carga* m = NULL;
-	NodoAeronave* Pex = ppio;
-	
+	NodoAeronave * Pex = ppio;
+	if (Pex != NULL) {
+		mayor = Pex->getAeronave();
 		while (Pex != NULL) {
-			Aeronaves* Av = Pex->getAeronave();
-			  if (typeid(Aeronaves) == typeid (Carga)){
-				  Carga* car = 
-				  Carga* car = (typeid(Carga) == typeid(Aeronaves));
-				  double area = m->AreaAcceso(); {
-					  if (area > AreaMayor) {
-						  mayor = Pex->getAeronave();
-						  AreaMayor = area;
-
-					  }
-				  }
-
+			
+		}
+	}
+	Persona* obtenerPersonaConMayorSalario() {
+		Persona* mayor = NULL; // solo es una flecha
+		Nodo* PEx = ppio;
+		if (PEx != NULL) {   // Por lo menos hay uno.
+			mayor = PEx->getPersona();
+			while (PEx != NULL) {
+				if (PEx->getPersona()->getSalario() > mayor->getSalario())
+					mayor = PEx->getPersona();
+				PEx = PEx->getSigNodo();
 			}
 		}
-	
-
+		return mayor;
+	}
 }*/
-/*
-* ListaAeronave::busquedaPlaca(string pla) {
+
+
+Aeronaves* ListaAeronave::buscarAvionesCivil(string Plac) {
 	NodoAeronave* Pex = ppio;
+	Aeronaves* avion = Pex->getAeronave();
+
 
 	while (Pex != NULL) {
 
-		if (Pex->getAeronave())
-
-
+		if(typeid(*avion)==typeid(AviacionCivil)){
+		if (avion->getPlaca() == Plac) {
+			return avion;
+		 }
+		}
+		Pex = Pex->getSigNodo();
 
 	}
-}*/
+
+	return nullptr;
+}
+
+

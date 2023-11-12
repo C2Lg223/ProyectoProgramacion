@@ -13,5 +13,6 @@ class Miscelaneos : public Planta {
 	 int getGradoEscolaridad();
 	 string getTipoLabor();
 	 string toString();
+	 bool EsPiloto();
 
 };

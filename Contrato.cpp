@@ -24,3 +24,6 @@ Aeronaves* Contrato::getAviones() { return avion; }
 Fecha* Contrato::getIniciaaTrabajar() { return ingresaTrabajar; }
 Fecha* Contrato::getFinalizaTrabajo() { return FinalizaTrabajo; }
 int  Contrato::getSalario() { return salario; }
+void Contrato::desvincularAeronave() {
+	avion = nullptr;
+}
