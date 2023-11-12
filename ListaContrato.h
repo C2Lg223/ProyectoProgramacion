@@ -15,4 +15,5 @@ public:
 	string ReporteContratoServicio();
 	string ReportePlazoFijo();
 	string ReporteTiempoIndefinido();
+	string ReportePilotoAvCarga();
 };

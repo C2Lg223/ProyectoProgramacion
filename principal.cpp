@@ -44,7 +44,7 @@ int main() {
 
 	Controladora* CO = new Controladora();
 
-	CO->Control0();
+	CO->ControlMenuPrincipal();
 	return 0;
 	
 

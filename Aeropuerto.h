@@ -16,11 +16,13 @@ private:
 public:
 	Aeropuerto();
 	Aeropuerto(string, string, string);
+	ListaAeronave* getContenedorAeronave();
+	ListaContrato* getContenedorContrato();
+	ListaEmpleado* getContenedorEmpleados();
 	virtual ~Aeropuerto();
 	bool ingresarAeronave(Aeronaves*);
 	bool ingresarEmpleado(Empleado* );
 	bool ingresarContrato(Contrato* );
-	bool BuscarEmPorCed(string);
 	bool BusquedaConPorCod(string);
 	int contarAeronave();
 	void MostrarContratos();

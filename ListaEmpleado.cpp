@@ -45,19 +45,19 @@ string ListaEmpleado::toString(){
 
 }
 
-Empleado*  ListaEmpleado:: buscarConCedula(string ced) {
+Empleado* ListaEmpleado::buscarConCedula(string ced) {
 
 	NodoEmpleado* Pex = ppio;
-
 	while (Pex != NULL) {
 		if (Pex->getEmpleado()->getCedula() == ced) {
 			return (Pex->getEmpleado());
-		
+
 		}	Pex = Pex->getSigNodo();
 	}
-		
-	
-} 
+
+
+}
+
 
 bool ListaEmpleado::eliminaEmpleado(string ced) {
 	NodoEmpleado* PEx = ppio;
@@ -103,5 +103,3 @@ bool ListaEmpleado::hayPilotos() {
 		empl = empl->getSigNodo();
 	}
 }
-
-

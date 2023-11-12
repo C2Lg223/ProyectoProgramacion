@@ -16,7 +16,6 @@ public:
 	
 
 	//Metodos de Ingreso Empleados 
-	static void DatosEmpleado();
 	static void ingresarPiloto(Aeropuerto* aero);
 	static void ingresaCopilotos(Aeropuerto* aero);
 	static void ingresaAzafata(Aeropuerto* aero);
@@ -24,7 +23,6 @@ public:
 	static void ingresaMiscelaneo(Aeropuerto* aero);
 
 	//Metodos de Ingresoa Aeronaves 
-
 	static int MenuTiposAeronaves();
 	static void IngresarAvionComercial(Aeropuerto*);
 	static void IngresarAvionesCargas(Aeropuerto* );
@@ -32,9 +30,9 @@ public:
 
 	//Metodos de Ingreso Contratos 
 	static int MenuTiposContratos();
-	static void IngresarContratoServivio();
-	static void IngresarPlazoFijo();
-	static void IngresarTiempoIndefinido();
+	static void IngresarContratoServivio(Aeropuerto*);
+	static void IngresarPlazoFijo(Aeropuerto* );
+	static void IngresarTiempoIndefinido(Aeropuerto*);
 
 
 
@@ -46,25 +44,40 @@ public:
 	static int menuMantContratos();
 	static void EliminarEmpleado(Aeropuerto* );
 	// Opcion de editar 
-	static int menuModificarEmple();
+	
+	static int menuModificarAeronave();
+	static int menuModificarContrato();
+
+	//Metodos que modifican los datos 
+    static void ModificarEmple(Aeropuerto*);
+	static void ModificarAerona(Aeropuerto*);
+	static void ModificarContrato(Aeropuerto*);
 	//Tercera opcion del menu principla REPORTES 
 	static int menuReportes();
 	static void MostrarContratos(Aeropuerto* );
 	static void ReportesAeronavesyTripula(Aeropuerto*);
 	static void MostrarAeronaves(Aeropuerto*);
 	static void ReporteEmpleadoTodos(Aeropuerto*);
-
-
+	static void Pilotos_AvionesCarga(Aeropuerto*);
 	static void ReporteContratoServicio(Aeropuerto*);
 	static void ReportaC_PlazoFijo(Aeropuerto*);
 	static void ReporteC_TiempoIndefinido(Aeropuerto*);
-
-
+	static void R_Tripula_AvionComerciales(Aeropuerto*);
+	static void R_PlazoFijoExcedidos(Aeropuerto*);
+	static void AvionC_MayorAreaAcceso(Aeropuerto*);
 
 	//Cuarta opcion del menu principla CONSULTA 
 	static int menuConsulta();
+	static void BusquedaEmpleado(Aeropuerto*);
 	static void BusquedaContrato(Aeropuerto*);
+	static void AvionesCiviles(Aeropuerto*);
 
+
+
+
+
+	//Mensajes 
+	static void menjDefault();
 
 };
 

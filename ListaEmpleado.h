@@ -13,6 +13,7 @@ public:
 	Empleado* buscarConCedula(string);
 	bool eliminaEmpleado(string ced);
 	bool hayPilotos();
+	void ModificaAnnioExPil(int anioE);
 
 };
 

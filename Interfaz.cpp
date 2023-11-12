@@ -1,4 +1,5 @@
 #include "Interfaz.h"
+#include<iostream>
 
 int Interfaz::menuPrincipal()
 {
@@ -16,8 +17,10 @@ int Interfaz::menuPrincipal()
 	return opc;
 }
 
-int Interfaz::menuIngresos()
-{
+
+
+
+int Interfaz::menuIngresos(){
 	int opc;
 	system("cls");
 	cout << "**************************** INGRESAR ******************************" << endl;
@@ -29,6 +32,10 @@ int Interfaz::menuIngresos()
 	cin >> opc;
 	return opc;
 }
+
+
+//*****************************************************************************************************************************************************
+//                         INGRESOS EMPLEADOS 
 int Interfaz::menuIngresoEmpleados()
 {
 	int opc;
@@ -39,6 +46,7 @@ int Interfaz::menuIngresoEmpleados()
 	cout << "(3). Azafata " << endl;
 	cout << "(4). Administrativos " << endl;
 	cout << "(5). Miscelaneo" << endl;
+	cout << "(6).Menu Anterior " << endl;
 	cout << "********Digitar una opcion********" << endl;
 	cin >> opc;
 	return opc;
@@ -166,16 +174,22 @@ void Interfaz::ingresaMiscelaneo(Aeropuerto* aero){
 	aero->ingresarEmpleado(Mis);
 }
 
+//*****************************************************************************************************************************************************
+
+//*****************************************************************************************************************************************************
+//                           INGRESOS AERONAVES 
+
 int Interfaz::MenuTiposAeronaves() {
 
 	int opc;
 	system("cls");
-	cout << "-----------------------------------------------------------------" << endl;
-	cout << "              Ingresa Aviones  " << endl;
-	cout << "    1. Aviones Comerciales  " << endl;
-	cout << "    2. Aviones de Carga " << endl;
-	cout << "    3. Aviones Militares " << endl;
-	cout << "-----------------------------------------------------------------" << endl << endl;
+	cout << "............................................................" << endl;
+	cout << ":              Ingresa Aviones                             : " << endl;
+	cout << ":    1. Aviones Comerciales                                :" << endl;
+	cout << ":    2. Aviones de Carga                                   :" << endl;
+	cout << ":    3. Aviones Militares                                  :" << endl;
+	cout << ":    4. Menu Anterior                                      :" << endl;
+	cout << "............................................................" << endl << endl;
 	cout << "Digite una opcion: ";
 	cin >> opc;
 
@@ -195,15 +209,14 @@ void Interfaz::IngresarAvionComercial(Aeropuerto* aero) {
 	cin >> categ; cout << endl;
 	cout << "  Ingrese la placa: ";
 	cin >> pla; 
-	cout << "\n Escriba el tipo de avion:  " << endl;
-	cout << " * PasilloÚnico"<<endl<<" * DoblePasillo " << endl;
+	cout << "\n Digite el tipo de avion  (PasilloUnico o DoblePasillo) " << endl;
 	cin >> tipoAvio;
 	cout << " Ingrese la fecha de Creacion: " << endl;
 	cout << " Dia: ";
 	cin >> dia;
-	cout << "\n Mes: ";
+	cout << " Mes: ";
 	cin >> mes;
-	cout << " \n Annio: ";
+	cout << " Annio: ";
 	cin >> annio;
 	cout << "\n Ingrese la distancia Recorrida: ";
 	cin >> distar;
@@ -222,20 +235,17 @@ void Interfaz::IngresarAvionesCargas(Aeropuerto* aero) {
 	Aeronaves* ae = nullptr;
 
 	system("cls");
-	cout << " ---------INGRESAR AVION DE CARGA--------" << endl;
-	cout << "  Ingrese la Categoria:  ";
+	cout << " ---------INGRESAR AVION DE CARGA--------" << endl << endl;
+	cout << " Ingrese la Categoria:  ";
 	cin >> categ; cout << endl;
-	cout << "  Ingrese la placa: ";
-	cin >> pla;
-	cout << "\n Escriba el tipo de avion:  " << endl;
-	cout << " * PasilloÚnico" << endl << " * DoblePasillo " << endl;
+	cout << "\n Digite el tipo de avion:  ( Escotilla y puerta lateral) )" << endl;
 	cin >> tipoAvio;
 	cout << " Ingrese la fecha de Creacion: " << endl;
-	cout << " Dia: ";
+	cout << "Dia: ";
 	cin >> dia;
-	cout << "\n Mes: ";
+	cout << " Mes: ";
 	cin >> mes;
-	cout << " \n Annio: ";
+	cout << " Annio: ";
 	cin >> annio;
 	cout << "\n Ingrese la distancia Recorrida: ";
 	cin >> distaR;
@@ -282,7 +292,14 @@ void Interfaz::IngresaAvionesMilitares(Aeropuerto* aero) {
 		aero->ingresarAeronave(ae);
 	}
 }
+//*****************************************************************************************************************************************************
 
+
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//Contratos Menu Principal y Ingresos 
 int Interfaz::MenuTiposContratos() {
 	int opc;
 
@@ -293,57 +310,51 @@ int Interfaz::MenuTiposContratos() {
 	cout << ":       1. Contrato de servicio                            :" << endl;
 	cout << ":       2. Plazo Fijo                                      :" << endl;
 	cout << ":       3. Tiempo Intefinido                               :" << endl;
+	cout << ":       4. Menu Anterio                                    :" << endl;
+	cout << ":                                                          :" << endl;
 	cout << "............................................................" << endl << endl;
-	cout << "Digite una opcio: ";
+	cout << "     Digite una opcio: ";
 	cin >> opc;
 
 	return opc;
 }
 
+void Interfaz::IngresarContratoServivio(Aeropuerto*) {
+
+	system("cls");
+	cout << " Completar esto " << endl;
 
 
+}
 
+void Interfaz::IngresarPlazoFijo(Aeropuerto*) {
+	system("cls");
+	cout << " Completar esto " << endl;
 
+}
 
+void Interfaz::IngresarTiempoIndefinido(Aeropuerto*) {
+	system("cls");
+	cout << " Completar esto " << endl;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+// MANTENIMIENTO 
 
 int Interfaz::menuMantenimiento() {
 	int opc;
 	system("cls");
-	cout << "***********************  MANTENIMIENTO ******************************" << endl;
-	cout << " 1) Empleado " << endl;
-	cout << " 2) Aeronaves " << endl;
-	cout << " 3) Contratos " << endl;
-	cout << " 4) Atras " << endl;
-	cout << "Digitar una opcion: " << endl;
+	cout << "........................................................................" << endl;
+	cout << ":                           Mantenimiento                              :" << endl;
+	cout << ":                                                                      :" << endl;
+	cout << ":                                                                      :" << endl;
+	cout << ":                1. Empleado                                           :" << endl;
+	cout << ":                2. Aeronaves                                          :" << endl;
+	cout << ":                3. Contratos                                          :" << endl;
+	cout << ":                4) Menu Anterior                                      :" << endl;
+	cout << ":                                                                      :" << endl;
+	cout << "........................................................................" << endl;            
+    cout << "   Digitar una opcion: ";
 	cin >> opc;
 	return opc;
 }
@@ -354,7 +365,8 @@ int Interfaz::menuMantEmpleado() {
 	cout << "2.Mantenimiento                               2.1 Empleados " << endl << endl;
 	cout << " 1) Eliminar Empleado " << endl;
 	cout << " 2) Modificar Datos " << endl;
-	cout << "Digitar una opcion: " << endl;
+	cout << " 3) Menu Anterior " << endl;
+	cout << " Digitar una opcion: " << endl;
 	cin >> opc;
 	return opc;
 
@@ -378,42 +390,158 @@ void Interfaz::EliminarEmpleado(Aeropuerto* aer) {
 int Interfaz::menuMantAeronaves() {
 	int opc;
 	system("cls");
+	cout << "..............................................................." << endl;
 	cout << "2.Mantenimiento                               2.2 Aeronaves " << endl << endl;
 	cout << " 1) Eliminar Aeronave " << endl;
 	cout << " 2) Modificar Datos " << endl;
-	cout << "Digitar una opcion: " << endl;
+	cout << " 3) Menu Anterior " << endl;
+	cout << "..............................................................." << endl << endl;
+	cout << " Digitar una opcion: " << endl;
 	cin >> opc;
 	return opc;
 
 }
+
+
 
 int Interfaz::menuMantContratos() {
 	int opc;
 	system("cls");
-	cout << "2.Mantenimiento                               2.3 Contratos  " << endl << endl;
+	cout << "..............................................................." << endl;
+	cout << " 2.Mantenimiento                               2.3 Contratos  " << endl << endl;
 	cout << " 1) Eliminar Contrato " << endl;
 	cout << " 2) Modificar Datos " << endl;
-	cout << "Digitar una opcion: " << endl;
+	cout << " 3) Menu Anterior " << endl;
+	cout << "..............................................................." << endl << endl;
+	cout << " Digitar una opcion: " << endl;
 	cin >> opc;
 	return opc;
 
 }
-int Interfaz::menuModificarEmple() {
-	int opc;
+
+
+void Interfaz::ModificarContrato(Aeropuerto* aer) {
+	string puestto, cod;
+	int salario;
+	int opc, opc1;
+	Contrato* ContratoAux = NULL;
+
 	system("cls");
-	cout << "Modificar Datos del Empleados " << endl;
-	cout << " 1. Nombre " << endl;
-	cout << " 2. Edad" << endl;
-	cout << " 3. Ocupacion " << endl;
-	cout << " 4. Amnios Experiencia " << endl;
-	cout << " 5. Atras " << endl << endl;
-	cout << " Digite una opcion: " << endl;
-	cin >> opc;
+	cout << "Digite el codigo del Contrato : ";
+	cin >> cod;
+	ContratoAux = aer->getContenedorContrato()->busquedaPorCod(cod);
+	if (ContratoAux != NULL) {
+		cout << "Datos Actuales " << endl;
+		cout << ContratoAux->toString();
+		cout << " Digite: " << "\n 1. Modificar Datos" << "\n 2.Cancelar" << endl;
+		cin >> opc1;
 
-	return opc;
+		if (opc1 == 1) {
+			do {
+				cout << "Modificar Datos del Contrato " << endl;
+				cout << " 1. Puesto " << endl;
+				cout << " 2. Salario " << endl;
+				cout << " 3. Menu Anterior " << endl << endl;
+				cout << " Digite una opcion: " << endl;
+				cin >> opc;
+
+				switch (opc) {
+				case 1: cout << "Ingrese el puesto: ";
+					cin >> puestto;
+					ContratoAux->setPuesto(puestto);
+					cout << " Mostar Informacion  Actualizada" << endl;
+					cout << "----------------------------------" << endl;
+					cout << ContratoAux->toString();
+					break;
+				case 2: cout << "Ingrese el Salario: ";
+					cin >> salario;
+					ContratoAux->setSalario(salario);
+					cout << " Mostar Informacion  Actualizada" << endl;
+					cout << "----------------------------------" << endl;
+					cout << ContratoAux->toString();
+					break;
+				default:
+					break;
+				}
+			} while (opc != 3);
+			
+		}
+	}
+}
+	
+void  Interfaz::ModificarEmple(Aeropuerto* aer) {
+	int opc, opc1;
+	string ced;
+	string nombre, Ocupacion;
+	int edad;
+	Empleado* empleAux = NULL;
+
+	system("cls");
+
+	cout << "Digite la cedula del Empleado: ";
+	cin >> ced;
+	empleAux = aer->getContenedorEmpleados()->buscarConCedula(ced);
+	if (empleAux != NULL) {
+		cout << "Datos Actuales" << endl;
+		cout << empleAux->toString();
+		cout << " Digite: " << "\n 1. Modificar Datos" << "\n 2.Cancelar" << endl;
+		cin >> opc1;
+		system("pause"); 
+		 if (opc1 == 1) {
+				 cout << "Modificar Datos del Empleados " << endl;
+				 cout << " 1. Nombre " << endl;
+				 cout << " 2. Edad" << endl;
+				 cout << " 3. Ocupacion " << endl;
+				 cout << " 4. Atras " << endl << endl;
+				 cout << " Digite una opcion: " << endl;
+				 cin >> opc ;
+
+				 switch (opc) {
+
+				 case 1:
+					 cout << " Ingrese el nombre: ";
+					 cin >> nombre;
+					 empleAux->setNombre(nombre);
+					 cout << endl << endl;
+					 cout << "Informacion Actualizada: " << endl;
+					 cout << "-------------------------" << endl << endl;
+					 cout << empleAux->toString();
+					 break;
+				 case 2:
+					 cout << "Ingrese la edad: ";
+					 cin >> edad;
+					 empleAux->setEdad(edad);
+					 cout << endl << endl;
+					 cout << "Informacion Actualizada: " << endl;
+					 cout << "-------------------------" << endl << endl;
+					 cout << empleAux->toString();
+					 break;
+				 case 3:
+					 cout << "Ingrese la Ocupacion: ";
+					 cin >> Ocupacion;
+					 empleAux->setOcupacion(Ocupacion);
+					 cout << endl << endl;
+					 cout << "Informacion Actualizada: " << endl;
+					 cout << "-------------------------" << endl << endl;
+					 cout << empleAux->toString();
+					 break;
+				 default:
+					 break;
+				 }
+
+		}
+	}
+	
+
+	
 }
 
+//Faltan metodo 
 
+
+
+//******************************************************************************************************************
+//                              REPORTES 
 int Interfaz::menuReportes() {
 	int opc;
 
@@ -473,6 +601,13 @@ void Interfaz::ReporteEmpleadoTodos(Aeropuerto* aero) {
 	cout<< aero->MostrarEmpleado();
 }
 
+//opcion 5 
+void Interfaz::Pilotos_AvionesCarga(Aeropuerto*) {
+	cout << " <=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=>" << endl;
+
+
+}
+
 //opcion 6 REPORTES
 
 void Interfaz::ReporteContratoServicio(Aeropuerto* aero) {
@@ -497,33 +632,43 @@ void Interfaz::ReporteC_TiempoIndefinido(Aeropuerto* aero) {
 }
 
 //Opcion 9 Reportes 
+void Interfaz::R_Tripula_AvionComerciales(Aeropuerto*) {
+	cout << " <=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=>" << endl;
+}
 
 
 //Opcion 10 Reportes 
+void Interfaz::R_PlazoFijoExcedidos(Aeropuerto*) {
+	cout << " <=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=>" << endl;
+}
 
 
 
 //Opcion 11 
+void Interfaz::AvionC_MayorAreaAcceso(Aeropuerto*) {
+	cout << " <=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=>" << endl;
+}
 
 
-//Opcion 12 
 
 
+//******************************************************************************************************************
 
 //MENU CONSULTAS 
 int Interfaz::menuConsulta() {
 	int opc;
 
 	system("cls");
-	cout << " ========================================================================" << endl;
-	cout << "                      CONSULTA " << endl << endl;
-	cout << "                 1. Empleado " << endl;
-	cout << "                 2. Contrato " << endl;
-	cout << "                 3. Aeronave " << endl;
-	cout << "                 4. Atras " << endl;
-	cout << " ========================================================================" << endl;
+	cout << "............................................................" << endl;
+	cout << ":                    CONSULTA                              :" << endl;
+	cout << ":                                                          :" << endl;
+	cout << ":            1. Empleado                                   :" << endl;
+	cout << ":            2. Contrato                                   :" << endl;
+	cout << ":            3. Aeronave                                   :" << endl;
+	cout << ":            4. Menu Anterios                              :" << endl;
+	cout << "............................................................" << endl << endl;
 
-	cout << "Digitar una opcion: " << endl;
+	cout << "Digitar una opcion: ";
 	cin >> opc;
 	return opc;
 
@@ -540,6 +685,17 @@ void Interfaz::BusquedaContrato(Aeropuerto* aero) {
 	cin >> cod;
 	aero->BusquedaConPorCod(cod);
 
+}
+
+
+
+
+
+
+//Mensajes 
+void Interfaz::menjDefault() {
+	stringstream s;
+	s << "Opcion Invalida " << endl;
 }
 
 

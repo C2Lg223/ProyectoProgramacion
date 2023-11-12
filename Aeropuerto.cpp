@@ -25,14 +25,15 @@ Aeropuerto::~Aeropuerto() {
 
 
 }
+ListaAeronave* Aeropuerto::getContenedorAeronave() { return AeronavesC; }
+ListaEmpleado* Aeropuerto::getContenedorEmpleados() { return EmpleadosC; }
+ListaContrato* Aeropuerto::getContenedorContrato() { return ContratosC; }
 
 bool Aeropuerto::ingresarAeronave(Aeronaves* aero) {	return AeronavesC->ingresar(*aero);}
 
 bool Aeropuerto::ingresarEmpleado(Empleado*  empl) {     return EmpleadosC->ingresar(*empl); }
 
 bool Aeropuerto::ingresarContrato(Contrato*  Cont) {     return ContratosC->ingresar(*Cont); }
-
-bool Aeropuerto::BuscarEmPorCed(string ced) { return EmpleadosC->buscarConCedula(ced); }
 
 bool Aeropuerto::BusquedaConPorCod(string cod) { return ContratosC->busquedaPorCod(cod); }
 

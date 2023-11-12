@@ -125,5 +125,3 @@ string ListaContrato::ReporteTiempoIndefinido() {
 	return s.str();
 }
 
-
-
