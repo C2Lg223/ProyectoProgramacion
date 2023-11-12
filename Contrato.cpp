@@ -1,8 +1,10 @@
 #include"Contrato.h"
 
-Contrato::Contrato( string cod, string pues, int sala, Empleado& empl, Aeronaves& aero, Fecha& iniciaTra, Fecha& finalizatra )
-	: codigo(cod), Puesto(pues), salario(sala), emple(&empl), avion(&aero), ingresaTrabajar(&iniciaTra), FinalizaTrabajo(&finalizatra) {
-}
+Contrato::Contrato(string cod, string pues, int sal, Fecha& i, Fecha& f, Empleado& emp) :
+	codigo(cod), Puesto(pues), salario(sal), ingresaTrabajar(&i), FinalizaTrabajo(&f), emple(&emp) {}
+
+Contrato::Contrato(string cod, string pues, int sal, Fecha& i, Fecha& f, Empleado& emp, Aeronaves& av) :
+	codigo(cod), Puesto(pues), salario(sal), ingresaTrabajar(&i), FinalizaTrabajo(&f), emple(&emp), avion(&av) {}
 
 Contrato::~Contrato() {
 	if (emple != NULL)delete emple;

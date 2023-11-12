@@ -1,8 +1,11 @@
 #include"ContratoServicio.h"
 
-ContratoServicio::ContratoServicio(string Horario, string tipSer, string cod, string pues, int sala,  Empleado& empl, Aeronaves& avion, Fecha& Ingresa, Fecha& finaliza)
-	: HorarioLaboral(Horario), tipoServicio(tipSer), Contrato(cod, pues, sala, empl, avion, Ingresa, finaliza) {
-}
+ContratoServicio::ContratoServicio(string hor, string tipServ, string cod, string pues, int sal, Fecha& i, Fecha& f, Empleado& emp) : Contrato(cod, pues, sal, i, f, emp), HorarioLaboral(hor), tipoServicio(tipServ) {}
+
+ContratoServicio::ContratoServicio(string hor, string tipServ, string cod, string pues, int sal, Fecha& i, Fecha& f, Empleado& emp, Aeronaves& av) : Contrato(cod, pues, sal, i, f, emp, av), HorarioLaboral(hor), tipoServicio(tipServ) {}
+
+
+
 ContratoServicio::~ContratoServicio() {}
 void ContratoServicio::setHorarioLaboral(string Horario) { HorarioLaboral = Horario; }
 void ContratoServicio::setTipoServicio(string tipSer) { tipoServicio = tipSer; }

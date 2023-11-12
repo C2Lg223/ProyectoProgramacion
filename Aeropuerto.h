@@ -2,6 +2,8 @@
 #include"ListaAeronave.h"
 #include"ListaContrato.h"
 #include"ListaEmpleado.h"
+#include<sstream>
+#include<iostream>
 
 class Aeropuerto {
 private:
@@ -30,7 +32,12 @@ public:
 	Empleado* BuscarPorCed(string);
 	bool listaAeronaveVacio();
 	string imprimirAeronaves();
+	string imprimirComerciales();
 	bool existeAvionSegunPlaca(string pla);
+	Aeronaves* buscarAvPorPlaca(string pla);
+	bool existeAvCivilSegunPlaca(string pla);
+	bool existeAvComeercialSegunPlaca(string pla);
+	bool existeComercial();
 	int contarAeronave();
 	void MostrarContratos();
 	string MostrarAeronaves();

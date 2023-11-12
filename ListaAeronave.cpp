@@ -70,7 +70,53 @@ bool ListaAeronave::existeAvionSegunPlaca(string pla){
 	return false;
 }
 
+Aeronaves* ListaAeronave::busquedaPorPlaca(string pla){
+	NodoAeronave* aux = ppio;
+	while (aux != NULL) {
+		if (aux->getAeronave()->getPlaca() == pla) {
+			return  aux->getAeronave();
+		}
+		aux = aux->getSigNodo();
+	}
+	return NULL;
 }
+
+bool ListaAeronave::existeAvCivil(string pla){
+	NodoAeronave* aux = ppio;
+	while (aux != NULL) {
+		if ((typeid(*aux->getAeronave()) == typeid(Carga) || typeid(*aux->getAeronave()) == typeid(Comercial)) && aux->getAeronave()->getPlaca() == pla) {
+			return true;
+		}
+		aux = aux->getSigNodo();
+	}
+	return false;
+}
+
+bool ListaAeronave::existeAvComercial(string pla){
+	NodoAeronave* aux = ppio;
+	while (aux != NULL) {
+		if ((typeid(*aux->getAeronave()) == typeid(Comercial)) && aux->getAeronave()->getPlaca() == pla) {
+			return true;
+		}
+		aux = aux->getSigNodo();
+	}
+
+	return false;
+}
+
+bool ListaAeronave::existeComercial(){
+	NodoAeronave* aux = ppio;
+	while (aux != NULL) {
+		if (typeid(*aux->getAeronave()) == typeid(Comercial)) {
+			return true;
+		}
+		aux = aux->getSigNodo();
+	}
+
+	return false;
+}
+
+
 
 
 bool ListaAeronave::hayAvionDeCarga() {
@@ -82,6 +128,21 @@ bool ListaAeronave::hayAvionDeCarga() {
 
 		pt = pt->getSigNodo();
 	}
+}
+string ListaAeronave::imprimirComerciales(){
+	NodoAeronave* aux = ppio;
+	stringstream s;
+
+	s << "--------AVIONES COMERCIALES--------" << endl << endl;
+
+	while (aux != NULL) {
+		if (typeid(*aux->getAeronave()) == typeid(Comercial))
+			s << aux->getAeronave()->toString() << endl;
+		aux = aux->getSigNodo();
+
+	}
+
+	return s.str();
 }
 /*  Revisar 
 Aeronaves* ListaAeronave::MayorAreaAcceso() {
