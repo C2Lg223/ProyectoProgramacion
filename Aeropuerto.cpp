@@ -37,6 +37,50 @@ bool Aeropuerto::ingresarContrato(Contrato*  Cont) {     return ContratosC->ingr
 
 bool Aeropuerto::BusquedaConPorCod(string cod) { return ContratosC->busquedaPorCod(cod); }
 
+bool Aeropuerto::existeEmplSegunCedula(string ced){
+	return EmpleadosC->existeEmplSegunCed(ced);
+}
+
+bool Aeropuerto::existeContratoConEmpleado(string ced){
+	return ContratosC->existeContratoLigadoAEmpleado(ced);
+}
+
+Empleado* Aeropuerto::BuscarPorCed(string ced){
+	return EmpleadosC->buscarConCedula(ced);
+}
+
+bool Aeropuerto::listaAeronaveVacio(){
+	return AeronavesC->estaVacia();
+}
+
+string Aeropuerto::imprimirAeronaves(){
+	return AeronavesC->toString();
+}
+
+string Aeropuerto::imprimirComerciales(){
+	return AeronavesC->imprimirComerciales();
+}
+
+bool Aeropuerto::existeAvionSegunPlaca(string pla){
+	return AeronavesC->existeAvionSegunPlaca(pla);
+}
+
+Aeronaves* Aeropuerto::buscarAvPorPlaca(string pla){
+	return AeronavesC->busquedaPorPlaca(pla);
+}
+
+bool Aeropuerto::existeAvCivilSegunPlaca(string pla){
+	return AeronavesC->existeAvCivil(pla);
+}
+
+bool Aeropuerto::existeAvComeercialSegunPlaca(string pla){
+	return AeronavesC->existeAvComercial();
+}
+
+bool Aeropuerto::existeComercial(){
+	return AeronavesC->existeComercial();
+}
+
 int Aeropuerto::contarAeronave() { return AeronavesC->contarObjetos(); }
 
 string Aeropuerto::MostrarContratos() {

@@ -12,6 +12,7 @@ public:
 	bool ingresar(Contrato&);
 	string toString();
 	Contrato* busquedaPorCod(string cod);
+	bool existeContratoLigadoAEmpleado(string ced);
 	string reporteAeronaveconTripulacion(); 
 	string ReporteContratoServicio();
 	string ReportePlazoFijo();

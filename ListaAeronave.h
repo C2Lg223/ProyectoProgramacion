@@ -11,7 +11,11 @@ public:
 	bool ingresar(Aeronaves&);
 	string toString();
 	int contarObjetos();
-
+	bool existeAvionSegunPlaca(string pla);
+	Aeronaves* busquedaPorPlaca(string pla);
+	bool existeAvCivil(string pla);
+	bool existeAvComercial(string pla);
+	bool existeComercial();
 	bool eliminarAeronave(string placa);
 	Aeronaves* MayorAreaAcceso();
 	bool existeAvionSegunPlaca(string pla);

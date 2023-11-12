@@ -29,7 +29,7 @@ public:
 
 	//Metodos de Ingreso Contratos 
 	static int MenuTiposContratos();
-	static void IngresarContratoServivio(Aeropuerto*);
+	static void IngresarContratoServicioP(Aeropuerto*);
 	static void IngresarPlazoFijo(Aeropuerto* );
 	static void IngresarTiempoIndefinido(Aeropuerto*);
 

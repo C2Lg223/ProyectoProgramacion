@@ -8,10 +8,10 @@ class Aeronaves {
   protected:
 	Fecha* creacion;
 	double distanciaReco;
-	string Placa;
+	string placa;
 
   public:
-	Aeronaves(Fecha& crea, double disRe, string);;
+	Aeronaves(Fecha& crea, double disRe, string pla);
 	virtual ~Aeronaves();
 	void setDistanciaRecorida(double dr);
 	void setFechaCreacion(Fecha&);

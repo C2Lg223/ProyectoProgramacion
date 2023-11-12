@@ -57,7 +57,7 @@ int ListaAeronave::contarObjetos() {
 	return cont;
 }
 
-bool ListaAeronave::existeAvionSegunPlaca(string pla) {
+bool ListaAeronave::existeAvionSegunPlaca(string pla){
 	NodoAeronave* aux = ppio;
 
 	while (aux != NULL) {
@@ -70,30 +70,103 @@ bool ListaAeronave::existeAvionSegunPlaca(string pla) {
 	return false;
 }
 
-/*Aeronaves* ListaAeronave::MayorAreaAcceso() {
-	Aeronaves* mayor = NULL;
-	NodoAeronave * Pex = ppio;
-	if (Pex != NULL) {
-		mayor = Pex->getAeronave();
-		while (Pex != NULL) {
-			
+Aeronaves* ListaAeronave::busquedaPorPlaca(string pla){
+	NodoAeronave* aux = ppio;
+	while (aux != NULL) {
+		if (aux->getAeronave()->getPlaca() == pla) {
+			return  aux->getAeronave();
 		}
+		aux = aux->getSigNodo();
 	}
-	Persona* obtenerPersonaConMayorSalario() {
-		Persona* mayor = NULL; // solo es una flecha
-		Nodo* PEx = ppio;
-		if (PEx != NULL) {   // Por lo menos hay uno.
-			mayor = PEx->getPersona();
-			while (PEx != NULL) {
-				if (PEx->getPersona()->getSalario() > mayor->getSalario())
-					mayor = PEx->getPersona();
-				PEx = PEx->getSigNodo();
+	return NULL;
+}
+
+bool ListaAeronave::existeAvCivil(string pla){
+	NodoAeronave* aux = ppio;
+	while (aux != NULL) {
+		if ((typeid(*aux->getAeronave()) == typeid(Carga) || typeid(*aux->getAeronave()) == typeid(Comercial)) && aux->getAeronave()->getPlaca() == pla) {
+			return true;
+		}
+		aux = aux->getSigNodo();
+	}
+	return false;
+}
+
+bool ListaAeronave::existeAvComercial(string pla){
+	NodoAeronave* aux = ppio;
+	while (aux != NULL) {
+		if ((typeid(*aux->getAeronave()) == typeid(Comercial)) && aux->getAeronave()->getPlaca() == pla) {
+			return true;
+		}
+		aux = aux->getSigNodo();
+	}
+
+	return false;
+}
+
+bool ListaAeronave::existeComercial(){
+	NodoAeronave* aux = ppio;
+	while (aux != NULL) {
+		if (typeid(*aux->getAeronave()) == typeid(Comercial)) {
+			return true;
+		}
+		aux = aux->getSigNodo();
+	}
+
+	return false;
+}
+
+
+
+
+bool ListaAeronave::hayAvionDeCarga() {
+	NodoAeronave* pt = ppio;
+
+	while (pt != nullptr) {
+		if (typeid(Aeronaves) == typeid(Carga))
+			return true;
+
+		pt = pt->getSigNodo();
+	}
+}
+string ListaAeronave::imprimirComerciales(){
+	NodoAeronave* aux = ppio;
+	stringstream s;
+
+	s << "--------AVIONES COMERCIALES--------" << endl << endl;
+
+	while (aux != NULL) {
+		if (typeid(*aux->getAeronave()) == typeid(Comercial))
+			s << aux->getAeronave()->toString() << endl;
+		aux = aux->getSigNodo();
+
+	}
+
+	return s.str();
+}
+/*  Revisar 
+Aeronaves* ListaAeronave::MayorAreaAcceso() {
+	Aeronaves* mayor = NULL;
+	double AreaMayor = 0;
+	Carga* m = NULL;
+	NodoAeronave* Pex = ppio;
+	
+		while (Pex != NULL) {
+			Aeronaves* Av = Pex->getAeronave();
+			  if (typeid(Aeronaves) == typeid (Carga)){
+				  Carga* car = 
+				  Carga* car = (typeid(Carga) == typeid(Aeronaves));
+				  double area = m->AreaAcceso(); {
+					  if (area > AreaMayor) {
+						  mayor = Pex->getAeronave();
+						  AreaMayor = area;
+
+					  }
+				  }
+
 			}
 		}
-		return mayor;
-	}
-}*/
-
+	
 
 Aeronaves* ListaAeronave::buscarAvionesCivil(string Plac) {
 	NodoAeronave* Pex = ppio;

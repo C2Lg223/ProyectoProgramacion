@@ -15,7 +15,8 @@ class Contrato {
 	   Fecha* FinalizaTrabajo; 
 
 public: 
-	Contrato( string, string, int, Empleado&, Aeronaves&, Fecha&, Fecha&);
+	Contrato(string, string, int, Fecha&, Fecha&, Empleado&);
+	Contrato(string, string, int, Fecha&, Fecha&, Empleado&, Aeronaves&);
 	virtual ~Contrato();
 	//----------Metodos Set-----------------
 	void setCodigo(string);
