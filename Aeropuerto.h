@@ -24,6 +24,13 @@ public:
 	bool ingresarEmpleado(Empleado* );
 	bool ingresarContrato(Contrato* );
 	bool BusquedaConPorCod(string);
+	bool listaEmpleadosVacio();
+	bool existeEmplSegunCedula(string ced);
+	bool existeContratoConEmpleado(string ced);
+	Empleado* BuscarPorCed(string);
+	bool listaAeronaveVacio();
+	string imprimirAeronaves();
+	bool existeAvionSegunPlaca(string pla);
 	int contarAeronave();
 	void MostrarContratos();
 	string MostrarAeronaves();

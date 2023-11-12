@@ -383,7 +383,7 @@ void Interfaz::IngresarContratoServicioP(Aeropuerto* aero) {
 						cout << aero->imprimirAeronaves();
 						cout << "Ingrese el Avion que vinculara con dicho contrato(PLACA): " << endl;
 						cin >> placa;
-						if (aero.existeAvionSegunPlaca(pla)) "NO EXISTE EL AVION";
+						if (aero->existeAvionSegunPlaca(placa)) "NO EXISTE EL AVION";
 						else {
 							av = aero->buscarAvPorPlaca(pla);
 							cont = new ContratoServicio(horario, tipSer, cod, pues, sal, *inicio, *final, *em, *av);

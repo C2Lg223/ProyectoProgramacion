@@ -10,6 +10,7 @@ public:
 	bool estaVacia();
 	bool ingresar(Empleado&);
 	string toString();
+	bool existeEmplSegunCed(string);
 	Empleado* buscarConCedula(string);
 	bool eliminaEmpleado(string ced);
 	bool hayPilotos();

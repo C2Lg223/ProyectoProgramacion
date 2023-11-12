@@ -57,6 +57,21 @@ int ListaAeronave::contarObjetos() {
 	return cont;
 }
 
+bool ListaAeronave::existeAvionSegunPlaca(string pla){
+	NodoAeronave* aux = ppio;
+
+	while (aux != NULL) {
+		if (aux->getAeronave()->getPlaca() == pla) {
+			return true;
+		}
+		aux = aux->getSigNodo();
+	}
+
+	return false;
+}
+
+}
+
 
 bool ListaAeronave::hayAvionDeCarga() {
 	NodoAeronave* pt = ppio;
