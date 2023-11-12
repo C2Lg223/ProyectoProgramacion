@@ -319,10 +319,99 @@ int Interfaz::MenuTiposContratos() {
 	return opc;
 }
 
-void Interfaz::IngresarContratoServivio(Aeropuerto*) {
+void Interfaz::IngresarContratoServicioP(Aeropuerto* aero) {
+	Contrato* cont = nullptr;
+	Aeronaves* av = nullptr;
+	Fecha* inicio;
+	Fecha* final;
+	Empleado* em = nullptr;
+	int sal, d, m, a;
+	string horario, tipSer, cod, pues, ced, placa;
 
 	system("cls");
-	cout << " Completar esto " << endl;
+	
+	if (aero->listaEmpleadosVacio()) "***NO hay empleados***";
+	else {
+		cout << "---------------CREAR UN CONTRATO DE SERVICIOS PROFESIONALES---------------------";
+		cout << endl;
+		cout << "Ingrese Codigo del Contrato: " << endl;
+		cin >> cod;
+		cout << "Ingrese Descripcion del Puesto: " << endl;
+		cin >> pues;
+		cout << "Ingrese el Tipo de Servicio: " << endl;
+		cin >> tipSer;
+		cout << "Ingrese el Salario: " << endl;
+		cin >> sal;
+		cout << "----Ingrese la Fecha de Inicio---- " << endl;
+		cout << "Dia: " << endl;
+		cin >> d;
+		cout << "Mes: " << endl;
+		cin >> m;
+		cout << "Anio: " << endl;
+		cin >> a;
+		cout << endl;
+		inicio = new Fecha(d, m, a);
+
+		cout << "----Ingrese la Fecha Final----" << endl;
+		cout << "Dia: " << endl;
+		cin >> d;
+		cout << "Mes: " << endl;
+		cin >> m;
+		cout << "Anio: " << endl;
+		cin >> a;
+		cout << endl;
+		final = new Fecha(d, m, a);
+
+		cout << "Ingrese el Empleado para dicho Contrato (Cedula): " << endl;
+		cin >> ced;
+	}
+
+	if (aero->existeEmplSegunCedula(ced) == false) "EMPLEADO INEXISTENTE";
+	else {
+		if (aero->existeContratoConEmpleado(ced)) "YA EXISTE UN CONTRATO LIGADO";
+		else {
+			em = aero->BuscarPorCed(ced);
+			if (typeid(*em) == typeid(Administrativa) || typeid(*em) == typeid(Miscelaneos)) {
+				cont = new ContratoServicio(horario, tipSer, cod, pues, sal, *inicio, *final, *em);
+				aero->ingresarContrato(cont);
+
+			}
+			else {
+				if (aero->listaAeronaveVacio()) "NO HAY AVIONES DISPONIBLES";
+				else {
+					if (typeid(*em) == typeid(Piloto)) {
+						cout << aero->imprimirAeronaves();
+						cout << "Ingrese el Avion que vinculara con dicho contrato(PLACA): " << endl;
+						cin >> placa;
+						if (aero.existeAvionSegunPlaca(pla)) "NO EXISTE EL AVION";
+						else {
+							av = aero->buscarAvPorPlaca(pla);
+							cont = new ContratoServicio(horario, tipSer, cod, pues, sal, *inicio, *final, *em, *av);
+							aero->ingresarContrato(cont);
+						}
+					}
+
+					if (typeid(*em) == typeid(Copiloto)) {
+						if (aero.existeAvCivil == false) "NO EXISTE EL AVION";
+						else {
+							cout << aero->imprimirAeronaves();
+							cout << "Ingrese el Avion que vinculara con dicho contrato(PLACA): " << endl;
+							cin >> placa;
+							if (aero.existeAvionSegunPlaca(pla)) "NO EXISTE EL AVION";
+							else {
+								av = aero->buscarAvPorPlaca(pla);
+								cont = new ContratoServicio(horario, tipSer, cod, pues, sal, *inicio, *final, *em, *av);
+								aero->ingresarContrato(cont);
+							}
+						}
+					}
+				}
+			}
+
+		}
+	}
+
+
 
 
 }
