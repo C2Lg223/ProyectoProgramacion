@@ -117,6 +117,20 @@ bool ListaAeronave::existeComercial(){
 }
 
 
+string  ListaAeronave::AeronavesCon20annio(Fecha& actual) {
+	NodoAeronave* Pex = ppio;
+	Aeronaves* avion = Pex->getAeronave();
+
+	while (Pex != NULL) {
+		if (avion->EdadAviones(actual) < 20) {
+			return avion->toString();
+		}
+
+	}
+
+}
+
+
 string ListaAeronave::imprimirComerciales(){
 	NodoAeronave* aux = ppio;
 	stringstream s;

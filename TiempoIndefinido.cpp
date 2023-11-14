@@ -1,7 +1,11 @@
 #include "TiempoIndefinido.h"
 
-TiempoIndefinido::TiempoIndefinido(Plaza& numOne, string cod, string pues, int sala, Empleado& empl, Aeronaves& avion, Fecha& Ingresa, Fecha& finaliza)
-	: nPlaza(&numOne), Contrato(cod, pues, sala, Ingresa, finaliza, empl, avion) {}
+
+TiempoIndefinido::TiempoIndefinido(Plaza& numOne, string cod, string puest, double sal, Fecha& Ingresa, Empleado& empl)
+	:nPlaza(&numOne), Contrato(cod, puest, sal, Ingresa, empl) {}
+
+TiempoIndefinido::TiempoIndefinido(Plaza& numOne, string cod, string pues, double sala,  Fecha& Ingresa, Empleado& empl, Aeronaves& avion)
+	: nPlaza(&numOne), Contrato(cod, pues, sala, Ingresa, empl, avion) {}
 TiempoIndefinido::~TiempoIndefinido() {}
 void TiempoIndefinido::setPlazaC(Plaza& pla) { nPlaza = (Plaza*)&pla; }
 Plaza* TiempoIndefinido::getPlazaC() { return nPlaza; }
@@ -31,4 +35,5 @@ string TiempoIndefinido:: toString() {
 	
 }
 
-bool TiempoIndefinido::EstaExcedido(Fecha&) { return false; }
+bool TiempoIndefinido::ContratoExcedido(Fecha&) { return false; }
+bool TiempoIndefinido::EsPlazoFijo() { return false; }

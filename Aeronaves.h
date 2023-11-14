@@ -20,6 +20,7 @@ class Aeronaves {
 	Fecha* getFechaCreacion();
 	double getDistanciaRecorrida();
 	string getPlaca();
+	int EdadAviones(Fecha&);
 
 	virtual string toString() = 0;
 	virtual bool EsAvionDeCarga() = 0;

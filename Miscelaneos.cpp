@@ -26,3 +26,6 @@ string Miscelaneos::toString() {
 
 }
 bool Miscelaneos::EsPiloto() { return false; }
+
+bool Miscelaneos::EsAdministrativa() { return false; }
+bool Miscelaneos::EsMicelaneos() { return true; }

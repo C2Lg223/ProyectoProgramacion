@@ -11,4 +11,6 @@ public:
 	string getTelefono();
 	string toString();
 	bool EsPiloto();
+	bool EsAdministrativa();
+	bool EsMicelaneos();
 };

@@ -6,12 +6,14 @@ private:
 	Plaza* nPlaza;
 
 public:
-	TiempoIndefinido(Plaza&, string, string, int, Empleado&, Aeronaves&, Fecha&, Fecha&);
+	TiempoIndefinido(Plaza&, string, string, double, Fecha&, Empleado&);
+	TiempoIndefinido(Plaza&, string, string, double,  Fecha&, Empleado&, Aeronaves&);
 	virtual ~TiempoIndefinido();
 	void setPlazaC(Plaza&);
 	Plaza* getPlazaC();
 	string toString();
-	bool EstaExcedido(Fecha&);
+	bool ContratoExcedido(Fecha&);
+	bool EsPlazoFijo();
 
 
 };

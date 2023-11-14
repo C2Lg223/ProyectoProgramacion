@@ -1,8 +1,8 @@
 #include"ContratoServicio.h"
 
-ContratoServicio::ContratoServicio(string hor, string tipServ, string cod, string pues, int sal, Fecha& i, Fecha& f, Empleado& emp) : Contrato(cod, pues, sal, i, f, emp), HorarioLaboral(hor), tipoServicio(tipServ) {}
+ContratoServicio::ContratoServicio(string hor, string tipServ, string cod, string pues, double sal, Fecha& i, Fecha& f, Empleado& emp) : Contrato(cod, pues, sal, i, f, emp), HorarioLaboral(hor), tipoServicio(tipServ) {}
 
-ContratoServicio::ContratoServicio(string hor, string tipServ, string cod, string pues, int sal, Fecha& i, Fecha& f, Empleado& emp, Aeronaves& av) : Contrato(cod, pues, sal, i, f, emp, av), HorarioLaboral(hor), tipoServicio(tipServ) {}
+ContratoServicio::ContratoServicio(string hor, string tipServ, string cod, string pues, double sal, Fecha& i, Fecha& f, Empleado& emp, Aeronaves& av) : Contrato(cod, pues, sal, i, f, emp, av), HorarioLaboral(hor), tipoServicio(tipServ) {}
 
 
 
@@ -31,4 +31,5 @@ string ContratoServicio::toString() {
 	return s.str();
 }
 
-bool ContratoServicio::EstaExcedido(Fecha&) { return false; }
+bool ContratoServicio::ContratoExcedido(Fecha&) { return false; }
+bool ContratoServicio::EsPlazoFijo() { return false; }

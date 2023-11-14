@@ -14,5 +14,7 @@ class Miscelaneos : public Planta {
 	 string getTipoLabor();
 	 string toString();
 	 bool EsPiloto();
+	 bool EsAdministrativa();
+	 bool EsMicelaneos();
 
 };

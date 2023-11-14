@@ -15,11 +15,10 @@ public:
 	bool existeAvCivil(string pla);
 	bool existeAvComercial(string pla);
 	bool existeComercial();
-	bool eliminarAeronave(string placa);
 	Aeronaves* MayorAreaAcceso();
 	bool existeAvionSegunPlaca(string pla);
-	Aeronaves* buscarAvionesCivil(string); 
 	string imprimirComerciales();
+	string AeronavesCon20annio(Fecha&);
 };
 
 

@@ -140,7 +140,7 @@ public:
 	int ControlIngreOpc3() { return Interfaz::MenuTiposContratos(); }
 	void ControlServicioContrato() { return Interfaz::IngresarContratoServicioP(aeropuert); }
 	void ControlPlazoFijo() { return Interfaz::IngresarPlazoFijo(aeropuert); }
-	void ControlTiempoInde() { return Interfaz::IngresarTiempoIndefinido(aeropuert); }
+	void ControlTiempoInde() { return Interfaz::ingresoDeContratoDeTiempoIndefinido(aeropuert); }
 
 	//********************************************* MENU INGRESOS ***************************************************
 
@@ -224,6 +224,7 @@ public:
 
 	int ControManteContrato() { return Interfaz::menuMantContratos(); }
 	void ModificarContrato() { return Interfaz::ModificarContrato(aeropuert); }
+	void EliminarContrato() { return Interfaz::EliminarContrato(aeropuert); }
 	
 	//*************************************************************************************************
 	//    REPORTE 

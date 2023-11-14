@@ -35,3 +35,5 @@ Empleado* Piloto::copia()
 	return new Piloto(cedula, nombre, Ocupacion, edad, aniosExp);
 }
 bool Piloto::EsPiloto() { return true; }
+bool Piloto::EsAdministrativa() { return false; }
+bool Piloto::EsMicelaneos() { return false; }

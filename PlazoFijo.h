@@ -4,9 +4,11 @@
 
 class PlazoFijo : public Contrato {
 public:
-	PlazoFijo(string, string, int, Fecha&, Fecha&, Empleado&, Aeronaves&);
+	PlazoFijo(string, string, double, Fecha&, Fecha&, Empleado&);
+	PlazoFijo(string, string, double, Fecha&, Fecha&, Empleado&, Aeronaves&);
 	virtual~PlazoFijo();
 	string toString();
-	bool EstaExcedido(Fecha& Act);
+	bool ContratoExcedido(Fecha& Act);
 	int TiempoConContratoFijo(Fecha&);
+	bool EsPlazoFijo();
 };

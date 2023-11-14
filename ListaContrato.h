@@ -8,7 +8,7 @@ private:
 public:
 	ListaContrato ();
 	virtual ~ListaContrato ();
-	bool estaVacia();
+	bool listaContratosestaVacia();
 	bool ingresar(Contrato&);
 	string toString();
 	string reporteAeronaveconTripulacion(); 
@@ -20,9 +20,12 @@ public:
 	bool existeContratoLigadoAEmpleado(string ced);
 	string ContratosPlazoFijExcedidos(Fecha& Actual);
 	void BuscaEmplConCed(string );
-	Contrato* busquedaPorCod(string cod);
+	bool existeContradoPorCod(string);
+	Contrato* MostrarPorCod(string cod);
 
-	bool EliminarEmpleado(string ced);
+	bool existeContratosExcedido(Fecha&);
+	bool EliminarEmpleado(string);
+	bool eliminarContrato(string);
 
 
 };

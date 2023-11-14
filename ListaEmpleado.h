@@ -7,7 +7,8 @@ private:
 public:
 	ListaEmpleado();
 	virtual ~ListaEmpleado();
-	bool estaVacia();
+	bool listaEmpleadoVacia();
+		
 	bool ingresar(Empleado&);
 	string toString();
 	Empleado* buscarConCedula(string);

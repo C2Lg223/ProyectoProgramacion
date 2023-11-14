@@ -13,13 +13,13 @@ ListaContrato::~ListaContrato() {
 	}
 }
 
-bool ListaContrato::estaVacia() {
+bool ListaContrato::listaContratosestaVacia() {
 	return(ppio == nullptr);
 }
 
 bool ListaContrato::ingresar(Contrato& contr) {
 	NodoContrato* aux = ppio;
-	if (estaVacia()) {
+	if (listaContratosestaVacia()) {
 		ppio = new NodoContrato(contr, nullptr);
 		return true;
 	}
@@ -46,9 +46,15 @@ string ListaContrato::toString() {
 	}
 	return s.str();
 }
+bool ListaContrato::existeContradoPorCod(string cod) {
+	NodoContrato* Pex = ppio;
 
-Contrato* ListaContrato::busquedaPorCod(string cod) {
-	stringstream s;
+	while (Pex != NULL) {
+		if (Pex->getContrato()->getCodigo() == cod)return true;
+	}
+	return false;
+}
+Contrato* ListaContrato::MostrarPorCod(string cod) {
 	NodoContrato* Pex = ppio;
 
 	while (Pex != NULL) {
@@ -178,7 +184,7 @@ string ListaContrato::ContratosPlazoFijExcedidos(Fecha& Actual) {
 
 	while (Pex != NULL) {
 		Contrato* con = Pex->getContrato();
-		if (typeid(*con) == typeid (PlazoFijo) && con->EstaExcedido(Actual) == true) {
+		if (typeid(*con) == typeid (PlazoFijo) && con->ContratoExcedido(Actual) == true) {
 			s << con->toString() << endl;
 		}
 	}
@@ -240,5 +246,56 @@ bool ListaContrato::EliminarEmpleado(string ced) {
 				 return false;
 			 }
 	}
+}
+
+bool ListaContrato::eliminarContrato(string cod) {
+	NodoContrato* PEx = ppio;
+	NodoContrato* borrado = NULL;
+	bool encontrado = false;
+
+	if (PEx != NULL) {
+		if (PEx->getContrato()->getCodigo() == cod) {
+			borrado = ppio;
+			ppio = borrado->getSigNodo();
+			delete borrado->getSigNodo();
+			delete borrado->getContrato();
+			delete borrado;
+			return true;
+		}else
+		{
+			while (PEx->getSigNodo() != NULL && !encontrado) {
+				if (PEx->getSigNodo()->getContrato()->getCodigo() != cod)
+					PEx = PEx->getSigNodo();
+				else
+					encontrado = true;
+			}
+				if (PEx->getSigNodo() != NULL) {
+					borrado = PEx->getSigNodo();
+					PEx->setSigNodo(borrado->getSigNodo());
+					delete borrado->getContrato();
+					delete borrado;
+					return true;
+				}
+				else
+					return false;
+		}
+	}
+		return false;
+}
+
+
+
+bool ListaContrato::existeContratosExcedido(Fecha& actual) {
+	NodoContrato* Pex = ppio;
+	Contrato* con = Pex->getContrato();
+
+	while (Pex != NULL) {
+		if (con->ContratoExcedido(actual) == true) {
+			return true;
+		}
+	}
+	return  false;
+
+
 }
 

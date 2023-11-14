@@ -28,5 +28,7 @@ string Azafata::toString(){
 }
 bool Azafata::EsPiloto() { return false; }
 
+bool Azafata::EsAdministrativa() { return false; }
+bool Azafata::EsMicelaneos() { return false; }
 
 

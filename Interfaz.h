@@ -31,7 +31,7 @@ public:
 	static int MenuTiposContratos();
 	static void IngresarContratoServicioP(Aeropuerto*);
 	static void IngresarPlazoFijo(Aeropuerto* );
-	static void IngresarTiempoIndefinido(Aeropuerto*);
+	static void ingresoDeContratoDeTiempoIndefinido(Aeropuerto*);
 
 
 
@@ -42,6 +42,7 @@ public:
 	static int menuMantAeronaves();
 	static int menuMantContratos();
 	static void EliminarEmpleado(Aeropuerto* );
+	static void EliminarContrato(Aeropuerto*);
 	// Opcion de editar 
 	
 	static int menuModificarAeronave();
@@ -64,6 +65,7 @@ public:
 	static void R_Tripula_AvionComerciales(Aeropuerto*);
 	static void R_PlazoFijoExcedidos(Aeropuerto*);
 	static void AvionC_MayorAreaAcceso(Aeropuerto*);
+	static void AvionesDe20annio(Aeropuerto*);
 
 	//Cuarta opcion del menu principla CONSULTA 
 	static int menuConsulta();
@@ -77,6 +79,13 @@ public:
 
 	//Mensajes 
 	static void menjDefault();
+	static void  msjExito();
+	static void msjErrorNoHayContratoVencidos();
+	static void msjErrorElCodigoDeLaPlazaEXISTE();
+	static void msjErrorNoExisteContrato();
+	static void  msjNoEsPlazoFijo();
+
+	
 
 };
 

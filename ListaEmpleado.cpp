@@ -13,13 +13,13 @@ ListaEmpleado::~ListaEmpleado(){
 	}
 }
 
-bool ListaEmpleado::estaVacia(){
+bool ListaEmpleado::listaEmpleadoVacia() {
 	return (ppio == nullptr);
 }
 
 bool ListaEmpleado::ingresar(Empleado& empl){
 	NodoEmpleado* aux = ppio;
-	if (estaVacia()) {
+	if (listaEmpleadoVacia()) {
 		ppio = new NodoEmpleado(empl, nullptr);
 		return true;
 	}

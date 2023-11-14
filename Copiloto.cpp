@@ -28,6 +28,8 @@ string Copiloto::toString() {
 
 }
 bool Copiloto::EsPiloto() { return false; }
+bool Copiloto :: EsAdministrativa() { return false; }
+bool Copiloto :: EsMicelaneos() { return false; }
 
 
 

@@ -12,6 +12,8 @@ public:
 	string toString();
 	Empleado* copia();
 	bool EsPiloto();
+	bool EsAdministrativa();
+	bool EsMicelaneos();
 
 
 

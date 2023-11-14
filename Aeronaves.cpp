@@ -17,3 +17,20 @@ double Aeronaves::getDistanciaRecorrida() { return distanciaReco; }
 string Aeronaves::getPlaca(){
 	return placa;
 }
+
+int Aeronaves::EdadAviones(Fecha& actual){
+		int AnnioPF = 0;
+		int diaActual = actual.getDia();
+		int MesActual = actual.getMes();
+		int AnioActual = actual.getAnnio();
+	
+		AnnioPF = AnioActual - creacion->getAnnio();
+
+		//Comprueba si todavia no tiene un annio
+		if (MesActual < creacion->getMes() || (MesActual == creacion->getMes() && diaActual == creacion->getDia())) {
+			AnnioPF--;
+		}
+
+		return AnnioPF;
+
+}

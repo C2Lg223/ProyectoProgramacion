@@ -2,8 +2,11 @@
 
 #include"PlazoFijo.h"
 
-PlazoFijo::PlazoFijo(string cod, string pues, int sala,  Fecha& Ingresa, Fecha& finaliza, Empleado& empl, Aeronaves& avion)
-	:Contrato(cod, pues, sala,Ingresa, finaliza,empl, avion) {}
+PlazoFijo::PlazoFijo(string cod, string pues, double sala,  Fecha& Ingresa, Fecha& finaliza, Empleado& empl)
+	:Contrato(cod, pues, sala,Ingresa, finaliza,empl) {}
+
+PlazoFijo::PlazoFijo(string cod, string pues, double sala, Fecha& Ingresa, Fecha& finaliza, Empleado& empl, Aeronaves& avion)
+	:Contrato(cod, pues, sala, Ingresa, finaliza, empl, avion) {}
 
 PlazoFijo::~PlazoFijo() {}
 string PlazoFijo::toString() {
@@ -39,8 +42,11 @@ int PlazoFijo::TiempoConContratoFijo(Fecha& Actual) {
 
 	return AnnioPF;
 }
-bool PlazoFijo::EstaExcedido(Fecha& Act) {
+bool PlazoFijo::ContratoExcedido(Fecha& Act) {
 	
 	if (TiempoConContratoFijo(Act) > 2)
 		return true;
 }
+
+
+bool PlazoFijo::EsPlazoFijo() { return true; }

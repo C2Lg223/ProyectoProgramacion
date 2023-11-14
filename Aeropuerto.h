@@ -26,8 +26,8 @@ public:
 	bool ingresarAeronave(Aeronaves*);
 	bool ingresarEmpleado(Empleado* );
 	bool ingresarContrato(Contrato* );
-	bool BusquedaConPorCod(string);
-	bool listaEmpleadosVacio();
+	Contrato* BusquedaCodContrato(string);
+	
 	bool existeEmplSegunCedula(string ced);
 	bool existeContratoConEmpleado(string ced);
 	Empleado* BuscarPorCed(string);
@@ -39,6 +39,7 @@ public:
 	bool existeAvCivilSegunPlaca(string pla);
 	bool existeAvComeercialSegunPlaca(string pla);
 	bool existeComercial();
+	bool existeContratoPorCod(string cod);
 	int contarAeronave();
 	string MostrarContratos();
 	string MostrarAeronaves();
@@ -55,7 +56,14 @@ public:
 
 
 	void BuscaEmplConCed(string);
-	Aeronaves* BuscarAvionCivil(string);
+	bool existeContratoExcedido(Fecha&);
+	bool eliminarContratoPorCod(string cod);
+	Aeronaves* BuscarAvion(string Placa);
+
+	bool listaEmpleadoVacia();
+	bool listaContratovacia();
+	string AvionesDe20annios(Fecha& actual);
+
 	
 
 };

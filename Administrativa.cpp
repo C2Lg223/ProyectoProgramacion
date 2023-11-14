@@ -17,3 +17,6 @@ string Administrativa::toString(){
 	return s.str();
 }
 bool Administrativa::EsPiloto() { return false; }
+
+bool Administrativa::EsAdministrativa() { return true; }
+bool Administrativa:: EsMicelaneos() { return false; }
