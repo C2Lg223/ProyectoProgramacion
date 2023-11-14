@@ -563,10 +563,114 @@ void Interfaz::IngresarPlazoFijo(Aeropuerto* aero) {
 
 }
 
-void Interfaz::IngresarTiempoIndefinido(Aeropuerto*) {
-	system("cls");
-	cout << " Completar esto " << endl;
+void Interfaz::IngresarTiempoIndefinido(Aeropuerto* aero) {
+	void Interfaz::ingresoDeContratoDeTiempoIndefinido(Aeropuerto * aero)
+	{
 
+		string codigo, codigoContrato, descripPuesto;
+		Contrato* contrato1 = NULL;
+		Contrato* tiempoIndefinido = NULL;
+		double salario;
+		Fecha* fechaIngreso = NULL;
+		Fecha* ceseLaboral = NULL;
+		Fecha* fechaActual = NULL;
+		Empleado* empleado = NULL;
+		Avion* avion = NULL;
+		Plaza* plazaLaboral = NULL;
+
+		/*  TiempoIndefinido::TiempoIndefinido(string codigo, string descripPuesto, double salario,
+			  Fecha * fechaIngreso, Fecha * ceseLaboral, Empleado * empleado,
+			  Avion * avion, Plaza * plazaLaboral)*/
+
+		int dia, mes, annio;
+
+		system("cls");
+
+		cout << "   Ingrese la fecha actual: " << endl << endl;
+
+		cout << "Dia (dd): ";
+		cin >> dia;
+		cout << "Mes (mm): ";
+		cin >> mes;
+		cout << "Annio (yyyy):";
+		cin >> annio;
+
+		fechaActual = new Fecha(dia, mes, annio);
+
+		if (aero->existenContratosVencidos(fechaActual) == false) msjErrorNoHayContratoVencidos();
+		else {
+			aero->mostrarContratosVencidos(fechaActual);
+			cout << "Ingrese el codigo del contrato que desea convertir a tiempo indefinido" << endl;
+			cin >> codigoContrato;
+			if (aero->noExisteContratoConCodigo(codigoContrato) == true) msjErrorNoExisteContrato();
+			else {
+				contrato1 = aero->buscarContratoPuroConCodigo(codigoContrato);
+				if (contrato1->esPlazoFijo() == false) msjErrorElContratoNoEsPlazoFijo();
+				else {
+					system("cls");
+					Plaza* pla = NULL;
+					string cod, desc;
+
+					cout << endl;
+					cout << "**************" << endl;
+					cout << "          INGRESO DE UNA NUEVA PLAZA        " << endl;
+					cout << "**************" << endl;
+
+					cout << "Ingrese el código de la plaza: ";
+					cin >> cod;
+					if (contrato1->getPlazaLaboral() != NULL) msjErrorElCodigoDeLaPlazaEXISTE();
+					else {
+						cout << "Ingrese la descripción de la plaza: ";
+						cin >> desc;
+						cout << endl;
+
+						pla = new Plaza(cod, desc);
+						system("cls");
+
+						cout << "**************" << endl;
+						cout << "  INGRESO DE CONTRATO TIEMPO INDEFINIDO   " << endl;
+						cout << "**************" << endl;
+
+
+						cout << "Ingrese la nueva descripcion del puesto: ";
+						cin >> descripPuesto;
+
+						cout << "Ingrese el nuevo salario: ";
+						cin >> salario;
+
+						cout << "Ingrese la fecha de ingreso:" << endl;
+						cout << "Dia (dd): ";
+						cin >> dia;
+						cout << "Mes (mm): ";
+						cin >> mes;
+						cout << "Año (yyyy):";
+						cin >> annio;
+
+						fechaIngreso = new Fecha(dia, mes, annio);
+						if (contrato1->getEmpleado()->esAdministrativo() || contrato1->getEmpleado()->esMiscelaneo()) {
+							/* (string codigo, string descripPuesto, double salario,
+								 Fecha * fechaIngreso, Empleado * empleado, Plaza * plazaLaboral)*/
+							tiempoIndefinido = new TiempoIndefinido(contrato1->getCodigo(), descripPuesto, salario, fechaIngreso, contrato1->getEmpleado(), pla);
+							aero->eliminarContratoPorCodigo(contrato1->getCodigo());
+							aero->ingresarContrato(tiempoIndefinido);
+							msjExito();
+						}
+						else {
+
+							/*(string codigo, string descripPuesto, double salario,
+								Fecha * fechaIngreso, Empleado * empleado,
+								Avion * avion, Plaza * plazaLaboral)*/
+
+							tiempoIndefinido = new TiempoIndefinido(contrato1->getCodigo(), descripPuesto, salario, fechaIngreso, contrato1->getEmpleado(), contrato1->getAvion(), pla);
+							aero->eliminarContratoPorCodigo(contrato1->getCodigo());
+							aero->ingresarContrato(tiempoIndefinido);
+							msjExito();
+						}
+					}
+				}
+			}
+		}
+	}
 }
 //-----------------------------------------------------------------------------------------------------------------------------------------------------
 // MANTENIMIENTO 
