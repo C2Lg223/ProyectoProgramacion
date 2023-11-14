@@ -11,7 +11,6 @@ public:
 	bool ingresar(Aeronaves&);
 	string toString();
 	int contarObjetos();
-	bool existeAvionSegunPlaca(string pla);
 	Aeronaves* busquedaPorPlaca(string pla);
 	bool existeAvCivil(string pla);
 	bool existeAvComercial(string pla);
@@ -20,6 +19,7 @@ public:
 	Aeronaves* MayorAreaAcceso();
 	bool existeAvionSegunPlaca(string pla);
 	Aeronaves* buscarAvionesCivil(string); 
+	string imprimirComerciales();
 };
 
 

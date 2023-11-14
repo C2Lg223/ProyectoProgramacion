@@ -11,7 +11,7 @@ string Comercial::toString() {
 			s << "   Fecha de Creacion:  " << creacion->toString(); 
 		}
 		s << "   Distancia Recorrida: " << distanciaReco << endl;
-		s << "   Placa: " << Placa << endl;
+		s << "   Placa: " << placa << endl;
 		s << "   Tipo de avion: " << tipoAvion << endl << endl;
 		s << "   ---------------------------------" << endl;
 		s << "   Avion: " << Servicio::NombreA(categoria) << endl;

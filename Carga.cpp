@@ -16,7 +16,7 @@ string Carga::toString() {
 		s << "El avion fue creado en " << creacion->toString() << endl;
 	}
 	s << "Su distancia recorrida es: " << distanciaReco << endl;
-	s << "Placa: " << Placa << endl;
+	s << "Placa: " << placa << endl;
 	s << "Tipo: " << tipoAvion << endl;
 	s << "Altura de la puerta: " << alturaPuerta << endl;
 	s << "Ancho de la Puerta: " << anchoPuerta << endl;

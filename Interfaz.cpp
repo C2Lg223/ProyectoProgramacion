@@ -290,7 +290,7 @@ void Interfaz::IngresaAvionesMilitares(Aeropuerto* aero) {
 	cin >> placa;
 	cout << endl;
 	creacion = new Fecha(dia, mes, annio);
-	if (aero->contarAeronave() == 15) {
+	if (aero->contarAeronave() > 15) {
 		ae = new Militar(veloc, tipoAvio, categ, *creacion, distaR, placa);
 		aero->ingresarAeronave(ae);
 	}
@@ -374,19 +374,19 @@ void Interfaz::IngresarContratoServicioP(Aeropuerto* aero) {
 		if (aero->existeContratoConEmpleado(ced)) "YA EXISTE UN CONTRATO LIGADO";
 		else {
 			em = aero->BuscarPorCed(ced);
-			if (typeid(*em) == typeid(Administrativa) || typeid(*em) == typeid(Miscelaneos)) {
-				cont = new ContratoServicio(horario, tipSer, cod, pues, sal, *inicio, *final, *em);
-				aero->ingresarContrato(cont);
+		     	if (typeid(*em) == typeid(Administrativa) || typeid(*em) == typeid(Miscelaneos)) {
+			     	cont = new ContratoServicio(horario, tipSer, cod, pues, sal, *inicio, *final, *em);
+			     	aero->ingresarContrato(cont);
 
-			}
+			    }
 			else {
 				if (aero->listaAeronaveVacio()) "NO HAY AVIONES DISPONIBLES";
 				else {
 					if (typeid(*em) == typeid(Piloto)) {
-						cout << aero->imprimirAeronaves();
-						cout << "Ingrese el Avion(PLACA): " << endl;
-						cin >> placa;
-						if (aero->existeAvionSegunPlaca(placa)) "NO EXISTE EL AVION";
+						  cout << aero->imprimirAeronaves();
+						  cout << "Ingrese el Avion(PLACA): " << endl;
+						  cin >> placa;
+						  if (aero->existeAvionSegunPlaca(placa)) "NO EXISTE EL AVION";
 						else {
 							av = aero->buscarAvPorPlaca(placa);
 							cont = new ContratoServicio(horario, tipSer, cod, pues, sal, *inicio, *final, *em, *av);
@@ -394,53 +394,50 @@ void Interfaz::IngresarContratoServicioP(Aeropuerto* aero) {
 						}
 					}
 
-					if (typeid(*em) == typeid(Copiloto)) {
-						if (aero->existeAvCivilSegunPlaca(placa) == false) "NO EXISTE EL AVION";
-						else {
-							cout << aero->imprimirAeronaves();
-							cout << "Ingrese el Avion que vinculara con dicho contrato(PLACA): " << endl;
-							cin >> placa;
-							if (aero->existeAvionSegunPlaca(placa)) "NO EXISTE EL AVION";
-							else {
+				    	if (typeid(*em) == typeid(Copiloto)) {
+					     	if (aero->existeAvCivilSegunPlaca(placa) == false) "NO EXISTE EL AVION";
+					    	else {
+							   cout << aero->imprimirAeronaves();
+							   cout << "Ingrese el Avion que vinculara con dicho contrato(PLACA): " << endl;
+							   cin >> placa;
+							     if (aero->existeAvionSegunPlaca(placa)) "NO EXISTE EL AVION";
+							  else {
 								av = aero->buscarAvPorPlaca(placa);
 								cont = new ContratoServicio(horario, tipSer, cod, pues, sal, *inicio, *final, *em, *av);
 								aero->ingresarContrato(cont);
-							}
-						}
-					}
-					if (typeid(*em) == typeid(Azafata)) {
+							  }
+						    }
+					    }
 
-						if (aero->existeComercial() == false) "NO EXISTE EL AVION";
-						else{
-							system("cls");
-							cout << aero->imprimirComerciales();
-							cout << "   Ingrese el Avion(PLACA): ";
-							cin >> placa; cout << endl;
+				    	if (typeid(*em) == typeid(Azafata)) {
 
-							if (aero->existeAvComeercialSegunPlaca() == false) "NO EXISTE EL AVION";
-							else
-							{
+					     	if (aero->existeComercial() == false) "NO EXISTE EL AVION";
+					    	else{
+							        system("cls");
+							        cout << aero->imprimirComerciales();
+							        cout << "   Ingrese el Avion(PLACA): ";
+							        cin >> placa; cout << endl;
+
+							        if (aero->existeAvComeercialSegunPlaca(placa) == false) "NO EXISTE EL AVION";
+							  else{
 								av = aero->buscarAvPorPlaca(placa);
 
 								cont = new ContratoServicio(horario, tipSer, cod, pues, sal, *inicio, *final, *em, *av);
 								if (aero->ingresarContrato(cont)) "Se logró ingresar";
 
 							
-								}
+							  }
 
 							}
 						}
-					}
+					
 				}
 			}
 
 		}
 	}
+ }
 
-
-
-
-}
 
 void Interfaz::IngresarPlazoFijo(Aeropuerto* aero) {
 	
@@ -496,7 +493,7 @@ void Interfaz::IngresarPlazoFijo(Aeropuerto* aero) {
 		else {
 			em = aero->BuscarPorCed(ced);
 			if (typeid(*em) == typeid(Administrativa) || typeid(*em) == typeid(Miscelaneos)) {
-				cont = new PlazoFijo(horario, tipSer, cod, pues, sal, *inicio, *final, *em);
+				cont = new PlazoFijo(horario, cod, pues, sal, *inicio, *final, *em, *av);
 				aero->ingresarContrato(cont);
 
 			}
@@ -510,7 +507,7 @@ void Interfaz::IngresarPlazoFijo(Aeropuerto* aero) {
 						if (aero->existeAvionSegunPlaca(placa)) "NO EXISTE EL AVION";
 						else {
 							av = aero->buscarAvPorPlaca(placa);
-							cont = new PlazoFijo(horario, tipSer, cod, pues, sal, *inicio, *final, *em, *av);
+							cont = new PlazoFijo(horario, cod, pues, sal, *inicio, *final, *em, *av);
 							aero->ingresarContrato(cont);
 						}
 					}
@@ -524,7 +521,7 @@ void Interfaz::IngresarPlazoFijo(Aeropuerto* aero) {
 							if (aero->existeAvionSegunPlaca(placa)) "NO EXISTE EL AVION";
 							else {
 								av = aero->buscarAvPorPlaca(placa);
-								cont = new PlazoFijo(horario, tipSer, cod, pues, sal, *inicio, *final, *em, *av);
+								cont = new PlazoFijo(horario, cod, pues, sal, *inicio, *final, *em, *av);
 								aero->ingresarContrato(cont);
 							}
 						}
@@ -538,12 +535,12 @@ void Interfaz::IngresarPlazoFijo(Aeropuerto* aero) {
 							cout << "   Ingrese el Avion(PLACA): ";
 							cin >> placa; cout << endl;
 
-							if (aero->existeAvComeercialSegunPlaca() == false) "NO EXISTE EL AVION";
+							if (aero->existeAvComeercialSegunPlaca(placa) == false) "NO EXISTE EL AVION";
 							else
 							{
 								av = aero->buscarAvPorPlaca(placa);
 
-								cont = new PlazoFijo(horario, tipSer, cod, pues, sal, *inicio, *final, *em, *av);
+								cont = new PlazoFijo(horario, cod, pues, sal, *inicio, *final, *em, *av);
 								if (aero->ingresarContrato(cont)) "Se logró ingresar";
 
 
@@ -559,9 +556,6 @@ void Interfaz::IngresarPlazoFijo(Aeropuerto* aero) {
 }
 
 
-
-
-}
 
 void Interfaz::IngresarTiempoIndefinido(Aeropuerto*) {
 	system("cls");

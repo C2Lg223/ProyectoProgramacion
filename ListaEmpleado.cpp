@@ -104,16 +104,5 @@ bool ListaEmpleado::eliminaEmpleado(string ced) {
 	return false;
 }
 
-bool ListaEmpleado::existeEmplSegunCed(string ced) {
-	NodoEmpleado* aux = ppio;
-	while (aux != NULL) {
-		if (aux->getEmpleado()->getCedula() == ced) {
-			return true;
-		}
-		aux = aux->getSigNodo();
-	}
-	return false;
-}
-
 
 

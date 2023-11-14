@@ -10,7 +10,7 @@ void Aeronaves::setDistanciaRecorida(double dr) {
 	distanciaReco = dr;
 }
 void Aeronaves::setFechaCreacion(Fecha& CreacionAvion) { creacion = (Fecha*)&CreacionAvion; }
-void Aeronaves::setPlaca(string Pl) { Placa = Pl; }
+void Aeronaves::setPlaca(string Pl) { placa = Pl; }
 Fecha* Aeronaves::getFechaCreacion() { return creacion; }
 double Aeronaves::getDistanciaRecorrida() { return distanciaReco; }
 

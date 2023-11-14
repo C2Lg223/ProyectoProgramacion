@@ -11,8 +11,6 @@ public:
 	bool estaVacia();
 	bool ingresar(Contrato&);
 	string toString();
-	Contrato* busquedaPorCod(string cod);
-	bool existeContratoLigadoAEmpleado(string ced);
 	string reporteAeronaveconTripulacion(); 
 	string ReporteContratoServicio();
 	string ReportePlazoFijo();
@@ -22,6 +20,7 @@ public:
 	bool existeContratoLigadoAEmpleado(string ced);
 	string ContratosPlazoFijExcedidos(Fecha& Actual);
 	void BuscaEmplConCed(string );
+	Contrato* busquedaPorCod(string cod);
 
 	bool EliminarEmpleado(string ced);
 

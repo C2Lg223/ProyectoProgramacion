@@ -1,7 +1,7 @@
 #include "TiempoIndefinido.h"
 
 TiempoIndefinido::TiempoIndefinido(Plaza& numOne, string cod, string pues, int sala, Empleado& empl, Aeronaves& avion, Fecha& Ingresa, Fecha& finaliza)
-	: nPlaza(&numOne), Contrato(cod, pues, sala,empl, avion, Ingresa, finaliza) {}
+	: nPlaza(&numOne), Contrato(cod, pues, sala, Ingresa, finaliza, empl, avion) {}
 TiempoIndefinido::~TiempoIndefinido() {}
 void TiempoIndefinido::setPlazaC(Plaza& pla) { nPlaza = (Plaza*)&pla; }
 Plaza* TiempoIndefinido::getPlazaC() { return nPlaza; }

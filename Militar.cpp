@@ -24,7 +24,7 @@ string Militar::toString() {
 	if (creacion != NULL) {
 		s << "  El avion fue creado en " << creacion->toString() << endl;
 	}
-	s << "  Placa:  " << Placa << endl;
+	s << "  Placa:  " << placa << endl;
 	s << "  Su distancia recorrida es: " << distanciaReco << endl;
 	s << "--------------------------------" << endl;
 	s << "--------------------------------" << endl;

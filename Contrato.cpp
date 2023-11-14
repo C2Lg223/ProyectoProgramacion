@@ -1,8 +1,7 @@
 #include"Contrato.h"
 
-Contrato::Contrato(string cod, string pues, int sal, Fecha& i, Fecha& f, Empleado& emp) :
-	codigo(cod), Puesto(pues), salario(sal), ingresaTrabajar(&i), FinalizaTrabajo(&f), emple(&emp) {}
-
+Contrato::Contrato(string cod, string pues, int sal, Fecha& i, Fecha& f, Empleado& em)
+	:codigo(cod), Puesto(pues), salario(sal), ingresaTrabajar(&i), FinalizaTrabajo(&f), emple(&em){}
 Contrato::Contrato(string cod, string pues, int sal, Fecha& i, Fecha& f, Empleado& emp, Aeronaves& av) :
 	codigo(cod), Puesto(pues), salario(sal), ingresaTrabajar(&i), FinalizaTrabajo(&f), emple(&emp), avion(&av) {}
 

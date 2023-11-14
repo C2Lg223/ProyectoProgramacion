@@ -170,16 +170,7 @@ string ListaContrato::EmpleadosDeAvionesComerciales() {
 	return s.str();
 }
 
-bool ListaContrato::existeContratoLigadoAEmpleado(string ced) {
-	NodoContrato* aux = ppio;
-	while (aux != NULL) {
-		if (aux->getContrato()->getEmpleado()->getCedula() == ced) {
-			return true;
-		}
-		aux = aux->getSigNodo();
-	}
-	return false;
-}
+
 
 string ListaContrato::ContratosPlazoFijExcedidos(Fecha& Actual) {
 	stringstream s;
@@ -219,7 +210,6 @@ bool ListaContrato::EliminarEmpleado(string ced) {
 		Contrato* aux = Pex->getContrato();
 		Aeronaves* vincu = Pex->getContrato()->getAviones();
 
-		aux->desvincularAeronave();
 		  if (Pex->getContrato()->getEmpleado()->getCedula() == ced) {
 			borrado = ppio;
 			ppio = borrado->getSigNodo();

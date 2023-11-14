@@ -74,7 +74,7 @@ bool Aeropuerto::existeAvCivilSegunPlaca(string pla){
 }
 
 bool Aeropuerto::existeAvComeercialSegunPlaca(string pla){
-	return AeronavesC->existeAvComercial();
+	return AeronavesC->existeAvComercial(pla);
 }
 
 bool Aeropuerto::existeComercial(){
@@ -118,30 +118,6 @@ string Aeropuerto::PilotosDeCarga() {
 
 string Aeropuerto::ReporteEmpleadoEnAvComercial() {
 	return ContratosC->EmpleadosDeAvionesComerciales();
-}
-
-bool Aeropuerto::existeEmplSegunCedula(string ced) {
-	return EmpleadosC->existeEmplSegunCed(ced);
-}
-
-bool Aeropuerto::existeContratoConEmpleado(string ced) {
-	return ContratosC->existeContratoLigadoAEmpleado(ced);
-}
-
-Empleado* Aeropuerto::BuscarPorCed(string ced) {
-	return EmpleadosC->buscarConCedula(ced);
-}
-
-bool Aeropuerto::listaAeronaveVacio() {
-	return AeronavesC->estaVacia();
-}
-
-string Aeropuerto::imprimirAeronaves() {
-	return AeronavesC->toString();
-}
-
-bool Aeropuerto::existeAvionSegunPlaca(string pla) {
-	return AeronavesC->existeAvionSegunPlaca(pla);
 }
 
 string Aeropuerto::ContratosExcedidos(Fecha& Actual) {

@@ -117,18 +117,6 @@ bool ListaAeronave::existeComercial(){
 }
 
 
-
-
-bool ListaAeronave::hayAvionDeCarga() {
-	NodoAeronave* pt = ppio;
-
-	while (pt != nullptr) {
-		if (typeid(Aeronaves) == typeid(Carga))
-			return true;
-
-		pt = pt->getSigNodo();
-	}
-}
 string ListaAeronave::imprimirComerciales(){
 	NodoAeronave* aux = ppio;
 	stringstream s;
@@ -188,3 +176,4 @@ Aeronaves* ListaAeronave::buscarAvionesCivil(string Plac) {
 }
 
 
+*/

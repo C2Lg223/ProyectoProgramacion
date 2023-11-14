@@ -2,8 +2,8 @@
 
 #include"PlazoFijo.h"
 
-PlazoFijo::PlazoFijo(string cod, string pues, int sala, Empleado& empl, Aeronaves& avion, Fecha& Ingresa, Fecha& finaliza)
-	:Contrato(cod, pues, sala,empl, avion, Ingresa, finaliza) {}
+PlazoFijo::PlazoFijo(string cod, string pues, int sala,  Fecha& Ingresa, Fecha& finaliza, Empleado& empl, Aeronaves& avion)
+	:Contrato(cod, pues, sala,Ingresa, finaliza,empl, avion) {}
 
 PlazoFijo::~PlazoFijo() {}
 string PlazoFijo::toString() {
