@@ -283,6 +283,41 @@ bool ListaContrato::eliminarContrato(string cod) {
 		return false;
 }
 
+/*bool ListaContrato::eliminarAeronaves(string Placa) {
+	string nuevaPlaca;
+	NodoContrato* PEx = ppio;
+	NodoContrato* borrado = NULL;
+	bool encontrado = false;
+
+	if (PEx->getContrato()->getAviones()->getPlaca() == Placa) {
+		Aeronaves* aeronavesBorrada = PEx->getContrato()->getAviones();
+		Contrato* contratoActual = PEx->getContrato();
+
+		if (PEx == ppio) {
+			ppio = ppio->getSigNodo();
+		}
+		else {
+			borrado->setSigNodo(PEx->getSigNodo());
+		}
+		delete aeronavesBorrada;
+		delete PEx;
+
+		NodoContrato* temp = ppio;
+
+		while (temp != nullptr) {
+			if (temp->getContrato()->getAviones()->getPlaca () == nuevaPlaca) {
+				Aeronaves* avion = temp->getContrato()->getAviones();
+				if (avion->)
+				
+			}
+		}
+	}
+
+
+
+}*/
+
+
 
 
 bool ListaContrato::existeContratosExcedido(Fecha& actual) {

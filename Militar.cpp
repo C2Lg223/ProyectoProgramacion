@@ -38,3 +38,4 @@ string Militar::toString() {
 
 bool Militar::EsAvionComercial() { return false; }
 bool Militar::EsAvionDeCarga() { return false; }
+double Militar::AreaAcceso() { return 0; }

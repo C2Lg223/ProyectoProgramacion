@@ -29,3 +29,5 @@ bool Comercial::EsAvionDeCarga() {
 	return false;
 }
 bool Comercial::EsAvionComercial() { return true; }
+
+double Comercial::AreaAcceso() { return 0; }

@@ -63,6 +63,7 @@ public:
 	bool listaEmpleadoVacia();
 	bool listaContratovacia();
 	string AvionesDe20annios(Fecha& actual);
+	Aeronaves* MayorAreaAcceso();
 
 	
 

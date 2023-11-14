@@ -214,10 +214,17 @@ public:
 	void MenuMantContrato() {
 		int opc;
 		
+		do {
 			opc = ControlMantenimiento();
-			if (opc == 1) {
-			    ModificarContrato();
+
+			switch (opc) {
+			case 1: EliminarContrato(); break;
+			case 2: ModificaEmpleado(); break;
+			default:
+				MensajeDefault();
+				break;
 			}
+		} while (opc != 3);
 			
 
 	}
@@ -235,30 +242,27 @@ public:
 
 			opc = ControlMenuReportes();
 			switch (opc){
-			case 1:  R_ContratoEmp(); break;
-			case 2:  R_ContratoEmp(); break;
-			case 3:  R_AeronaveTripu(); break;
-			case 4:  R_Aeronaves()    ; break;
-			case 5:  R_Empleados()    ; break;
-			case 6:  R_PilotosA_Carga(); break;
-			case 7:  R_ContratoServicio(); break;
-			case 8:  R_PlazoFijo(); break;
-			case 9:  R_TiempoInd(); break;
-			case 10: R_TripAvionComercial(); break;
-			case 11: R_PlazoFijoEx(); break;
-			case 12: R_AvMayorAcceso(); break;
+			   case 1: R_ContratoEmp(); break;
+			   case 2: R_AeronaveTripu(); break;
+			   case 3: R_Aeronaves(); break;
+			   case 4: R_Empleados(); break;
+			   case 5: R_PilotosA_Carga(); break;
+			   case 6: R_AvionesCon20(); break;
+			   case 7:R_ContratoServicio(); break;
+			   case 8: R_PlazoFijo(); break;
+			   case 9: R_TiempoInd(); break;
+			   case 10: R_TripAvionComercial(); break;
+			   case 11: R_PlazoFijoEx(); break;
+			   case 12: R_AvMayorAcceso(); break;
 
-			default:
+			
+			   default:
 				MensajeDefault();
 				break;
 			}
 
 
-
-
-
-
-		} while (opc != 12);
+		} while (opc != 13);
 	}
 
 	int ControlMenuReportes() { return Interfaz::menuReportes (); }
@@ -267,6 +271,7 @@ public:
 	void R_Aeronaves() { return Interfaz::MostrarAeronaves(aeropuert);}
 	void R_Empleados() {return Interfaz::ReporteEmpleadoTodos(aeropuert);}
 	void R_PilotosA_Carga() { return Interfaz::Pilotos_AvionesCarga(aeropuert); }
+    void R_AvionesCon20() { return Interfaz::AvionesDe20annio(aeropuert); }
 	void R_ContratoServicio() { return Interfaz::ReporteContratoServicio(aeropuert); }
 
 	void R_PlazoFijo() { return Interfaz::ReportaC_PlazoFijo(aeropuert); }
@@ -274,6 +279,7 @@ public:
 	void R_TripAvionComercial() { return Interfaz::R_Tripula_AvionComerciales(aeropuert); }
 	void R_PlazoFijoEx() { return Interfaz::R_PlazoFijoExcedidos(aeropuert); }
 	void R_AvMayorAcceso() { return Interfaz::AvionC_MayorAreaAcceso(aeropuert); }
+	
 
 
 	//*************************************************************************************************

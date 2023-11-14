@@ -156,3 +156,8 @@ bool Aeropuerto::listaContratovacia()
 string Aeropuerto::AvionesDe20annios(Fecha& actual) {
 	return AeronavesC->AeronavesCon20annio(actual);
 }
+
+
+Aeronaves* Aeropuerto::MayorAreaAcceso() {
+	return AeronavesC->MayorAreaAcceso();
+}

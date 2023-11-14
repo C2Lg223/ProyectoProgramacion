@@ -13,6 +13,7 @@ public:
 	virtual string toString() = 0;
 	virtual bool EsAvionDeCarga() = 0;
 	virtual bool EsAvionComercial() = 0;
+	virtual double AreaAcceso() = 0;
 
 };
 

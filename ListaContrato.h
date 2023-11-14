@@ -26,6 +26,7 @@ public:
 	bool existeContratosExcedido(Fecha&);
 	bool EliminarEmpleado(string);
 	bool eliminarContrato(string);
+	//bool eliminarAeronaves(string);
 
 
 };

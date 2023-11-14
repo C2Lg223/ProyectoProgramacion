@@ -1013,6 +1013,7 @@ void Interfaz::ReporteEmpleadoTodos(Aeropuerto* aero) {
 	cout << " Mostrar todas los Empleados " << endl;
 	cout<< aero->MostrarEmpleado();
 	cout << " <=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=>" << endl;
+	system("pause");
 }
 
 //opcion 5 
@@ -1115,8 +1116,9 @@ void Interfaz::R_PlazoFijoExcedidos(Aeropuerto* aero) {
 
 
 //Opcion 12 
-void Interfaz::AvionC_MayorAreaAcceso(Aeropuerto*) {
+void Interfaz::AvionC_MayorAreaAcceso(Aeropuerto* aer) {
 	cout << " <=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=>" << endl;
+	cout << aer->MayorAreaAcceso() << endl;
 	
 }
 
@@ -1154,6 +1156,7 @@ void Interfaz::BusquedaEmpleado(Aeropuerto* aero) {
 	cout << "  Digite el numero de ced: " << endl;
 	cin >> ced;
 	aero->BuscaEmplConCed(ced);
+	
 
 
 }

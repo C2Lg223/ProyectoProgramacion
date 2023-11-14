@@ -146,48 +146,27 @@ string ListaAeronave::imprimirComerciales(){
 
 	return s.str();
 }
-/*  Revisar 
 Aeronaves* ListaAeronave::MayorAreaAcceso() {
-	Aeronaves* mayor = NULL;
-	double AreaMayor = 0;
-	Carga* m = NULL;
-	NodoAeronave* Pex = ppio;
-	
-		while (Pex != NULL) {
-			Aeronaves* Av = Pex->getAeronave();
-			  if (typeid(Aeronaves) == typeid (Carga)){
-				  Carga* car = 
-				  Carga* car = (typeid(Carga) == typeid(Aeronaves));
-				  double area = m->AreaAcceso(); {
-					  if (area > AreaMayor) {
-						  mayor = Pex->getAeronave();
-						  AreaMayor = area;
+	Aeronaves* mayor = nullptr;
 
-					  }
-				  }
+	NodoAeronave* Pex = ppio;
+	if (Pex != NULL) {
+		mayor = Pex->getAeronave();
+
+		while (Pex != NULL) {
+			if (typeid(*mayor) == typeid (Carga)) {
+				if (Pex->getAeronave()->AreaAcceso() > mayor->AreaAcceso()) {
+					mayor = Pex->getAeronave();
+					Pex = Pex->getSigNodo();
+				}
+
+
 
 			}
+
 		}
-	
-
-Aeronaves* ListaAeronave::buscarAvionesCivil(string Plac) {
-	NodoAeronave* Pex = ppio;
-	Aeronaves* avion = Pex->getAeronave();
-
-
-	while (Pex != NULL) {
-
-		if(typeid(*avion)==typeid(AviacionCivil)){
-		if (avion->getPlaca() == Plac) {
-			return avion;
-		 }
-		}
-		Pex = Pex->getSigNodo();
-
 	}
 
-	return nullptr;
+	return mayor;
 }
-
-
-*/
+	

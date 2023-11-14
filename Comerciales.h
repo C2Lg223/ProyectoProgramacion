@@ -12,4 +12,5 @@ public:
 	string toString();
 	bool EsAvionDeCarga();
 	bool EsAvionComercial();
+	double AreaAcceso();
 };
