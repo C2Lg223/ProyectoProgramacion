@@ -24,10 +24,10 @@ int Interfaz::menuIngresos(){
 	int opc;
 	system("cls");
 	cout << "**************************** INGRESAR ******************************" << endl;
-	cout << "(1). Avion " << endl;
-	cout << "(2). Empleado" << endl;
-	cout << "(3). Contrato " << endl;
-	cout << "(4). Atras" << endl;
+	cout << "   (1). Avion " << endl;
+	cout << "   (2). Empleado" << endl;
+	cout << "   (3). Contrato " << endl;
+	cout << "   (4). Atras" << endl;
 	cout << "********Digitar una opcion********" << endl;
 	cin >> opc;
 	return opc;
@@ -41,12 +41,12 @@ int Interfaz::menuIngresoEmpleados()
 	int opc;
 	system("cls");
 	cout << "**************************** INGRESAR EMPLEADO ******************************" << endl;
-	cout << "(1). Piloto" << endl;
-	cout << "(2). Copiloto " << endl;
-	cout << "(3). Azafata " << endl;
-	cout << "(4). Administrativos " << endl;
-	cout << "(5). Miscelaneo" << endl;
-	cout << "(6).Menu Anterior " << endl;
+	cout << "   (1). Piloto" << endl;
+	cout << "   (2). Copiloto " << endl;
+	cout << "   (3). Azafata " << endl;
+	cout << "   (4). Administrativos " << endl;
+	cout << "   (5). Miscelaneo" << endl;
+	cout << "   (6).Menu Anterior " << endl;
 	cout << "********Digitar una opcion********" << endl;
 	cin >> opc;
 	return opc;
@@ -60,15 +60,15 @@ void Interfaz::ingresarPiloto(Aeropuerto* aero){
 
 	system("cls");
 	cout << "-----------------INGRESAR UN PILOTO-----------------" << endl;
-	cout << "Digite Cedula: " << endl;
+	cout << "   Digite Cedula: " << endl;
 	cin >> ced;
-	cout << "Digite Nombre: " << endl;
+	cout << "   Digite Nombre: " << endl;
 	cin >> nom;
-	cout << "Digite la Ocupacion: " << endl;
+	cout << "  Digite la Ocupacion: " << endl;
 	cin >> ocu;
-	cout << "Digite la Edad: " << endl;
+	cout << "  Digite la Edad: " << endl;
 	cin >> ed;
-	cout << "Digite los Anios de Experiencia: " << endl;
+	cout << "  Digite los Anios de Experiencia: " << endl;
 	cin >> aE;
 	cout << endl;
 
@@ -85,15 +85,15 @@ void Interfaz::ingresaCopilotos(Aeropuerto* aero){
 	system("cls");
 
 	cout << "----------INGRESAR UN COPILOTO--------------" << endl;
-	cout << "Digite Cedula: " << endl;
+	cout << "   Digite Cedula: " << endl;
 	cin >> ced;
-	cout << "Digite Nombre: " << endl;
-	cin >> nom;
-	cout << "Digite Ocupacion: " << endl;
-	cin >> ocu;
-	cout << "Digite Edad: " << endl;
+	cout << "   Digite Nombre: " << endl;
+	getline(cin, nom);
+	cout << "   Digite Ocupacion: " << endl;
+	getline(cin, ocu);
+	cout << "   Digite Edad: " << endl;
 	cin >> ed;
-	cout << "Digite el Telefono: " << endl;
+	cout << "   Digite el Telefono: " << endl;
 	cout << "--------------------------------------------" << endl;
 
 	cop = new Copiloto(ced, nom, ocu, ed, tel);
@@ -107,20 +107,24 @@ void Interfaz::ingresaAzafata(Aeropuerto* aero){
 
 	system("cls");
 	cout << "------------INGRESAR UNA AZAFATA------------" << endl;
-	cout << "Digite Cedula: " << endl;
+	cout << "  Digite Cedula: " << endl;
 	cin >> ced;
-	cout << "Digite Nombre: " << endl;
-	cin >> nom;
-	cout << "Digite Ocupacion: " << endl;
-	cin >> ocu;
-	cout << "Digite Edad: " << endl;
+	cout << "  Digite Nombre: " << endl;
+	getline(cin, nom);
+	cout << "  Digite Ocupacion: " << endl;
+	getline(cin, ocu);
+	cout << "  Digite Edad: " << endl;
 	cin >> ed;
-	cout << "Digite Nacionalidad: " << endl;
+	cout << "  Digite Nacionalidad: " << endl;
 	cin >> nac;
 	cout << "---------------------------------------------" << endl;
 
 	az = new Azafata(ced, nom, ocu, ed, nac);
 	aero->ingresarEmpleado(az);
+	if (aero->ingresarEmpleado(az)) {
+		cout << "  Se ha ingresado correctamente AZAFATA" << endl;
+	}
+	
 }
 
 void Interfaz::ingreasaAdministrativos(Aeropuerto* aero) {
@@ -130,21 +134,25 @@ void Interfaz::ingreasaAdministrativos(Aeropuerto* aero) {
 	
 	system("cls");
 	cout << "------------INGRESAR UNA ADMINISTRATIVO------------" << endl;
-	cout << "Digite Cedula: " << endl;
+	cout << "   Digite Cedula: " << endl;
 	cin >> ced;
-	cout << "Digite Nombre: " << endl;
-	cin >> nom;
-	cout << "Digite Ocupacion: " << endl;
-	cin >> ocu;
-	cout << "Digite Edad: " << endl;
+	cout << "   Digite Nombre: " << endl;
+	getline(cin, nom);
+	cout << "   Digite Ocupacion: " << endl;
+	getline(cin, ocu);
+	cout << "   Digite Edad: " << endl;
 	cin >> ed;
-	cout << "Digite Tipo Administrativo (Secretario, Recepcionista, etc): " << endl;
+	cout << "   Digite Tipo Administrativo (Secretario, Recepcionista, etc): " << endl;
 	cin >> ed;
-	cout << "Digite Titulo Universitario: " << endl;
+	cout << "   Digite Titulo Universitario: " << endl;
 	cin >> tit;
 	cout << "---------------------------------------------" << endl;
 	adm = new Administrativa(tit, tipAdmi, ced, nom, ocu, ed);
-	aero->ingresarEmpleado(adm);
+
+	if (aero->ingresarEmpleado(adm)) {
+		cout << " Se ha ingresado Corectamente " << endl;
+	}
+
 }
 
 void Interfaz::ingresaMiscelaneo(Aeropuerto* aero){
@@ -153,25 +161,26 @@ void Interfaz::ingresaMiscelaneo(Aeropuerto* aero){
 	Empleado* Mis = nullptr;
 
 	system("cls");
-	cout << "------------INGRESAR UNA ADMINISTRATIVO------------" << endl;
-	cout << "Digite Cedula: " << endl;
+	cout << "------------INGRESAR UN  MICELANEO ------------" << endl;
+	cout << "\n   Digite Cedula: ";
 	cin >> ced;
-	cout << "Digite Nombre: " << endl;
-	cin >> nom;
-	cout << "Digite Ocupacion: " << endl;
-	cin >> ocu;
-	cout << "Digite Edad: " << endl;
+	cout << "\n   Digite Nombre: ";
+	getline(cin, nom);
+	cout << "\n   Digite Ocupacion: ";
+	getline(cin, ocu);
+	cout << "\n   Digite Edad: ";
 	cin >> ed;
-	cout << "Digite el Grado de Escolaridad: " << endl;
+	cout << "\n   Digite el Grado de Escolaridad: ";
 	cin >> escolaridad;
-	cout << "Escriba el area donde Laboran: " << endl;
-	cout << " 1. Area de Cargo" << endl << " 2. Area de Descarga" << endl << " 3. Aseo y ornato" << endl
-		<< "4. Cuido en el edificio" << endl<<" 5. Pistas de aterrizaje" << endl << "6. Terminal " << endl;
-	cin >> labor;
+	cout << "\n   Digite el area donde Laboran" << endl;
+    cout<<"(Area de Cargo, Area de Descarga, Aseo y ornato, Cuido en el edificio, Pistas de aterrizaje, Terminal) : " << endl;
+	getline(cin, labor);
 	cout << "---------------------------------------------" << endl;
 
 	Mis = new Miscelaneos(escolaridad, labor, ced, nom, ocu, ed);
-	aero->ingresarEmpleado(Mis);
+	if (aero->ingresarEmpleado(Mis)) {
+		msjExito();
+	}
 }
 
 //*****************************************************************************************************************************************************
@@ -205,13 +214,13 @@ void Interfaz::IngresarAvionComercial(Aeropuerto* aero) {
 
 	system("cls");
 	cout << " ---------INGRESAR AVION COMERCIAL--------" << endl;
-	cout << "  Ingrese la Categoria:  ";
+	cout << " Ingrese la Categoria:  ";
 	cin >> categ; cout << endl;
-	cout << "  Ingrese la placa: ";
+	cout << " Ingrese la placa: ";
 	cin >> pla; 
 	cout << "\n Digite el tipo de avion  (PasilloUnico o DoblePasillo) " << endl;
 	cin >> tipoAvio;
-	cout << " Ingrese la fecha de Creacion: " << endl;
+	cout << "\n Ingrese la fecha de Creacion: " << endl;
 	cout << " Dia: ";
 	cin >> dia;
 	cout << " Mes: ";
@@ -223,7 +232,10 @@ void Interfaz::IngresarAvionComercial(Aeropuerto* aero) {
 
 	cre = new Fecha(dia, mes, annio);
     ae = new Comercial(categ, tipoAvio, *cre, distar, pla);
-	aero->ingresarAeronave(ae);
+	if (aero->ingresarAeronave(ae)) {
+		msjExito();
+	}
+	
 
 }
 
@@ -239,8 +251,8 @@ void Interfaz::IngresarAvionesCargas(Aeropuerto* aero) {
 	cout << " Ingrese la Categoria:  ";
 	cin >> categ; cout << endl;
 	cout << "\n Digite el tipo de avion:  ( Escotilla y puerta lateral) )" << endl;
-	cin >> tipoAvio;
-	cout << " Ingrese la fecha de Creacion: " << endl;
+	getline(cin, tipoAvio);
+	cout << "\n Ingrese la fecha de Creacion: " << endl;
 	cout << "Dia: ";
 	cin >> dia;
 	cout << " Mes: ";
@@ -257,7 +269,9 @@ void Interfaz::IngresarAvionesCargas(Aeropuerto* aero) {
 
 	cre = new Fecha(dia, mes, annio);
 	ae = new Carga(categ, alturaPuer, anchoPuer, tipoAvio, *cre, distaR, pla );
-	aero->ingresarAeronave(ae);
+
+
+	if (aero->ingresarAeronave(ae)) { msjExito(); }
 
 }
 
@@ -284,7 +298,7 @@ void Interfaz::IngresaAvionesMilitares(Aeropuerto* aero) {
 	cin >> dia;
 	cout << "\n Mes: ";
 	cin >> mes;
-	cout << " \n Annio: ";
+	cout << "\n Annio: ";
 	cin >> annio;
 	cout << "Digite la Placa: " << endl;
 	cin >> placa;
@@ -337,35 +351,35 @@ void Interfaz::IngresarContratoServicioP(Aeropuerto* aero) {
 	else {
 		cout << "---------------CREAR UN CONTRATO DE SERVICIOS PROFESIONALES---------------------";
 		cout << endl;
-		cout << "Ingrese Codigo del Contrato: " << endl;
+		cout << "  Ingrese Codigo del Contrato: ";
 		cin >> cod;
-		cout << "Ingrese Descripcion del Puesto: " << endl;
+		cout << "\n  Ingrese Descripcion del Puesto: ";
 		cin >> pues;
-		cout << "Ingrese el Tipo de Servicio: " << endl;
+		cout << "\n  Ingrese el Tipo de Servicio: ";
 		cin >> tipSer;
-		cout << "Ingrese el Salario: " << endl;
+		cout << "\n  Ingrese el Salario: ";
 		cin >> sal;
-		cout << "----Ingrese la Fecha de Inicio---- " << endl;
-		cout << "Dia: " << endl;
+		cout << "\n----Ingrese la Fecha de Inicio---- " << endl;
+		cout << "  Dia: " << endl;
 		cin >> d;
-		cout << "Mes: " << endl;
+		cout << "  Mes: " << endl;
 		cin >> m;
-		cout << "Anio: " << endl;
+		cout << "  Anio: " << endl;
 		cin >> a;
 		cout << endl;
 		inicio = new Fecha(d, m, a);
 
-		cout << "----Ingrese la Fecha Final----" << endl;
-		cout << "Dia: " << endl;
+		cout << "\n----Ingrese la Fecha Final----" << endl;
+		cout << "  Dia: ";
 		cin >> d;
-		cout << "Mes: " << endl;
+		cout << "\n  Mes: ";
 		cin >> m;
-		cout << "Anio: " << endl;
+		cout << "\n  Anio: ";
 		cin >> a;
 		cout << endl;
 		final = new Fecha(d, m, a);
 
-		cout << "Ingrese el Empleado para dicho Contrato (Cedula): " << endl;
+		cout << "  Ingrese el Empleado para dicho Contrato (Cedula): " << endl;
 		cin >> ced;
 	}
 
@@ -552,7 +566,7 @@ void Interfaz::IngresarPlazoFijo(Aeropuerto* aero) {
 					}
 				}
 			}
-			
+		
 		}
 	 }
 
@@ -985,6 +999,7 @@ void Interfaz::MostrarContratos(Aeropuerto* aero) {
 	cout<<" <=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=>" << endl;
 	cout << "              Contratos los Empleado " << endl;
 	cout<<aero->MostrarContratos();
+	system("pause");
 
 }
 //opcion 2  REPORTES
@@ -994,6 +1009,7 @@ void Interfaz::ReportesAeronavesyTripula(Aeropuerto* aero) {
 	cout << " <=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=>" << endl;
 	cout << " Reportes de Aeronaves con su tripulacion " << endl; 
 	cout<<aero->reporteAeronavesTripulacion();
+	system("pause");
 }
 
 
@@ -1004,6 +1020,7 @@ void Interfaz::MostrarAeronaves(Aeropuerto* aero) {
 	cout << "      Mostrar todas las Aeronaves     " << endl;
     cout<<	aero->MostrarAeronaves();
 	cout << " <=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=>" << endl;
+	system("pause");
 }
 
 //opcion 4  REPORTES
@@ -1022,6 +1039,7 @@ void Interfaz::Pilotos_AvionesCarga(Aeropuerto* aero) {
 	cout << " <=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=>" << endl;
 	cout << aero->PilotosDeCarga() << endl;
 	cout << " <=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=>" << endl;
+	system("pause");
 
 }
 
@@ -1031,8 +1049,8 @@ void Interfaz::AvionesDe20annio(Aeropuerto* aero) {
 	system("cls");
 	if (aero->listaAeronaveVacio() != true) {
 		cout << " <=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=>" << endl;
-		cout << "  Digite la Fecha Actual: ";
-		cout << " Dia:  "; 
+		cout << "   Digite la Fecha Actual: ";
+		cout << "  Dia:  "; 
 		cin >> dia;
 		cout << "  Mes: ";
 		cin >> mes;
