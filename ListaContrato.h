@@ -20,6 +20,7 @@ public:
 	bool existeContratoLigadoAEmpleado(string ced);
 	string ContratosPlazoFijExcedidos(Fecha& Actual);
 	void BuscaEmplConCed(string );
+	Empleado* buscaEmpEnAvion(string pla);
 	bool existeContradoPorCod(string);
 	Contrato* MostrarPorCod(string cod);
 

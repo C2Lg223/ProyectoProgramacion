@@ -769,6 +769,38 @@ void Interfaz::EliminarContrato(Aeropuerto* aer) {
 
 
 }
+
+void Interfaz::EliminarAeronave(Aeropuerto* aero){
+	Empleado* em = nullptr;
+	string placa;
+	bool error = false;
+	system("cls");
+
+	if (aero->listaAeronaveVacio()) {
+		cout << "/*//*//*//*/NO HAY AVIONES /*//*//*//*//*//*//" << endl;
+	}
+	else {
+		cout << "....................................................." << endl;
+		cout << "          Eliminar Aeronave  " << endl;
+		cout << "....................................................." << endl << endl;
+		cout << aero->imprimirAeronaves() << endl;
+		cout << "  Digite la Placa del Avion : " << endl;
+		cin >> placa;
+		if (aero->existeAvionSegunPlaca(placa) == false) {
+			cout << "NO EXISTE EL AVION" << endl;
+		}
+		else {
+			em = aero->buscarEmpleadoPorAvi(placa);
+			while (em != nullptr) {
+				cout << "NO SE PUEDE ELIMINAR AVION, CONTIENE TRIPULANTES" << endl;
+			}
+			aero->eliminarAvionPorPlaca(placa);
+			cout << "SE LOGRÓ ELIMINAR" << endl;
+		}
+	}
+
+
+}
 	
 
 	

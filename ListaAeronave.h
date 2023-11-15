@@ -16,6 +16,7 @@ public:
 	bool existeAvComercial(string pla);
 	bool existeComercial();
 	Aeronaves* MayorAreaAcceso();
+	bool eliminarAvionPorPlaca(string pla);
 	bool existeAvionSegunPlaca(string pla);
 	string imprimirComerciales();
 	string AeronavesCon20annio(Fecha&);

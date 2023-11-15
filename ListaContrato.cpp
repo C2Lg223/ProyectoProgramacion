@@ -207,6 +207,19 @@ void  ListaContrato::BuscaEmplConCed(string ced) {
 	cout << s.str();
 }
 
+Empleado* ListaContrato::buscaEmpEnAvion(string pla){
+	NodoContrato* aux = ppio;
+	while (aux != NULL) {
+		if (typeid(*aux->getContrato()->getEmpleado()) != typeid(Administrativa) && typeid(*aux->getContrato()->getEmpleado()) != typeid(Miscelaneos) && aux->getContrato()->getAviones()->getPlaca() == pla) {
+			return  aux->getContrato()->getEmpleado();
+		}
+		aux = aux->getSigNodo();
+
+	}
+
+	return NULL;
+}
+
 bool ListaContrato::EliminarEmpleado(string ced) {
 	NodoContrato* Pex = ppio;
 	NodoContrato* borrado = NULL;

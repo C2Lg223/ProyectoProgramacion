@@ -31,6 +31,8 @@ public:
 	bool existeEmplSegunCedula(string ced);
 	bool existeContratoConEmpleado(string ced);
 	Empleado* BuscarPorCed(string);
+	Empleado* buscarEmpleadoPorAvi(string pla);
+	bool eliminarAvionPorPlaca(string pla);
 	bool listaAeronaveVacio();
 	string imprimirAeronaves();
 	string imprimirComerciales();

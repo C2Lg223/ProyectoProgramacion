@@ -43,6 +43,7 @@ public:
 	static int menuMantContratos();
 	static void EliminarEmpleado(Aeropuerto* );
 	static void EliminarContrato(Aeropuerto*);
+	static void EliminarAeronave(Aeropuerto*);
 	// Opcion de editar 
 	
 	static int menuModificarAeronave();

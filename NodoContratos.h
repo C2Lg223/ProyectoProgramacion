@@ -3,6 +3,13 @@
 #include"ContratoServicio.h"
 #include"PlazoFijo.h"
 #include"TiempoIndefinido.h"
+#include"Piloto.h"
+#include"Copiloto.h"
+#include"Azafata.h"	
+#include"Miscelaneos.h"
+#include"Administrativa.h"
+#include"AviacionCivil.h"
+#include"ContratoServicio.h"
 
 class NodoContrato {
 

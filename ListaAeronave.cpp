@@ -169,4 +169,29 @@ Aeronaves* ListaAeronave::MayorAreaAcceso() {
 
 	return mayor;
 }
+
+bool ListaAeronave::eliminarAvionPorPlaca(string pla){
+	NodoAeronave* aux = ppio;
+	NodoAeronave* anterior = NULL;
+
+	if (!estaVacia() && aux->getAeronave()->getPlaca() == pla) {
+		NodoAeronave* actual = ppio;
+		if (!estaVacia()) {
+			ppio = actual->getSigNodo();
+			delete actual;
+			return true;
+		}
+	}
+	else
+		if (!estaVacia()) {
+			while (aux != NULL && aux->getAeronave()->getPlaca() != pla) {
+				anterior = aux;
+				aux = aux->getSigNodo();
+			}
+			anterior->setSigNodo(aux->getSigNodo());
+			delete aux;
+			return true;
+		}
+	return false;
+}
 	

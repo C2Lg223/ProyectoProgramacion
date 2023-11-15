@@ -49,6 +49,16 @@ Empleado* Aeropuerto::BuscarPorCed(string ced){
 	return EmpleadosC->buscarConCedula(ced);
 }
 
+Empleado* Aeropuerto::buscarEmpleadoPorAvi(string pla)
+{
+	return ContratosC->buscaEmpEnAvion(pla);
+}
+
+bool Aeropuerto::eliminarAvionPorPlaca(string pla)
+{
+		return AeronavesC->eliminarAvionPorPlaca(pla);
+}
+
 bool Aeropuerto::listaAeronaveVacio(){
 	return AeronavesC->estaVacia();
 }
